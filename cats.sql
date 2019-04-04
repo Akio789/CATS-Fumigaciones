@@ -31,7 +31,7 @@ CREATE TABLE Usuario (
     correo VARCHAR(100),
     direccion VARCHAR(100),
     administrador BIT,
-    PRIMARY KEY (id)
+    PRIMARY KEY (id)  
 );
 
 CREATE TABLE Proveedor (
@@ -129,8 +129,10 @@ CREATE TABLE UsuarioFumigador (
 	fecha Date
 );
 
-INSERT INTO 'Usuarios' (username, password, nombre, puesto, telefono, correo, direccion, administrador) 
-    VALUES ('user1', '123', 'Akio', 'Manager', '123456', 'user1@gmail.com', 'Insurgentes Sur', 1);
+INSERT INTO `Usuario` (username, password, nombre, puesto, telefono, correo, direccion, administrador) VALUES ('user1', '123', 'Akio', 'Manager', '123456', 'user1@gmail.com', 'Insurgentes Sur', b'1');
+
+CREATE USER 'catsUser'@'localhost' IDENTIFIED BY 'myPassword';
+GRANT SELECT,UPDATE,INSERT ON *.* TO 'catsUser'@'localhost';
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

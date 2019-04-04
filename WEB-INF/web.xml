@@ -28,7 +28,7 @@
 		username
 	</param-name> 
 	<param-value>
-		myUsername
+		catsUser
 	</param-value> 
 </context-param>
 

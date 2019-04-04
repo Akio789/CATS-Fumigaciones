@@ -31,16 +31,17 @@ public class Login extends HttpServlet {
             String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement stat = con.createStatement();
-            ResultSet res = stat
-                    .executeQuery("SELECT username, password FROM Usuario WHERE username=" + usernameInput + ";");
+            String sql = "SELECT username, password FROM Usuario WHERE username=" + usernameInput + ";";
+            System.out.println(usernameInput);
+            ResultSet res = stat.executeQuery(sql);
 
             // Validate user
             boolean validUser = false;
 
             while (res.next()) {
                 // Get info from database
-                String username = res.getString("usuario");
-                String password = res.getString("contaseña");
+                String username = res.getString("username");
+                String password = res.getString("password");
 
                 // If a valid username and password are found, validUser is now true
                 if (username.equals(usernameInput) && password.equals(passwordInput)) {

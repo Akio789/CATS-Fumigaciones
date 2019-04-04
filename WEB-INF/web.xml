@@ -1,0 +1,59 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="false">
+
+<display-name>
+	CATS Fumigaciones
+</display-name>
+
+<description>
+	Aplicación de manejo de recursos y empleados para la empresa CATS Fumigaciones.
+	Proyecto de la materia Bases de Datos del Tecnológico de Monterrey CCM.
+</description>
+
+<session-config>
+	<session-timeout>
+		30
+	</session-timeout>
+</session-config>
+
+<context-param> 
+	<description>
+		User name
+	</description> 
+	<param-name>
+		username
+	</param-name> 
+	<param-value>
+		myUsername
+	</param-value> 
+</context-param>
+
+<context-param> 
+	<description>
+		Password
+	</description> 
+	<param-name>
+		password
+	</param-name> 
+	<param-value>
+		myPassword
+	</param-value> 
+</context-param>
+
+<context-param> 
+	<description>
+		Database for CATS Fumicaciones
+	</description> 
+	<param-name>
+		database
+	</param-name> 
+	<param-value>
+		cats
+	</param-value> 
+</context-param> 
+
+</web-app>

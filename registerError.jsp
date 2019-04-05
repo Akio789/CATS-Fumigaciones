@@ -10,6 +10,7 @@
 <body>
     <p>Las contraseñas ingresadas no son iguales</p>
     <a href="./registerUser.jsp">Regresar a registro</a>
+    <br>
     <a href="./index.html">Regresar a página inicial</a>
 </body>
 </html>

@@ -32,7 +32,6 @@ public class Login extends HttpServlet {
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement stat = con.createStatement();
             String sql = "SELECT username, password FROM Usuario WHERE username='" + usernameInput + "';";
-            System.out.println(usernameInput);
             ResultSet res = stat.executeQuery(sql);
 
             // Validate user
@@ -48,6 +47,9 @@ public class Login extends HttpServlet {
                     validUser = true;
                 }
             }
+
+            stat.close();
+            con.close();
 
             // Determine page to dispatch to
             String nextPage = validUser ? "/menu.jsp" : "/loginError.jsp";

@@ -13,7 +13,7 @@ CREATE TABLE Usuario (
     telefono VARCHAR(20),
     correo VARCHAR(100),
     direccion VARCHAR(100),
-    administrador BOOLEAN,
+    administrador BOOLEAN DEFAULT false,
     PRIMARY KEY (id)  
 );
 

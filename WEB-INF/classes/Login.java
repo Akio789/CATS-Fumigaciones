@@ -31,7 +31,7 @@ public class Login extends HttpServlet {
             String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement stat = con.createStatement();
-            String sql = "SELECT username, password FROM Usuario WHERE username=" + usernameInput + ";";
+            String sql = "SELECT username, password FROM Usuario WHERE username='" + usernameInput + "';";
             System.out.println(usernameInput);
             ResultSet res = stat.executeQuery(sql);
 

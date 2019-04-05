@@ -5,9 +5,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Error</title>
+    <title>Error de login</title>
 </head>
 <body>
-    <h1>Usario o contraseña incorrectos</h1>
+    <p>Usuario o contraseña incorrectos</p>
+    <a href="./index.html">Regresar</a>
 </body>
 </html>

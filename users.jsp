@@ -45,10 +45,9 @@
                     <c:out value="${user.address}" />
                 </td>
                 <td>
-                    <form action="./modifyUser">
-                        <input type="submit" method="POST" value="Modify">
-                    </form>
-                    <a href="deleteUser.jsp?userToDeleteUsername=${user.username}&userToDeleteId=${user.id}">Delete</a>
+                    <a href="modifyUser.jsp?id=${user.id}&name=${user.name}&username=${user.username}&job=${user.job}&phoneNum=${user.phoneNum}&email=${user.email}&address=${user.address}">Modificar</a>
+
+                    <a href="deleteUser.jsp?userToDeleteUsername=${user.username}&userToDeleteId=${user.id}">Eliminar</a>
                 </td>
             </tr>
         </c:forEach>

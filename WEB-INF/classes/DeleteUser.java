@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-@WebServlet("/delUser")
+@WebServlet("/deleteUser")
 public class DeleteUser extends HttpServlet {
 
     public void init(ServletConfig config) {
@@ -22,23 +22,20 @@ public class DeleteUser extends HttpServlet {
             String user = getServletContext().getInitParameter("username");
             String pass = getServletContext().getInitParameter("password");
 
+            String userToDeleteId = request.getParameter("userToDeleteId");
+
             // JDBC
             Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url, user, pass);
-            // con.setAutoCommit(false);
             Statement stat = con.createStatement();
-
-            int userToDeleteId = Integer.parseInt(request.getParameter("userToDeleteId"));
             String sql = "DELETE FROM Usuario WHERE id='" + userToDeleteId + "';";
             stat.executeUpdate(sql);
 
-            // con.commit();
-            // con.setAutoCommit(true);
             stat.close();
             con.close();
 
-            RequestDispatcher disp = getServletContext().getRequestDispatcher("/menu.jsp");
+            RequestDispatcher disp = getServletContext().getRequestDispatcher("/users");
 
             if (disp != null) {
                 disp.forward(request, response);

@@ -25,6 +25,7 @@
         Address: <input type="text" name="address" value=${param.address}>
 
         <input type="submit" value="Aceptar">
+        <a href="./users.jsp">Regresar</a>
     </form>
 </body>
 </html>

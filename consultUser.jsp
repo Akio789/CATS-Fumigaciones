@@ -8,8 +8,8 @@
     <title>Sistema de usuarios</title>
 </head>
 <body>
-    <h1>Usuarios</h1>
-    <a href="./registerUser.jsp">Registrar</a>
+    <h1>Usuario consultado</h1>
+    <a href="./users">Regresar a usuarios</a>
     <a href="./menu.jsp">Menú</a>
     <form action="./consultUser">
         Nombre de usuario: <input type="text" name="userToConsult" />

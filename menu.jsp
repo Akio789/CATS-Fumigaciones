@@ -13,9 +13,20 @@
         <input type="submit" value="Usuarios">    
     </form>
 
-    <a href="./services.jsp">Servicios</a>
-    <a href="./products.jsp">Productos</a>
-    <a href="./fumigators.jsp">Fumigadores</a>
-    <a href="./clients.jsp">Clientes</a>
+    <form action="">
+        <input type="submit" value="Servicios">    
+    </form>
+
+    <form action="">
+        <input type="submit" value="Productos">    
+    </form>
+
+    <form action="">
+        <input type="submit" value="Fumigadores">    
+    </form>
+
+    <form action="">
+        <input type="submit" value="Clientes">    
+    </form>
 </body>
 </html>

@@ -14,6 +14,9 @@
         <input type="submit" value="No">    
     </form>
 
-    <a href="delUser?userToDeleteId=${param.userToDeleteId}">Si</a>
+    <form action="./deleteUser" method="GET">
+        <input type="text" name="userToDeleteId" value="${param.userToDeleteId}" style="display: none">
+        <input type="submit" value="Si">
+    </form>
 </body>
 </html>

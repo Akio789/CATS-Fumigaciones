@@ -41,6 +41,7 @@ public class ModifyUser extends HttpServlet {
                     + id + "';";
             ;
             stat.executeUpdate(sql);
+
             stat.close();
             con.close();
 

@@ -44,7 +44,7 @@ public class RegisterUser extends HttpServlet {
                         + "VALUES ('" + usernameInput + "', '" + passwordInput + "', '" + nameInput + "', '"
                         + positionInput + "', '" + phoneNumInput + "', '" + emailInput + "', '" + addressInput + "');";
                 stat.executeUpdate(sql);
-                nextPage = "/index.html";
+                nextPage = "/registerSuccess.jsp";
 
                 stat.close();
                 con.close();

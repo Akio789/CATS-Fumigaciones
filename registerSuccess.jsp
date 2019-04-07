@@ -5,17 +5,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bienvenido a CATS Fumigaciones</title>
+    <title>Registro de usuario</title>
 </head>
 <body>
-    <h1>Bienvenido al sistema de CATS Fumigaciones</h1>
+    <h1>Registro exitoso!</h1>
     <form action="./users">
         <input type="submit" value="Usuarios">    
     </form>
 
-    <a href="./services.jsp">Servicios</a>
-    <a href="./products.jsp">Productos</a>
-    <a href="./fumigators.jsp">Fumigadores</a>
-    <a href="./clients.jsp">Clientes</a>
+   <a href="./menu.jsp">Menú</a>
 </body>
 </html>

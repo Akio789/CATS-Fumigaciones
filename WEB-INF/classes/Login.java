@@ -45,6 +45,10 @@ public class Login extends HttpServlet {
                 // If a valid username and password are found, validUser is now true
                 if (username.equals(usernameInput) && password.equals(passwordInput)) {
                     validUser = true;
+
+                    // Create session
+                    HttpSession session = request.getSession(true);
+                    session.setAttribute("user", username);
                 }
             }
 

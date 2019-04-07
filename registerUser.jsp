@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Registrar usuario</title>
+    <title>Registro de usuario</title>
 </head>
 <body>
     <h1>Registrar usuario</h1>
@@ -28,7 +28,7 @@
         <br>
         <input type="submit" value="Registrar">
         <br>
-        <a href="./index.html">Regresar</a>
+        <a href="./users.jsp">Regresar</a>
     </form>
 </body>
 </html>

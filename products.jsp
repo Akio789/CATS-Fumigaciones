@@ -5,10 +5,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sistema de usuarios</title>
+    <title>Sistema de productos</title>
 </head>
 <body>
-    <h1>Usuarios</h1>
+    <h1>Productos</h1>
     <a href="./registerProduct.jsp">Registrar</a>
     <a href="./menu.jsp">Menú</a>
     <form action="./consultUser">

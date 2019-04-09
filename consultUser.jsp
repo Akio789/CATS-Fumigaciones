@@ -12,7 +12,7 @@
     <a href="./users">Regresar a usuarios</a>
     <a href="./menu.jsp">Menú</a>
     <form action="./consultUser">
-        Nombre de usuario: <input type="text" name="userToConsult" />
+        Nombre: <input type="text" name="userToConsult" />
         <input type="submit" value="Buscar">
     </form>
 

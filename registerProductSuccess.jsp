@@ -5,12 +5,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Error de registro</title>
+    <title>Registro de producto</title>
 </head>
 <body>
-    <p>Las contraseñas ingresadas no son iguales</p>
-    <a href="./registerUser.jsp">Regresar a registro</a>
-    <br>
-    <a href="./menu.jsp">Regresar al menú</a>
+    <h1>Registro exitoso!</h1>
+    <form action="./products">
+        <input type="submit" value="Productos">    
+    </form>
+
+   <a href="./menu.jsp">Menú</a>
 </body>
 </html>

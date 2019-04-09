@@ -17,7 +17,7 @@
         <input type="submit" value="Servicios">    
     </form>
 
-    <form action="">
+    <form action="./products">
         <input type="submit" value="Productos">    
     </form>
 

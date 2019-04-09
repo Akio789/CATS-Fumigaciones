@@ -8,8 +8,8 @@
     <title>Sistema de productos</title>
 </head>
 <body>
-    <h1>Productos</h1>
-    <a href="./registerProduct.jsp">Registrar</a>
+    <h1>Producto consultado</h1>
+    <a href="./products">Regresar a productos</a>
     <a href="./menu.jsp">Menú</a>
     <form action="./consultProduct">
         Nombre: <input type="text" name="productToConsult" />

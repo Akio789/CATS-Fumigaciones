@@ -4,10 +4,10 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.util.ArrayList;
-import pojos.User;
+import pojos.User;;
 
-@WebServlet("/users")
-public class ConnectionUsers extends HttpServlet {
+@WebServlet("/consultUser")
+public class ConsultUser extends HttpServlet {
 
     public void init(ServletConfig config) {
         try {
@@ -29,7 +29,8 @@ public class ConnectionUsers extends HttpServlet {
             String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement stat = con.createStatement();
-            String sql = "SELECT * FROM Usuario;";
+            String userToConsult = request.getParameter("userToConsult");
+            String sql = "SELECT * FROM Usuario WHERE nombre='" + userToConsult + "';";
             ResultSet res = stat.executeQuery(sql);
 
             ArrayList<User> users = new ArrayList<>();
@@ -54,7 +55,7 @@ public class ConnectionUsers extends HttpServlet {
             session.setAttribute("users", users);
 
             // Determine page to dispatch to
-            RequestDispatcher disp = getServletContext().getRequestDispatcher("/users.jsp");
+            RequestDispatcher disp = getServletContext().getRequestDispatcher("/consultUser.jsp");
 
             stat.close();
             con.close();

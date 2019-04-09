@@ -4,10 +4,10 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.util.ArrayList;
-import pojos.User;
+import pojos.Product;;
 
-@WebServlet("/users")
-public class ConnectionUsers extends HttpServlet {
+@WebServlet("/consultProduct")
+public class ConsultProduct extends HttpServlet {
 
     public void init(ServletConfig config) {
         try {
@@ -29,32 +29,30 @@ public class ConnectionUsers extends HttpServlet {
             String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement stat = con.createStatement();
-            String sql = "SELECT * FROM Usuario;";
+            String productToConsult = request.getParameter("productToConsult");
+            String sql = "SELECT * FROM Producto WHERE nombre='" + productToConsult + "';";
             ResultSet res = stat.executeQuery(sql);
 
-            ArrayList<User> users = new ArrayList<>();
+            ArrayList<Product> products = new ArrayList<>();
 
             // Iterate through ResultSet
             while (res.next()) {
-                User newUser = new User();
-                newUser.setId(res.getInt("id"));
-                newUser.setUsername(res.getString("username"));
-                newUser.setPassword(res.getString("password"));
-                newUser.setName(res.getString("nombre"));
-                newUser.setJob(res.getString("puesto"));
-                newUser.setPhoneNum(res.getString("telefono"));
-                newUser.setEmail(res.getString("correo"));
-                newUser.setAddress(res.getString("direccion"));
+                Product newProduct = new Product();
+                newProduct.setId(res.getInt("id"));
+                newProduct.setNombre(res.getString("nombre"));
+                newProduct.setCosto(res.getDouble("costo"));
+                newProduct.setCant_disp(res.getInt("cant_disp"));
+                newProduct.setIdProveedor(res.getInt("idProveedor"));
 
-                users.add(newUser);
+                products.add(newProduct);
             }
 
             // Save users in session
             HttpSession session = request.getSession(false);
-            session.setAttribute("users", users);
+            session.setAttribute("products", products);
 
             // Determine page to dispatch to
-            RequestDispatcher disp = getServletContext().getRequestDispatcher("/users.jsp");
+            RequestDispatcher disp = getServletContext().getRequestDispatcher("/consultProduct.jsp");
 
             stat.close();
             con.close();

@@ -28,5 +28,9 @@
     <form action="">
         <input type="submit" value="Clientes">    
     </form>
+
+    <form action="./providers">
+        <input type="submit" value="Proveedores">
+    </form>
 </body>
 </html>

@@ -4,10 +4,10 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.util.ArrayList;
-import pojos.User;
+import pojos.Provider;;
 
-@WebServlet("/users")
-public class ConnectionUsers extends HttpServlet {
+@WebServlet("/providers")
+public class ConnectionProviders extends HttpServlet {
 
     public void init(ServletConfig config) {
         try {
@@ -29,32 +29,28 @@ public class ConnectionUsers extends HttpServlet {
             String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement stat = con.createStatement();
-            String sql = "SELECT * FROM Usuario;";
+            String sql = "SELECT * FROM Proveedor;";
             ResultSet res = stat.executeQuery(sql);
 
-            ArrayList<User> users = new ArrayList<>();
+            ArrayList<Provider> providers = new ArrayList<>();
 
             // Iterate through ResultSet
             while (res.next()) {
-                User newUser = new User();
-                newUser.setId(res.getInt("id"));
-                newUser.setUsername(res.getString("username"));
-                newUser.setPassword(res.getString("password"));
-                newUser.setName(res.getString("nombre"));
-                newUser.setJob(res.getString("puesto"));
-                newUser.setPhoneNum(res.getString("telefono"));
-                newUser.setEmail(res.getString("correo"));
-                newUser.setAddress(res.getString("direccion"));
+                Provider newProvider = new Provider();
+                newProvider.setId(res.getInt("id"));
+                newProvider.setNombre(res.getString("nombre"));
+                newProvider.setDireccion(res.getString("direccion"));
+                newProvider.setCorreo(res.getString("correo"));
 
-                users.add(newUser);
+                providers.add(newProvider);
             }
 
             // Save users in session
             HttpSession session = request.getSession(false);
-            session.setAttribute("users", users);
+            session.setAttribute("providers", providers);
 
             // Determine page to dispatch to
-            RequestDispatcher disp = getServletContext().getRequestDispatcher("/users.jsp");
+            RequestDispatcher disp = getServletContext().getRequestDispatcher("/providers.jsp");
 
             stat.close();
             con.close();

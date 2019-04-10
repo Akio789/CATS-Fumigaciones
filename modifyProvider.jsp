@@ -8,18 +8,18 @@
     <title>Modificación de Producto</title>
 </head>
 <body>
-    <h1>Modificar producto</h1>
+    <h1>Modificar Proveedor</h1>
 
-    <form action="./modifyProduct">
+    <form action="./modifyProvider">
         <input type="text" name="id" value=${param.id} style="display: none;">
         Nombre: <input type="text" name="nombre" value="${param.nombre}">
         <br>
-        Costo: <input type="text" name="costo" value="${param.costo}">
+        Dirección: <input type="text" name="direccion" value="${param.direccion}">
         <br>
-        Proveedor: <input type="text" name="idProveedor" value="${param.idProveedor}">
+        Correo: <input type="text" name="correo" value="${param.correo}">
 
         <input type="submit" value="Aceptar">
-        <a href="./products.jsp">Regresar</a>
+        <a href="./providers.jsp">Regresar</a>
     </form>
 </body>
 </html>

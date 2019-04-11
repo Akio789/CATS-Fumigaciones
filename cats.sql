@@ -116,4 +116,4 @@ CREATE TABLE UsuarioFumigador (
 INSERT INTO `Usuario` (username, password, nombre, puesto, telefono, correo, direccion, administrador) VALUES ('user1', '123', 'Akio', 'Manager', '123456', 'user1@gmail.com', 'Insurgentes Sur', false);
 
 CREATE USER 'catsUser'@'localhost' IDENTIFIED BY 'myPassword';
-GRANT SELECT,UPTIMESTAMP,INSERT ON *.* TO 'catsUser'@'localhost';
+GRANT ALL PRIVILEGES ON *.* TO 'catsUser'@'localhost';

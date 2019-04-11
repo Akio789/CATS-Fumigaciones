@@ -43,8 +43,8 @@
                     </form>
 
                     <form action="./deleteFumigator.jsp">
-                        <input type="text" name="providerToDeleteName" value="${fumigator.nombre}" style="display: none;" />
-                        <input type="text" name="providerToDeleteId" value="${fumigator.id}" style="display: none;" />
+                        <input type="text" name="fumigatorToDeleteName" value="${fumigator.nombre}" style="display: none;" />
+                        <input type="text" name="fumigatorToDeleteId" value="${fumigator.id}" style="display: none;" />
                         <input type="submit" value="Eliminar" />
                     </form>
                     <%-- <a href="modifyUser.jsp?id=${user.id}&name=${user.name}&username=${user.username}&job=${user.job}&phoneNum=${user.phoneNum}&email=${user.email}&address=${user.address}">Modificar</a>

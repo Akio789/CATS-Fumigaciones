@@ -42,7 +42,7 @@
                         <input type="submit" value="Modificar" />
                     </form>
 
-                    <form action="./consultProvider.jsp">
+                    <form action="./deleteProvider.jsp">
                         <input type="text" name="providerToDeleteName" value="${provider.nombre}" style="display: none;" />
                         <input type="text" name="providerToDeleteId" value="${provider.id}" style="display: none;" />
                         <input type="submit" value="Eliminar" />

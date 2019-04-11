@@ -27,9 +27,6 @@
         <c:forEach items="${products}" var="product">
             <tr>
                 <td>
-                    <c:out value="${product.id}" />
-                </td>
-                <td>
                     <c:out value="${product.nombre}" />                
                 </td>
                 <td>
@@ -51,7 +48,7 @@
                         <input type="submit" value="Modificar" />
                     </form>
 
-                    <form action="./consultProduct.jsp">
+                    <form action="./deleteProduct.jsp">
                         <input type="text" name="productToDeleteName" value="${product.nombre}" style="display: none;" />
                         <input type="text" name="productToDeleteId" value="${product.id}" style="display: none;" />
                         <input type="submit" value="Eliminar" />

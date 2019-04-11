@@ -37,8 +37,8 @@
                     <form action="./modifyProvider.jsp">
                         <input type="text" name="id" value="${provider.id}" style="display: none;" />
                         <input type="text" name="nombre" value="${provider.nombre}"}" style="display: none;" />
-                        <input type="text" name="costo" value="${provider.direccion}" style="display: none;" />
-                        <input type="text" name="cant_disp" value="${provider.correo}" style="display: none;" />
+                        <input type="text" name="direccion" value="${provider.direccion}" style="display: none;" />
+                        <input type="text" name="correo" value="${provider.correo}" style="display: none;" />
                         <input type="submit" value="Modificar" />
                     </form>
 

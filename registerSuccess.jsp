@@ -5,12 +5,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Registro de usuario</title>
+    <title>Registro</title>
 </head>
 <body>
     <h1>Registro exitoso!</h1>
-    <form action="./users">
-        <input type="submit" value="Usuarios">    
+    <form action="${lastPageForSuccess}">
+        <input type="submit" value="Regresar">    
     </form>
 
    <a href="./menu.jsp">Menú</a>

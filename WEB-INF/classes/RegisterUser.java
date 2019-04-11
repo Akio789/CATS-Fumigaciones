@@ -52,6 +52,9 @@ public class RegisterUser extends HttpServlet {
                 nextPage = "/registerError.jsp";
             }
 
+            request.setAttribute("lastPageForSuccess", "./users");
+            request.setAttribute("lastPageForFailure", "./registerUser.jsp");
+
             // Determine page to dispatch to
             RequestDispatcher disp = getServletContext().getRequestDispatcher(nextPage);
 

@@ -21,7 +21,7 @@
         <input type="submit" value="Productos">    
     </form>
 
-    <form action="">
+    <form action="./fumigators">
         <input type="submit" value="Fumigadores">    
     </form>
 

@@ -4,10 +4,9 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.util.ArrayList;
-import pojos.Provider;;
 
-@WebServlet("/providers")
-public class ConnectionProviders extends HttpServlet {
+@WebServlet("/productBuy")
+public class ProductBuy extends HttpServlet {
 
     public void init(ServletConfig config) {
         try {
@@ -28,28 +27,26 @@ public class ConnectionProviders extends HttpServlet {
             Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url, user, pass);
+
+            int id = Integer.parseInt(request.getParameter("id"));
             Statement stat = con.createStatement();
-            String sql = "SELECT * FROM Proveedor;";
+            String sql = "SELECT cant_disp FROM Producto WHERE id='" + id + "';";
             ResultSet res = stat.executeQuery(sql);
 
-            ArrayList<Provider> providers = new ArrayList<>();
-
+            int currentQuantity = 0;
+            int boughtQuantity = Integer.parseInt(request.getParameter("quantity"));
             // Iterate through ResultSet
             while (res.next()) {
-                Provider newProvider = new Provider();
-                newProvider.setId(res.getInt("id"));
-                newProvider.setNombre(res.getString("nombre"));
-                newProvider.setDireccion(res.getString("direccion"));
-                newProvider.setCorreo(res.getString("correo"));
-
-                providers.add(newProvider);
+                currentQuantity = res.getInt("cant_disp");
             }
 
-            // Save users in session
-            request.setAttribute("providers", providers);
+            int newQuantity = currentQuantity + boughtQuantity;
+
+            sql = "UPDATE Producto SET cant_disp=' " + newQuantity + " ' WHERE id='" + id + "';";
+            stat.executeUpdate(sql);
 
             // Determine page to dispatch to
-            RequestDispatcher disp = getServletContext().getRequestDispatcher("/providers.jsp");
+            RequestDispatcher disp = getServletContext().getRequestDispatcher("/products");
 
             stat.close();
             con.close();

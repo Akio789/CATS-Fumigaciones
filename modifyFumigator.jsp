@@ -5,12 +5,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Modificación de Producto</title>
+    <title>Modificación de Fumigador</title>
 </head>
 <body>
-    <h1>Modificar Proveedor</h1>
+    <h1>Modificar Fumigador</h1>
 
-    <form action="./modifyProvider">
+    <form action="./modifyFumigator">
         <input type="text" name="id" value=${param.id} style="display: none;">
         Nombre: <input type="text" name="nombre" value="${param.nombre}">
         <br>
@@ -19,7 +19,7 @@
         Correo: <input type="text" name="correo" value="${param.correo}">
 
         <input type="submit" value="Aceptar">
-        <a href="./providers">Regresar</a>
+        <a href="./fumigators">Regresar</a>
     </form>
 </body>
 </html>

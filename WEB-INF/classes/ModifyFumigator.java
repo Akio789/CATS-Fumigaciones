@@ -3,11 +3,9 @@ import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
-import java.util.ArrayList;
-import pojos.Provider;;
 
-@WebServlet("/providers")
-public class ConnectionProviders extends HttpServlet {
+@WebServlet("/modifyFumigator")
+public class ModifyFumigator extends HttpServlet {
 
     public void init(ServletConfig config) {
         try {
@@ -24,35 +22,27 @@ public class ConnectionProviders extends HttpServlet {
             String user = getServletContext().getInitParameter("username");
             String pass = getServletContext().getInitParameter("password");
 
+            // Get user input
+            String id = request.getParameter("id");
+            String nombre = request.getParameter("nombre");
+            String direccion = request.getParameter("direccion");
+            String correo = request.getParameter("correo");
+
             // JDBC
             Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement stat = con.createStatement();
-            String sql = "SELECT * FROM Proveedor;";
-            ResultSet res = stat.executeQuery(sql);
-
-            ArrayList<Provider> providers = new ArrayList<>();
-
-            // Iterate through ResultSet
-            while (res.next()) {
-                Provider newProvider = new Provider();
-                newProvider.setId(res.getInt("id"));
-                newProvider.setNombre(res.getString("nombre"));
-                newProvider.setDireccion(res.getString("direccion"));
-                newProvider.setCorreo(res.getString("correo"));
-
-                providers.add(newProvider);
-            }
-
-            // Save users in session
-            request.setAttribute("providers", providers);
-
-            // Determine page to dispatch to
-            RequestDispatcher disp = getServletContext().getRequestDispatcher("/providers.jsp");
+            String sql = "UPDATE Fumigador SET nombre='" + nombre + "', direccion='" + direccion + "', correo='"
+                    + correo + "' WHERE id='" + id + "';";
+            ;
+            stat.executeUpdate(sql);
 
             stat.close();
             con.close();
+
+            // Determine page to dispatch to
+            RequestDispatcher disp = getServletContext().getRequestDispatcher("/fumigators");
 
             if (disp != null) {
                 disp.forward(request, response);

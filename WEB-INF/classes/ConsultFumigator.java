@@ -4,10 +4,10 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.util.ArrayList;
-import pojos.Provider;;
+import pojos.Fumigator;;
 
-@WebServlet("/providers")
-public class ConnectionProviders extends HttpServlet {
+@WebServlet("/consultFumigator")
+public class ConsultFumigator extends HttpServlet {
 
     public void init(ServletConfig config) {
         try {
@@ -29,27 +29,28 @@ public class ConnectionProviders extends HttpServlet {
             String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement stat = con.createStatement();
-            String sql = "SELECT * FROM Proveedor;";
+            String fumigatorToConsult = request.getParameter("fumigatorToConsult");
+            String sql = "SELECT * FROM Fumigador WHERE nombre='" + fumigatorToConsult + "';";
             ResultSet res = stat.executeQuery(sql);
 
-            ArrayList<Provider> providers = new ArrayList<>();
+            ArrayList<Fumigator> fumigators = new ArrayList<>();
 
             // Iterate through ResultSet
             while (res.next()) {
-                Provider newProvider = new Provider();
-                newProvider.setId(res.getInt("id"));
-                newProvider.setNombre(res.getString("nombre"));
-                newProvider.setDireccion(res.getString("direccion"));
-                newProvider.setCorreo(res.getString("correo"));
+                Fumigator newFumigator = new Fumigator();
+                newFumigator.setId(res.getInt("id"));
+                newFumigator.setNombre(res.getString("nombre"));
+                newFumigator.setDireccion(res.getString("direccion"));
+                newFumigator.setCorreo(res.getString("correo"));
 
-                providers.add(newProvider);
+                fumigators.add(newFumigator);
             }
 
             // Save users in session
-            request.setAttribute("providers", providers);
+            request.setAttribute("fumigators", fumigators);
 
             // Determine page to dispatch to
-            RequestDispatcher disp = getServletContext().getRequestDispatcher("/providers.jsp");
+            RequestDispatcher disp = getServletContext().getRequestDispatcher("/consultFumigator.jsp");
 
             stat.close();
             con.close();

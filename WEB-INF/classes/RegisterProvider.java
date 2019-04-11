@@ -41,8 +41,10 @@ public class RegisterProvider extends HttpServlet {
             stat.close();
             con.close();
 
+            request.setAttribute("lastPageForSuccess", "./providers");
+
             // Determine page to dispatch to
-            RequestDispatcher disp = getServletContext().getRequestDispatcher("/registerProviderSuccess.jsp");
+            RequestDispatcher disp = getServletContext().getRequestDispatcher("/registerSuccess.jsp");
 
             if (disp != null) {
                 disp.forward(request, response);

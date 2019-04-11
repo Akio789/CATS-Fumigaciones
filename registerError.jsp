@@ -8,8 +8,8 @@
     <title>Error de registro</title>
 </head>
 <body>
-    <p>Las contraseñas ingresadas no son iguales</p>
-    <a href="./registerUser.jsp">Regresar a registro</a>
+    <p>Hubo un error de llenado de la forma.</p>
+    <a href="${lastPageForFailure}">Regresar a registro</a>
     <br>
     <a href="./menu.jsp">Regresar al menú</a>
 </body>

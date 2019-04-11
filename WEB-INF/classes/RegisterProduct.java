@@ -45,7 +45,7 @@ public class RegisterProduct extends HttpServlet {
 
             while (res.next()) {
                 if (res.getInt("id") == idProveedor) {
-                    nextPage = "/registerProductSuccess.jsp";
+                    nextPage = "/registerSuccess.jsp";
                     exists = true;
                 }
             }
@@ -67,6 +67,9 @@ public class RegisterProduct extends HttpServlet {
 
             // Determine page to dispatch to
             RequestDispatcher disp = getServletContext().getRequestDispatcher(nextPage);
+
+            request.setAttribute("lastPageForSuccess", "./products");
+            request.setAttribute("lastPageForFailure", "./registerProduct.jsp");
 
             if (disp != null) {
                 disp.forward(request, response);

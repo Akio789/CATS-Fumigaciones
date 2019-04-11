@@ -56,8 +56,12 @@
                         <input type="text" name="productToDeleteId" value="${product.id}" style="display: none;" />
                         <input type="submit" value="Eliminar" />
                     </form>
-                    <%-- <a href="modifyUser.jsp?id=${user.id}&name=${user.name}&username=${user.username}&job=${user.job}&phoneNum=${user.phoneNum}&email=${user.email}&address=${user.address}">Modificar</a>
-                    <a href="deleteUser.jsp?userToDeleteUsername=${user.username}&userToDeleteId=${user.id}">Eliminar</a> --%>
+
+                    <form action="./productBuy.jsp">
+                        <input type="text" name="id" value="${product.id}" style="display: none;" />
+                        <input type="text" name="nombre" value="${product.nombre}" style="display: none;" />
+                        <input type="submit" value="Comprar">
+                    </form>
                 </td>
             </tr>
         </c:forEach>

@@ -13,7 +13,7 @@
         <input type="submit" value="Usuarios">    
     </form>
 
-    <form action="">
+    <form action="./services">
         <input type="submit" value="Servicios">    
     </form>
 

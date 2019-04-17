@@ -25,7 +25,7 @@
         <input type="submit" value="Fumigadores">    
     </form>
 
-    <form action="">
+    <form action="./client">
         <input type="submit" value="Clientes">    
     </form>
 

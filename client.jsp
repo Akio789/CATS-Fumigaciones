@@ -18,7 +18,7 @@
 
     <table border="1">
         <thead>
-            <th>Id</th>
+            <th>Nombre</th>
             <th>Telefono</th>
             <th>Direccion</th>
             <th>Correo</th>
@@ -48,8 +48,8 @@
                     </form>
 
                     <form action="./deleteClient.jsp">
-                        <input type="text" name="clientToDeleteName" value="${product.nombre}" style="display: none;" />
-                        <input type="text" name="clientToDeleteId" value="${product.id}" style="display: none;" />
+                        <input type="text" name="clientToDeleteName" value="${client.nombre}" style="display: none;" />
+                        <input type="text" name="clientToDeleteId" value="${client.id}" style="display: none;" />
                         <input type="submit" value="Eliminar" />
                     </form>
                 </td>

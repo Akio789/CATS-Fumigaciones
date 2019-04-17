@@ -14,9 +14,9 @@
         <br>
         Telefono: <input type="text" name="telefono" id="telefono" placeholder="No. Telefonico" required>
         <br>
-        Direccion: <input type="text" name="direccion" id="direccion" placeholder="Cantidad" required>
+        Direccion: <input type="text" name="direccion" id="direccion" placeholder="Direccion" required>
         <br>
-        Correo: <input type="text" name="correo" id="correo" placeholder="Describa el producto" required>
+        Correo: <input type="text" name="correo" id="correo" placeholder="Correo Electronico" required>
         <br>
         <a href="./products.jsp">Regresar</a>
     </form>

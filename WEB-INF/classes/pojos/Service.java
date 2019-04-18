@@ -3,6 +3,7 @@ package pojos;
 public class Service {
     private int id, idCliente, idFumigador;
     private double costo;
+    private String fecha;
 
     public Service() {
     }
@@ -37,6 +38,14 @@ public class Service {
 
     public void setCosto(double costo) {
         this.costo = costo;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String Fecha) {
+        this.fecha = fecha;
     }
 
 }

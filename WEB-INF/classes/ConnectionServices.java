@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.util.ArrayList;
-import pojos.Service;;
+import pojos.Service;
 
 @WebServlet("/services")
 public class ConnectionServices extends HttpServlet {
@@ -41,6 +41,7 @@ public class ConnectionServices extends HttpServlet {
                 newService.setId(res.getInt("id"));
                 newService.setIdFumigador(res.getInt("idFumigador"));
                 newService.setCosto(res.getDouble("costo"));
+                newService.setFecha(res.getString("fecha"));
 
                 services.add(newService);
             }

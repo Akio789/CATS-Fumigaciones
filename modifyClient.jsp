@@ -10,18 +10,18 @@
 <body>
     <h1>Modificar cliente</h1>
 
-    <form action="./modifyProduct">
+    <form action="./modifyClient">
         <input type="text" name="id" value=${param.id} style="display: none;">
         Nombre: <input type="text" name="nombre" value="${param.nombre}">
         <br>
-        Telefono: <input type="text" name="telelfono" value="${param.telefono}">
+        Telefono: <input type="text" name="telefono" value="${param.telefono}">
         <br>
         Direccion: <input type="text" name="direccion" value="${param.direccion}">
         <br>
         Correo:<input type="text" name="correo" value="${param.correo}"> 
 
         <input type="submit" value="Aceptar">
-        <a href="./products.jsp">Regresar</a>
+        <a href="./client.jsp">Regresar</a>
     </form>
 </body>
 </html>

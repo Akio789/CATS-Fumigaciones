@@ -52,7 +52,7 @@ public class ConsultClient extends HttpServlet {
             session.setAttribute("client", client);
 
             // Determine page to dispatch to
-            RequestDispatcher disp = getServletContext().getRequestDispatcher("/consultProduct.jsp");
+            RequestDispatcher disp = getServletContext().getRequestDispatcher("/consultClient.jsp");
 
             stat.close();
             con.close();

@@ -5,7 +5,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
 @WebServlet("/registerClient")
-public class registerClient extends HttpServlet {
+public class RegisterClient extends HttpServlet {
 
     public void init(ServletConfig config) {
         try {
@@ -38,37 +38,18 @@ public class registerClient extends HttpServlet {
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement stat = con.createStatement();
 
-            // Check if provider exists
-            String sql = "SELECT * FROM Cliente;";
-            ResultSet res = stat.executeQuery(sql);
-
-            while (res.next()) {
-                if (res.getInt("id") == idProveedor) {
-                    nextPage = "/registerSuccess.jsp";
-                    exists = true;
-                }
-            }
-
-            // Only insert new product if provider exists
-            if (exists) {
-                Connection con2 = DriverManager.getConnection(url, user, pass);
-                Statement stat2 = con2.createStatement();
-                String sql2 = "INSERT INTO Cliente (nombre, direccion, correo, telefono)" + " VALUES ('"
-                        + nombre + "', '" + direccion + "', '" + correo + "', '" + telefono + "');";
-                stat2.executeUpdate(sql2);
-
-                stat2.close();
-                con2.close();
-            }
+            String sql = "INSERT INTO Cliente (nombre, direccion, correo, telefono) VALUES ('" + nombre + "', '"
+                    + direccion + "', '" + correo + "', '" + telefono + "');";
+            stat.executeUpdate(sql);
 
             stat.close();
             con.close();
 
-            // Determine page to dispatch to
-            RequestDispatcher disp = getServletContext().getRequestDispatcher(nextPage);
-
             request.setAttribute("lastPageForSuccess", "./client");
             request.setAttribute("lastPageForFailure", "./registerClient.jsp");
+
+            // Determine page to dispatch to
+            RequestDispatcher disp = getServletContext().getRequestDispatcher("/registerSuccess.jsp");
 
             if (disp != null) {
                 disp.forward(request, response);

@@ -25,17 +25,17 @@ public class ModifyClient extends HttpServlet {
             // Get user input
             String id = request.getParameter("id");
             String nombre = request.getParameter("nombre");
-            String direccion = request.getParameter("costo");
-            String correo = request.getParameter("idProveedor");
-            String telefono = request.getParameter("idProveedor");
+            String direccion = request.getParameter("direccion");
+            String correo = request.getParameter("correo");
+            String telefono = request.getParameter("telefono");
 
             // JDBC
             Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement stat = con.createStatement();
-            String sql = "UPDATE Producto SET nombre='" + nombre + "', direccion='" + direccion + "', correo='"
-                    + correo + "', telefono='" + telefono + "' WHERE id='" + id + "';";
+            String sql = "UPDATE Cliente SET nombre='" + nombre + "', direccion='" + direccion + "', correo='" + correo
+                    + "', telefono='" + telefono + "' WHERE id='" + id + "';";
             ;
             stat.executeUpdate(sql);
 
@@ -43,7 +43,7 @@ public class ModifyClient extends HttpServlet {
             con.close();
 
             // Determine page to dispatch to
-            RequestDispatcher disp = getServletContext().getRequestDispatcher("/products");
+            RequestDispatcher disp = getServletContext().getRequestDispatcher("/client");
 
             if (disp != null) {
                 disp.forward(request, response);

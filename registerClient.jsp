@@ -17,6 +17,7 @@
         Direccion: <input type="text" name="direccion" id="direccion" placeholder="Direccion" required>
         <br>
         Correo: <input type="text" name="correo" id="correo" placeholder="Correo Electronico" required>
+        <input type="submit" value="Registrar">        
         <br>
         <a href="./products.jsp">Regresar</a>
     </form>

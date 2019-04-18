@@ -36,7 +36,7 @@ public class ConnectionClient extends HttpServlet {
 
             // Iterate through ResultSet
             while (res.next()) {
-                Client newProduct = new Client();
+                Client newClient = new Client();
                 newClient.setId(res.getInt("id"));
                 newClient.setNombre(res.getString("nombre"));
                 newClient.setCorreo(res.getString("correo"));

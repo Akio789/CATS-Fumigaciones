@@ -38,6 +38,7 @@ CREATE TABLE Producto (
 CREATE TABLE Cliente (
     id INT NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(100),
+    telefono VARCHAR(100),
     direccion VARCHAR(100),
     correo VARCHAR(100),
     PRIMARY KEY (id)

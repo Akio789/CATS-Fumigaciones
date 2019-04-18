@@ -18,11 +18,11 @@
 
     <table border="1">
         <thead>
-            <th>Id</th>
             <th>Nombre</th>
             <th>Costo</th>
             <th>Cantidad</th>
             <th>Proveedor</th>
+            <th>Opciones</th>
         </thead>
         <c:forEach items="${products}" var="product">
             <tr>

@@ -18,42 +18,38 @@
 
     <table border="1">
         <thead>
-            <th>Id</th>
             <th>Nombre</th>
             <th>Telefono</th>
             <th>Direccion</th>
             <th>Correo</th>
         </thead>
-        <c:forEach items="${products}" var="product">
+        <c:forEach items="${client}" var="clientItem">
             <tr>
                 <td>
-                    <c:out value="${client.id}" />
+                    <c:out value="${clientItem.nombre}" />                
                 </td>
                 <td>
-                    <c:out value="${client.nombre}" />                
+                    <c:out value="${clientItem.telefono}" />
                 </td>
                 <td>
-                    <c:out value="${client.telefono}" />
+                    <c:out value="${clientItem.direccion}" />
                 </td>
                 <td>
-                    <c:out value="${client.direccion}" />
-                </td>
-                <td>
-                    <c:out value="${client.correo}" />
+                    <c:out value="${clientItem.correo}" />
                 </td>
                 <td>
                     <form action="./modifyClient.jsp">
-                        <input type="text" name="id" value="${client.id}" style="display: none;" />
-                        <input type="text" name="nombre" value="${client.nombre}" style="display: none;" />
-                        <input type="text" name="telefono" value="${client.telefono}" style="display: none;" />
-                        <input type="text" name="direccion" value="${client.direccion}" style="display: none;" />
-                        <input type="text" name="correo" value="${client.correo}" style="display: none;" />
+                        <input type="text" name="id" value="${clientItem.id}" style="display: none;" />
+                        <input type="text" name="nombre" value="${clientItem.nombre}" style="display: none;" />
+                        <input type="text" name="telefono" value="${clientItem.telefono}" style="display: none;" />
+                        <input type="text" name="direccion" value="${clientItem.direccion}" style="display: none;" />
+                        <input type="text" name="correo" value="${clientItem.correo}" style="display: none;" />
                         <input type="submit" value="Modificar" />
                     </form>
 
                     <form action="./consultClient.jsp">
-                        <input type="text" name="clientToDeleteName" value="${client.nombre}" style="display: none;" />
-                        <input type="text" name="clientToDeleteId" value="${client.id}" style="display: none;" />
+                        <input type="text" name="clientToDeleteName" value="${clientItem.nombre}" style="display: none;" />
+                        <input type="text" name="clientToDeleteId" value="${clientItem.id}" style="display: none;" />
                         <input type="submit" value="Eliminar" />
                     </form>
                 </td>

@@ -19,7 +19,7 @@
         Correo: <input type="text" name="correo" id="correo" placeholder="Correo Electronico" required>
         <input type="submit" value="Registrar">        
         <br>
-        <a href="./products.jsp">Regresar</a>
+        <a href="./client.jsp">Regresar</a>
     </form>
 </body>
 </html>

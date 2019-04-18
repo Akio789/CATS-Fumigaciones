@@ -18,6 +18,7 @@
             <th>Fecha</th>
             <th>Fumigador</th>
             <th>Cliente</th>
+            <th>Opciones</th>
         </thead>
         <c:forEach items="${services}" var="services">
             <tr>
@@ -28,24 +29,24 @@
                     <c:out value="${services.fecha}" />
                 </td>
                 <td>
-                    <c:out value="${services.fumigador}" />
+                    <c:out value="${services.idFumigador}" />
                 </td>
                 <td>
-                    <c:out value="${services.cliente}" />
+                    <c:out value="${services.idCliente}" />
                 </td>
                 <td>
                     <form action="./modifyService.jsp">
                         <input type="text" name="id" value="${services.id}" style="display: none;" />
                         <input type="text" name="costo" value="${services.costo}" style="display: none;" />
                         <input type="text" name="fecha" value="${services.fecha}" style="display: none;" />
-                        <input type="text" name="fumigador" value="${services.fumigador}" style="display: none;" />
-                        <input type="text" name="cliente" value="${services.cliente}" style="display: none;" />
+                        <input type="text" name="idFumigador" value="${services.idFumigador}" style="display: none;" />
+                        <input type="text" name="idCliente" value="${services.idCliente}" style="display: none;" />
                         <input type="submit" value="Modificar" />
                     </form>
 
                     <form action="./deleteService.jsp">
                         <input type="text" name="serviceToDeleteId" value="${services.id}" style="display: none;" />
-                        <input type="submit" value="Eliminar" />
+                        <input type="submit" value="Cancelar" />
                     </form>
                 </td>
             </tr>

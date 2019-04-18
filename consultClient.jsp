@@ -20,7 +20,7 @@
         <thead>
             <th>Nombre</th>
             <th>Telefono</th>
-            <th>Direccion</th>
+            <th>Dirección</th>
             <th>Correo</th>
         </thead>
         <c:forEach items="${client}" var="clientItem">

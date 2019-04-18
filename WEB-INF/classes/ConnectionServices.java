@@ -29,7 +29,7 @@ public class ConnectionServices extends HttpServlet {
             String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement stat = con.createStatement();
-            String sql = "SELECT * FROM Service;";
+            String sql = "SELECT * FROM Servicio;";
             ResultSet res = stat.executeQuery(sql);
 
             ArrayList<Service> services = new ArrayList<>();

@@ -13,11 +13,11 @@
         <input type="submit" value="Usuarios">    
     </form>
 
-    <form action="./services" method="POST">
+    <form action="./services">
         <input type="submit" value="Servicios">    
     </form>
 
-    <form action="./products" >
+    <form action="./products" method="POST">
         <input type="submit" value="Productos">    
     </form>
 

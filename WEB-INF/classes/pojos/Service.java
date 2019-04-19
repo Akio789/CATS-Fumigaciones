@@ -44,7 +44,7 @@ public class Service {
         return fecha;
     }
 
-    public void setFecha(String Fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

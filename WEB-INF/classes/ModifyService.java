@@ -3,6 +3,8 @@ import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+import java.util.ArrayList;
+import pojos.Fumigator;;
 
 @WebServlet("/modifyService")
 public class ModifyService extends HttpServlet {
@@ -25,15 +27,30 @@ public class ModifyService extends HttpServlet {
             // Get user input
             String id = request.getParameter("id");
             double costo = Double.parseDouble(request.getParameter("costo"));
-            int idFumigador = Integer.parseInt(request.getParameter("idFumigador"));
+            String nombreFumigador = request.getParameter("nombre_fumigador");
             String fecha = request.getParameter("fecha");
-            int idCliente = Integer.parseInt(request.getParameter("idCliente"));
-
+            String nombreCliente = request.getParameter("nombre_cliente");
             // JDBC
             Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement stat = con.createStatement();
+
+            String sql = "SELECT * FROM Cliente WHERE nombre='" + nombreCliente + "' ;";
+            ResultSet res = stat.executeQuery(sql);
+
+            res.next();
+            int idCliente = res.getInt("id");
+
+
+            // Check if fumigator exists
+            String sql3 = "SELECT * FROM Fumigador WHERE nombre='" + nombreFumigador + "';";
+            ResultSet res2 = stat.executeQuery(sql3);
+
+            res2.next();
+            int idFumigador = res2.getInt("id");
+
+
             String sql = "UPDATE Servicio SET costo='" + costo + "', fecha='" + fecha + "', idFumigador='"
                     + idFumigador + "', idCliente='" + idCliente + "' WHERE id='" + id + "';";
             ;

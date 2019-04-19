@@ -38,7 +38,11 @@
     </header>
 
     <h1>Productos</h1>
-    <a href="./registerProduct.jsp">Registrar</a>
+    <form action="./registerProduct.jsp">
+        <input type="hidden" name="${providers}">
+        <input type="submit" value="Registar">
+    </form>
+
     <form action="./consultProduct" method="POST">
         Nombre: <input type="text" name="productToConsult" />
         <input type="submit" value="Buscar">
@@ -64,7 +68,7 @@
                     <c:out value="${product.cant_disp}" />
                 </td>
                 <td>
-                    <c:out value="${product.idProveedor}" />
+                    <c:out value="${product.nombreProveedor}" />
                 </td>
                 <td>
                     <form action="./modifyProduct.jsp" method="POST">

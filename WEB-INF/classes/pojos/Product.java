@@ -3,7 +3,7 @@ package pojos;
 public class Product {
     private int id, cant_disp, idProveedor;
     private double costo;
-    private String nombre, descripcion;
+    private String nombre, descripcion, nombreProveedor;
 
     public Product() {
     }
@@ -54,6 +54,14 @@ public class Product {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getNombreProveedor() {
+        return nombreProveedor;
+    }
+
+    public void setNombreProveedor(String nombreProveedor) {
+        this.nombreProveedor = nombreProveedor;
     }
 
 }

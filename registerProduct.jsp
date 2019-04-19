@@ -19,13 +19,17 @@
         Descripción: <input type="text" name="descr" id="descr" placeholder="Describa el producto" required>
         <br>
         Proveedor: 
-        <select name="provider" id="provider">
-            <c:forEach items="${providers}" var="provider">
-                <option value="provider.nombre"></option>
+        <select name="nombre_proveedor" id="provider">
+            <c:forEach items="${sessionScope.providers}" var="provider">
+                <option value="${provider.nombre}">${provider.nombre}</option>
             </c:forEach>
         </select>
+        <input type="submit" value="Registrar">
         <br>
-        <a href="./products.jsp">Regresar</a>
+    </form>
+    <form action="./products.jsp">
+            <input type="hidden" name="${providers}">
+            <input type="submit" value="Regresar">
     </form>
 </body>
 </html>

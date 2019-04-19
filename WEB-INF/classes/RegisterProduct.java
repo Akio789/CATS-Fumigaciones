@@ -29,11 +29,7 @@ public class RegisterProduct extends HttpServlet {
             double costo = Double.parseDouble(request.getParameter("costo"));
             int cant_disp = Integer.parseInt(request.getParameter("cant_disp"));
             String descr = request.getParameter("descr");
-            int idProveedor = Integer.parseInt(request.getParameter("idProveedor"));
-
-            // Only execute insert if provider exists
-            String nextPage = "/registerError.jsp";
-            boolean exists = false;
+            String nombreProveedor = request.getParameter("nombre_proveedor");
 
             // JDBC
             Class.forName("com.mysql.jdbc.Driver");
@@ -42,50 +38,24 @@ public class RegisterProduct extends HttpServlet {
             Statement stat = con.createStatement();
 
             // Check if provider exists
-            String sql = "SELECT * FROM Proveedor;";
+            String sql = "SELECT * FROM Proveedor WHERE nombre='" + nombreProveedor + "';";
             ResultSet res = stat.executeQuery(sql);
 
-            while (res.next()) {
-                if (res.getInt("id") == idProveedor) {
-                    nextPage = "/registerSuccess.jsp";
-                    exists = true;
-                }
-            }
-
-            res = stat.executeQuery(sql);
-            ArrayList<Provider> providers = new ArrayList<>();
-
-            // Iterate through ResultSet
-            while (res.next()) {
-                Provider newProvider = new Provider();
-                newProvider.setId(res.getInt("id"));
-                newProvider.setNombre(res.getString("nombre"));
-                newProvider.setDireccion(res.getString("direccion"));
-                newProvider.setCorreo(res.getString("correo"));
-
-                providers.add(newProvider);
-            }
-
-            // Save users in session
-            request.setAttribute("providers", providers);
+            res.next();
+            int idProveedor = res.getInt("id");
 
             // Only insert new product if provider exists
-            if (exists) {
-                Connection con2 = DriverManager.getConnection(url, user, pass);
-                Statement stat2 = con2.createStatement();
-                String sql2 = "INSERT INTO Producto (nombre, descripcion, cant_disp, costo, idProveedor)" + " VALUES ('"
-                        + nombre + "', '" + descr + "', '" + cant_disp + "', '" + costo + "', '" + idProveedor + "');";
-                stat2.executeUpdate(sql2);
+            Connection con2 = DriverManager.getConnection(url, user, pass);
+            Statement stat2 = con2.createStatement();
+            String sql2 = "INSERT INTO Producto (nombre, descripcion, cant_disp, costo, idProveedor)" + " VALUES ('"
+                    + nombre + "', '" + descr + "', '" + cant_disp + "', '" + costo + "', '" + idProveedor + "');";
+            stat2.executeUpdate(sql2);
 
-                stat2.close();
-                con2.close();
-            }
-
-            stat.close();
-            con.close();
+            stat2.close();
+            con2.close();
 
             // Determine page to dispatch to
-            RequestDispatcher disp = getServletContext().getRequestDispatcher(nextPage);
+            RequestDispatcher disp = getServletContext().getRequestDispatcher("/registerSuccess.jsp");
 
             request.setAttribute("lastPageForSuccess", "./products");
             request.setAttribute("lastPageForFailure", "./registerProduct.jsp");

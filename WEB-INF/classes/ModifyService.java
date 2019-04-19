@@ -35,7 +35,7 @@ public class ModifyService extends HttpServlet {
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement stat = con.createStatement();
             String sql = "UPDATE Servicio SET costo='" + costo + "', fecha='" + fecha + "', idFumigador='"
-                    + idFumigador + "', idCliente='" + idCliente"' WHERE id='" + id + "';";
+                    + idFumigador + "', idCliente='" + idCliente + "' WHERE id='" + id + "';";
             ;
             stat.executeUpdate(sql);
 

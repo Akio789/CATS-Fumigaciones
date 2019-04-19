@@ -27,8 +27,8 @@
         <input type="submit" value="Registrar">
         <br>
     </form>
-    <form action="./products.jsp">
-            <input type="hidden" name="${providers}">
+    <form action="./products" method="POST">
+            <input type="hidden" name="${sessionScope.providers}">
             <input type="submit" value="Regresar">
     </form>
 </body>

@@ -17,7 +17,7 @@
         Correo: <input type="text" name="correo" id="correo" placeholder="Email" required>
         <input type="submit" value="Registrar">
         <br>
-        <a href="./fumigators.jsp">Regresar</a>
+        <a href="./fumigators">Regresar</a>
     </form>
 </body>
 </html>

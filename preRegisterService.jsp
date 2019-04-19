@@ -30,8 +30,8 @@
         <input type="submit" value="Pre-Registrar">
         <br>
     </form>
-    <form action="./products.jsp">
-            <input type="hidden" name="${fumigators}">
+    <form action="./products" method="POST">
+            <input type="hidden" name="${sessionScope.fumigators}">
             <input type="submit" value="Regresar">
     </form>
 </body>

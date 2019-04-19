@@ -6,6 +6,7 @@ import javax.servlet.http.*;
 import java.util.ArrayList;
 import pojos.Service;
 import pojos.Client;
+import pojos.Fumigator;
 
 @WebServlet("/services")
 public class ConnectionServices extends HttpServlet {
@@ -101,8 +102,8 @@ public class ConnectionServices extends HttpServlet {
                 }
             }
 
-            HttpSession session = request.getSession();
-            session.setAttribute("Fumigators", fumigators);
+            HttpSession session2 = request.getSession();
+            session2.setAttribute("Fumigators", fumigators);
             // Save users in session
             request.setAttribute("services", services);
 

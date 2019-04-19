@@ -25,17 +25,10 @@ public class preRegisterService extends HttpServlet {
             String pass = getServletContext().getInitParameter("password");
 
             // Get user input
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-            Date parsed = format.parse(request.getParameter("fecha"));
-            java.sql.Date sql = new java.sql.Date(parsed.getTime());
 
             double costo = Double.parseDouble(request.getParameter("costo"));
             String nombreFumigador = request.getParameter("nombre_fumigador");
-            java.sql.Date fecha = new java.sql.Date(parsed.getTime());
             String fecha = request.getParameter("fecha");
-            double costo = Double.parseDouble(request.getParameter("costo"));
-            String nombreFumigador = request.getParameter("nombre_fumigador");
-            Date fecha = Date(request.getParameter("fecha"));
             String nombreCliente = request.getParameter("nombre_cliente");
 
 

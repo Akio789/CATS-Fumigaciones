@@ -5,6 +5,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.util.ArrayList;
 import pojos.Service;
+import pojos.Client;
 
 @WebServlet("/services")
 public class ConnectionServices extends HttpServlet {

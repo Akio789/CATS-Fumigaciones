@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Registrar producto</h1>
-    <form action="./registerProduct" method="GET">
+    <form action="./registerProduct" method="POST">
         Nombre: <input type="text" name="nombre" id="nombre" placeholder="Nombre del producto" required>
         <br>
         Costo: <input type="text" name="costo" id="costo" placeholder="Costo MXN" required>

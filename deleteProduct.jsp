@@ -10,11 +10,11 @@
 <body>
     <h1>Eliminar producto</h1>
     <p>Estás seguro de eliminar al producto ${param.productToDeleteName}?</p>
-    <form action="./products">
+    <form action="./products" method="POST">
         <input type="submit" value="No">    
     </form>
 
-    <form action="./deleteProduct" method="GET">
+    <form action="./deleteProduct" method="POST">
         <input type="text" name="productToDeleteId" value="${param.productToDeleteId}" style="display: none">
         <input type="submit" value="Si">
     </form>

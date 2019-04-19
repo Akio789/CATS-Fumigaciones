@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Registro exitoso!</h1>
-    <form action="${lastPageForSuccess}">
+    <form action="${lastPageForSuccess}" method="${method}">
         <input type="submit" value="Regresar">    
     </form>
 

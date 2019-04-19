@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Producto ${param.nombre}</h1>
-    <form action="./productBuy">
+    <form action="./productBuy" method="POST">
         <input type="hidden" name="id" value="${param.id}">
         Cantidad: <input type="text" name="quantity" id="quantity" placeholder="100">
         <input type="submit" value="Aceptar">

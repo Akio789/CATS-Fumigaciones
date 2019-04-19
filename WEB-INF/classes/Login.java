@@ -56,7 +56,7 @@ public class Login extends HttpServlet {
             con.close();
 
             // Determine page to dispatch to
-            String nextPage = validUser ? "/menu.jsp" : "/loginError.jsp";
+            String nextPage = validUser ? "/products" : "/loginError.jsp";
             RequestDispatcher disp = getServletContext().getRequestDispatcher(nextPage);
 
             if (disp != null) {

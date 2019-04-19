@@ -17,7 +17,7 @@ public class ConsultProduct extends HttpServlet {
         }
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
             // Initial parameters
             String db = getServletContext().getInitParameter("database");

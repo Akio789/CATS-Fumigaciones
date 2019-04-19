@@ -10,7 +10,7 @@
 <body>
     <h1>Modificar producto</h1>
 
-    <form action="./modifyProduct">
+    <form action="./modifyProduct" method="POST">
         <input type="text" name="id" value=${param.id} style="display: none;">
         Nombre: <input type="text" name="nombre" value="${param.nombre}">
         <br>

@@ -18,7 +18,6 @@
 
     <table border="1">
         <thead>
-            <th>Id</th>
             <th>Nombre</th>
             <th>Costo</th>
             <th>Cantidad</th>
@@ -26,9 +25,6 @@
         </thead>
         <c:forEach items="${products}" var="product">
             <tr>
-                <td>
-                    <c:out value="${product.id}" />
-                </td>
                 <td>
                     <c:out value="${product.nombre}" />                
                 </td>
@@ -55,6 +51,12 @@
                         <input type="text" name="productToDeleteName" value="${product.nombre}" style="display: none;" />
                         <input type="text" name="productToDeleteId" value="${product.id}" style="display: none;" />
                         <input type="submit" value="Eliminar" />
+                    </form>
+
+                    <form action="./productBuy.jsp">
+                        <input type="text" name="id" value="${product.id}" style="display: none;" />
+                        <input type="text" name="nombre" value="${product.nombre}" style="display: none;" />
+                        <input type="submit" value="Comprar">
                     </form>
                 </td>
             </tr>

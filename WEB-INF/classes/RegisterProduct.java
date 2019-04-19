@@ -15,7 +15,7 @@ public class RegisterProduct extends HttpServlet {
         }
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
             // Initial parameters
             String db = getServletContext().getInitParameter("database");
@@ -30,7 +30,7 @@ public class RegisterProduct extends HttpServlet {
             int idProveedor = Integer.parseInt(request.getParameter("idProveedor"));
 
             // Only execute insert if provider exists
-            String nextPage = "/registerProductError.jsp";
+            String nextPage = "/registerError.jsp";
             boolean exists = false;
 
             // JDBC
@@ -70,6 +70,7 @@ public class RegisterProduct extends HttpServlet {
 
             request.setAttribute("lastPageForSuccess", "./products");
             request.setAttribute("lastPageForFailure", "./registerProduct.jsp");
+            request.setAttribute("method", "POST");
 
             if (disp != null) {
                 disp.forward(request, response);

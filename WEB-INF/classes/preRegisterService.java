@@ -3,6 +3,8 @@ import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+import java.util.ArrayList;
+import pojos.Fumigator;;
 
 @WebServlet("/preRegisterService")
 public class preRegisterService extends HttpServlet {
@@ -28,10 +30,7 @@ public class preRegisterService extends HttpServlet {
             String fecha = request.getParameter("fecha");
             int idCliente = Integer.parseInt(request.getParameter("idCliente"));
 
-            // Only execute insert if client and fumigator exist
-            String nextPage = "/preRegisterServiceError.jsp";
-            boolean clientExists = false;
-            boolean fumigatorExists = false;
+
 
             // JDBC
             Class.forName("com.mysql.jdbc.Driver");
@@ -58,16 +57,14 @@ public class preRegisterService extends HttpServlet {
             int idFumigador = res2.getInt("id");
 
             // Only insert new product if client exists
-            if (clientExists) {
-                Connection con2 = DriverManager.getConnection(url, user, pass);
-                Statement stat2 = con2.createStatement();
-                String sql2 = "INSERT INTO Servicio (costo, fecha, idFumigador, idCliente)" + " VALUES ('" + costo
-                        + "', '" + fecha + "', '" + idFumigador + "', '" + idCliente + "');";
-                stat2.executeUpdate(sql2);
+            Connection con2 = DriverManager.getConnection(url, user, pass);
+            Statement stat2 = con2.createStatement();
+            String sql2 = "INSERT INTO Servicio (costo, fecha, idFumigador, idCliente)" + " VALUES ('" + costo
+                            + "', '" + fecha + "', '" + idFumigador + "', '" + idCliente + "');";
+            stat2.executeUpdate(sql2);
 
-                stat2.close();
-                con2.close();
-            }
+            stat2.close();
+            con2.close();
 
             stat.close();
             con.close();

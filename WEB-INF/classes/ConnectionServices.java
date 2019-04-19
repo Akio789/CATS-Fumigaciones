@@ -101,9 +101,8 @@ public class ConnectionServices extends HttpServlet {
                     }
                 }
             }
-
-            HttpSession session2 = request.getSession();
-            session2.setAttribute("Fumigators", fumigators);
+            
+            session.setAttribute("Fumigators", fumigators);
             // Save users in session
             request.setAttribute("services", services);
 

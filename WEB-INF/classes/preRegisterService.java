@@ -24,7 +24,7 @@ public class preRegisterService extends HttpServlet {
 
             // Get user input
             double costo = Double.parseDouble(request.getParameter("costo"));
-            int idFumigador = Integer.parseInt(request.getParameter("idFumigador"));
+            String nombreFumigador = request.getParameter("nombre_fumigador");
             String fecha = request.getParameter("fecha");
             int idCliente = Integer.parseInt(request.getParameter("idCliente"));
 
@@ -51,18 +51,14 @@ public class preRegisterService extends HttpServlet {
             }
 
             // Check if fumigator exists
-            String sql3 = "SELECT * FROM Fumigador;";
-            ResultSet res2 = stat.executeQuery(sql3);
+            String sql2 = "SELECT * FROM Fumigador WHERE nombre='" + nombreFumigador + "';";
+            ResultSet res2 = stat.executeQuery(sql2);
 
-            while (res2.next()) {
-                if (res2.getInt("id") == idFumigador) {
-                    nextPage = "/registerSuccess.jsp";
-                    fumigatorExists = true;
-                }
-            }
+            res2.next();
+            int idFumigador = res2.getInt("id");
 
             // Only insert new product if client exists
-            if (clientExists && fumigatorExists) {
+            if (clientExists) {
                 Connection con2 = DriverManager.getConnection(url, user, pass);
                 Statement stat2 = con2.createStatement();
                 String sql2 = "INSERT INTO Servicio (costo, fecha, idFumigador, idCliente)" + " VALUES ('" + costo

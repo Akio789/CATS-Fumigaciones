@@ -74,8 +74,7 @@ public class ConnectionServices extends HttpServlet {
                 }
             }
 
-            HttpSession session = request.getSession();
-            session.setAttribute("Clients", clients);
+
 
             Connection con3 = DriverManager.getConnection(url, user, pass);
             Statement stat3 = con3.createStatement();
@@ -101,8 +100,10 @@ public class ConnectionServices extends HttpServlet {
                     }
                 }
             }
-            
-            session.setAttribute("Fumigators", fumigators);
+
+            HttpSession session = request.getSession();
+            session.setAttribute("clients", clients);
+            session.setAttribute("fumigators", fumigators);
             // Save users in session
             request.setAttribute("services", services);
 

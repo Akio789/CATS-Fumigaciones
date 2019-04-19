@@ -22,7 +22,7 @@ public class DeleteService extends HttpServlet {
             String user = getServletContext().getInitParameter("username");
             String pass = getServletContext().getInitParameter("password");
 
-            String productToDeleteId = request.getParameter("serviceToDeleteId");
+            String serviceToDeleteId = request.getParameter("serviceToDeleteId");
 
             // JDBC
             Class.forName("com.mysql.jdbc.Driver");

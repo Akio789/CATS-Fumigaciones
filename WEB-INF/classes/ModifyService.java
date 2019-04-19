@@ -23,6 +23,7 @@ public class ModifyService extends HttpServlet {
             String pass = getServletContext().getInitParameter("password");
 
             // Get user input
+            String id = request.getParameter("id");
             double costo = Double.parseDouble(request.getParameter("costo"));
             int idFumigador = Integer.parseInt(request.getParameter("idFumigador"));
             String fecha = request.getParameter("fecha");

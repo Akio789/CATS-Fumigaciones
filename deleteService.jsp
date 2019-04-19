@@ -14,7 +14,7 @@
         <input type="submit" value="No">    
     </form>
 
-    <form action="./deleteService" method="GET">
+    <form action="./deleteService" method="POST">
         <input type="text" name="serviceToDeleteId" value="${param.serviceToDeleteId}" style="display: none">
         <input type="submit" value="Si">
     </form>

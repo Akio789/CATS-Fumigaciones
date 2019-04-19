@@ -42,12 +42,6 @@ public class preRegisterService extends HttpServlet {
             String sql = "SELECT * FROM Cliente;";
             ResultSet res = stat.executeQuery(sql);
 
-            while (res.next()) {
-                if (res.getInt("id") == idCliente) {
-                    nextPage = "/registerSuccess.jsp";
-                    clientExists = true;
-                }
-            }
 
             // Check if fumigator exists
             String sql3 = "SELECT * FROM Fumigador WHERE nombre='" + nombreFumigador + "';";
@@ -70,7 +64,7 @@ public class preRegisterService extends HttpServlet {
             con.close();
 
             // Determine page to dispatch to
-            RequestDispatcher disp = getServletContext().getRequestDispatcher(nextPage);
+            RequestDispatcher disp = getServletContext().getRequestDispatcher("/registerSuccess.jsp");
 
             request.setAttribute("lastPageForSuccess", "./services");
             request.setAttribute("lastPageForFailure", "./preRegisterService.jsp");

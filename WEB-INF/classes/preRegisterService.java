@@ -30,7 +30,6 @@ public class preRegisterService extends HttpServlet {
             // Get user input
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
             Date parsed = format.parse(request.getParameter("fecha"));
-            java.sql.Date sql = new java.sql.Date(parsed.getTime());
 
             double costo = Double.parseDouble(request.getParameter("costo"));
             String nombreFumigador = request.getParameter("nombre_fumigador");

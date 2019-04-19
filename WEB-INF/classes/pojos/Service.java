@@ -16,7 +16,7 @@ public class Service {
         this.id = id;
     }
 
-    public int getIdCLiente() {
+    public int getIdCliente() {
         return idCliente;
     }
 

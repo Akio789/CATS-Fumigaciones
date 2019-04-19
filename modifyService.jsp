@@ -10,7 +10,7 @@
 <body>
     <h1>Modificar servicio</h1>
 
-    <form action="./modifyService">
+    <form action="./modifyService" method="POST">
         <input type="text" name="id" value=${param.id} style="display: none;">
         Costo: <input type="text" name="costo" value="${param.costo}">
         <br>

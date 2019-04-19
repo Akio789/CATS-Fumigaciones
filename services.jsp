@@ -57,7 +57,7 @@
                     <c:out value="${service.fecha}" />
                 </td>
                 <td>
-                    <c:out value="${service.idFumigador}" />
+                    <c:out value="${service.nombreFumigador}" />
                 </td>
                 <td>
                     <c:out value="${service.nombreCliente}" />

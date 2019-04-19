@@ -1,0 +1,120 @@
+/* CSS RESET */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+    color: white;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    background: #455a64;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*MY STYLE */
+h1{
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Orbitron', sans-serif;
+    color:white;
+    margin-top: 35px;
+    margin-bottom: 33px;
+}
+#neko{
+    padding:10px;
+    margin-left:20px;
+}
+div{
+        background-color: white;
+    width: 580px;
+    height: 406px;
+    margin-left: 450px;
+    border-radius: 26px;
+    padding: 25px;
+
+}
+#user{
+        margin-left: 75px;
+    color: black;
+    transform: translateY(55px);
+}
+#pass{
+     margin-left: 75px;
+    color: black;
+    transform: translateY(-36px);
+}
+input, select, textarea{
+    color: white;
+}
+::placeholder {
+  color: white;
+}
+#username{
+    position: relative;
+    width: 300px;
+    height: 20px;
+    margin-top: 30px;
+    left: 50%;
+    margin-left:  -124px;
+    padding:8px;
+    background-color: #718792;
+}
+
+#password{
+    position: relative;
+    width: 300px;
+    height: 20px;
+    margin: 10px auto;
+    left: 50%;
+    padding:8px;
+    margin-left: -124px;
+    background-color: #718792;
+}
+#login{
+        /* text-align: center; */
+    margin-left: 250px;
+    margin-top: 29px;
+    width: 100px;
+    height: 52px;
+    color:black;
+    /* padding-top: 3px; */
+}

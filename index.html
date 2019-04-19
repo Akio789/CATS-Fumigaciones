@@ -1,32 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Login | CATS Fumigaciones</title>
-  </head>
 
-  <body>
-    <h1>Login</h1>
-    <form action="./services" method="POST">
-      Cuenta:
-      <input
-        type="text"
-        name="username"
-        id="username"
-        placeholder="Usuario"
-        required
-      />
-      <br />
-      Contraseña:
-      <input
-        type="password"
-        name="password"
-        id="password"
-        placeholder="Contraseña"
-        required
-      />
-      <br />
-      <input type="submit" value="Login" />
-    </form>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Login | CATS Fumigaciones</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <h1>CATS Fumigaciones</h1>
+    <div>
+    <img src="img/logo.jpeg" id="neko">
+    <form action="./menu" method="POST">
+        <p id="user">Username</p><input type="text" name="username" id="username" placeholder="Usuario" required>
+        <br>
+        <input type="password" name="password" id="password" placeholder="Contraseña" required>
+        <br>
+        <p id="pass">Password</p><input type="submit" value="Login" id="login">
+        </form>
+        </div>
+</body>
+
 </html>

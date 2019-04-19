@@ -5,9 +5,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.util.ArrayList;
 import pojos.Fumigator;;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 @WebServlet("/preRegisterService")
 public class preRegisterService extends HttpServlet {
@@ -28,6 +25,7 @@ public class preRegisterService extends HttpServlet {
             String pass = getServletContext().getInitParameter("password");
 
             // Get user input
+<<<<<<< HEAD
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
             Date parsed = format.parse(request.getParameter("fecha"));
 
@@ -38,6 +36,11 @@ public class preRegisterService extends HttpServlet {
 =======
             String fecha = request.getParameter("fecha");
 >>>>>>> parent of 78ea8cb... lel
+=======
+            double costo = Double.parseDouble(request.getParameter("costo"));
+            String nombreFumigador = request.getParameter("nombre_fumigador");
+            Date fecha = Date(request.getParameter("fecha"));
+>>>>>>> parent of 6237ddc... Update preRegisterService.java
             String nombreCliente = request.getParameter("nombre_cliente");
 
 

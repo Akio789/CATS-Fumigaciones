@@ -1,5 +1,6 @@
 package pojos;
 import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class Service {
     private int id, idCliente, idFumigador;
@@ -53,7 +54,7 @@ public class Service {
         SimpleDateFormat sdf = new SimpleDateFormat(OLD_FORMAT);
         Date d = sdf.parse(fecha);
         sdf.applyPattern(NEW_FORMAT);
-        newFecha = sdf.format(d);
+        String newFecha = sdf.format(d);
 
         this.fecha = newFecha;
     }

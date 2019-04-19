@@ -51,8 +51,8 @@ public class preRegisterService extends HttpServlet {
             }
 
             // Check if fumigator exists
-            String sql2 = "SELECT * FROM Fumigador WHERE nombre='" + nombreFumigador + "';";
-            ResultSet res2 = stat.executeQuery(sql2);
+            String sql3 = "SELECT * FROM Fumigador WHERE nombre='" + nombreFumigador + "';";
+            ResultSet res2 = stat.executeQuery(sql3);
 
             res2.next();
             int idFumigador = res2.getInt("id");

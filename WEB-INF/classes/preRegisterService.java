@@ -53,10 +53,10 @@ public class preRegisterService extends HttpServlet {
 
             // Check if fumigator exists
             String sql3 = "SELECT * FROM Fumigador;";
-            ResultSet res = stat.executeQuery(sql3);
+            ResultSet res2 = stat.executeQuery(sql3);
 
-            while (res.next()) {
-                if (res.getInt("id") == idFumigador) {
+            while (res2.next()) {
+                if (res2.getInt("id") == idFumigador) {
                     nextPage = "/registerSuccess.jsp";
                     fumigatorExists = true;
                 }

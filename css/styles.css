@@ -67,7 +67,7 @@ div{
         background-color: white;
     width: 580px;
     height: 406px;
-    margin-left: 450px;
+    margin: 0 auto;
     border-radius: 26px;
     padding: 25px;
 

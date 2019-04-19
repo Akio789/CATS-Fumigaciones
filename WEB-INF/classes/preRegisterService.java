@@ -23,7 +23,6 @@ public class preRegisterService extends HttpServlet {
             String pass = getServletContext().getInitParameter("password");
 
             // Get user input
-            String nombre = request.getParameter("nombre");
             double costo = Double.parseDouble(request.getParameter("costo"));
             int idFumigador = Integer.parseInt(request.getParameter("idFumigador"));
             String fecha = request.getParameter("fecha");

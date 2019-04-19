@@ -14,7 +14,12 @@
         <br>
         Fecha: <input type="text" name="fecha" id="fecha" placeholder="Fecha del Servicio" required>
         <br>
-        Fumigador: <input type="text" name="idFumigador" id="idFumigador" placeholder="Fumigador" required>
+        Fumigador: 
+        <select name="nombre_fumigador" id="fumigator">
+            <c:forEach items="${sessionScope.fumigators}" var="fumigator">
+                <option value="${fumigator.nombre}">${fumigator.nombre}</option>
+            </c:forEach>
+        </select>
         <br>
         Cliente: <input type="text" name="idCliente" id="idCliente" placeholder="Cliente" required>
         <input type="submit" value="Pre-Registrar">

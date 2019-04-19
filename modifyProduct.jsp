@@ -16,7 +16,12 @@
         <br>
         Costo: <input type="text" name="costo" value="${param.costo}">
         <br>
-        Proveedor: <input type="text" name="idProveedor" value="${param.idProveedor}">
+        Proveedor: 
+        <select name="nombre_proveedor" id="provider">
+            <c:forEach items="${sessionScope.providers}" var="provider">
+                <option value="${provider.nombre}">${provider.nombre}</option>
+            </c:forEach>
+        </select>
 
         <input type="submit" value="Aceptar">
         <a href="./products.jsp">Regresar</a>

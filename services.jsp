@@ -66,7 +66,7 @@
                     <form action="./modifyService.jsp">
                         <input type="text" name="id" value="${service.id}" style="display: none;" />
                         <input type="text" name="costo" value="${service.costo}" style="display: none;" />
-                        <input type="text" name="fecha" value="${service.fecha}" style="display: none;" />
+                        <input type="date" name="fecha" value="${service.fecha}" style="display: none;" />
                         <input type="text" name="idFumigador" value="${service.idFumigador}" style="display: none;" />
                         <input type="text" name="idCliente" value="${service.idCliente}" style="display: none;" />
                         <input type="submit" value="Modificar" />

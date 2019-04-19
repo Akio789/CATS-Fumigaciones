@@ -55,7 +55,7 @@ CREATE TABLE Fumigador (
 CREATE TABLE Servicio (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     costo DOUBLE,
-    fecha VARCHAR(100),
+    fecha DATE(),
     idFumigador INT NOT NULL,
     idCliente INT NOT NULL,
     FOREIGN KEY (idFumigador) REFERENCES Fumigador(id),

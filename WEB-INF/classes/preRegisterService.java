@@ -27,7 +27,7 @@ public class preRegisterService extends HttpServlet {
             // Get user input
             double costo = Double.parseDouble(request.getParameter("costo"));
             String nombreFumigador = request.getParameter("nombre_fumigador");
-            String fecha = request.getParameter("fecha");
+            Date fecha = Date(request.getParameter("fecha"));
             String nombreCliente = request.getParameter("nombre_cliente");
 
 

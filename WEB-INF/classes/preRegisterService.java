@@ -15,7 +15,7 @@ public class preRegisterService extends HttpServlet {
         }
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
             // Initial parameters
             String db = getServletContext().getInitParameter("database");
@@ -65,8 +65,8 @@ public class preRegisterService extends HttpServlet {
             if (clientExists && fumigatorExists) {
                 Connection con2 = DriverManager.getConnection(url, user, pass);
                 Statement stat2 = con2.createStatement();
-                String sql2 = "INSERT INTO Servicio (costo, fecha, idFumigador, idCliente)" + " VALUES ('"
-                        + costo + "', '" + fecha + "', '" + idFumigador + "', '" + idCliente + "');";
+                String sql2 = "INSERT INTO Servicio (costo, fecha, idFumigador, idCliente)" + " VALUES ('" + costo
+                        + "', '" + fecha + "', '" + idFumigador + "', '" + idCliente + "');";
                 stat2.executeUpdate(sql2);
 
                 stat2.close();
@@ -81,6 +81,7 @@ public class preRegisterService extends HttpServlet {
 
             request.setAttribute("lastPageForSuccess", "./services");
             request.setAttribute("lastPageForFailure", "./preRegisterService.jsp");
+            request.setAttribute("method", "POST");
 
             if (disp != null) {
                 disp.forward(request, response);

@@ -13,6 +13,5 @@
         <input type="submit" value="Regresar">    
     </form>
 
-   <a href="./menu.jsp">Menú</a>
 </body>
 </html>

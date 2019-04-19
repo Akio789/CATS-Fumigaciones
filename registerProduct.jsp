@@ -18,8 +18,12 @@
         <br>
         Descripción: <input type="text" name="descr" id="descr" placeholder="Describa el producto" required>
         <br>
-        Proveedor: <input type="text" name="idProveedor" id="idProveedor" placeholder="Proveedor" required>
-        <input type="submit" value="Registrar">
+        Proveedor: 
+        <select name="provider" id="provider">
+            <c:forEach items="${providers}" var="provider">
+                <option value="provider.nombre"></option>
+            </c:forEach>
+        </select>
         <br>
         <a href="./products.jsp">Regresar</a>
     </form>

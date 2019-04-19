@@ -18,7 +18,7 @@
         <br>
         Fumigador: <input type="text" name="idFumigador" value="${param.idFumigador}">
         <br>
-        Cliente: <input type="text" name="idProveedor" value="${param.idFumigador}">
+        Cliente: <input type="text" name="idCliente" value="${param.idCliente}">
 
         <input type="submit" value="Aceptar">
         <a href="./services.jsp">Regresar</a>

@@ -36,8 +36,8 @@ public class ModifyService extends HttpServlet {
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement stat = con.createStatement();
 
-            String sql = "SELECT * FROM Cliente WHERE nombre='" + nombreCliente + "' ;";
-            ResultSet res = stat.executeQuery(sql);
+            String sql2 = "SELECT * FROM Cliente WHERE nombre='" + nombreCliente + "' ;";
+            ResultSet res = stat.executeQuery(sql2);
 
             res.next();
             int idCliente = res.getInt("id");

@@ -24,7 +24,10 @@
         Cliente: <input type="text" name="idCliente" id="idCliente" placeholder="Cliente" required>
         <input type="submit" value="Pre-Registrar">
         <br>
-        <a href="./services.jsp">Regresar</a>
+    </form>
+    <form action="./products.jsp">
+            <input type="hidden" name="${fumigators}">
+            <input type="submit" value="Regresar">
     </form>
 </body>
 </html>

@@ -24,7 +24,7 @@
         Cliente: 
         <select name="nombre_cliente" id="client">
             <c:forEach items="${sessionScope.clients}" var="client">
-                <option value="${cliente.nombre}">${cliente.nombre}</option>
+                <option value="${client.nombre}">${client.nombre}</option>
             </c:forEach>
         </select>
         <br>

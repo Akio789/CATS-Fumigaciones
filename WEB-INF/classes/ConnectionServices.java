@@ -17,7 +17,7 @@ public class ConnectionServices extends HttpServlet {
         }
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
             // Initial parameters
             String db = getServletContext().getInitParameter("database");
@@ -36,7 +36,7 @@ public class ConnectionServices extends HttpServlet {
 
             // Iterate through ResultSet
             while (res.next()) {
-                Service newService = new Service ();
+                Service newService = new Service();
                 newService.setIdCliente(res.getInt("idCliente"));
                 newService.setId(res.getInt("id"));
                 newService.setIdFumigador(res.getInt("idFumigador"));
@@ -47,8 +47,7 @@ public class ConnectionServices extends HttpServlet {
             }
 
             // Save users in session
-            HttpSession session = request.getSession(false);
-            session.setAttribute("services", services);
+            request.setAttribute("services", services);
 
             // Determine page to dispatch to
             RequestDispatcher disp = getServletContext().getRequestDispatcher("/services.jsp");

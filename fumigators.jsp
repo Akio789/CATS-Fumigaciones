@@ -15,7 +15,7 @@
                 <input type="submit" value="Usuarios">    
             </form>
 
-            <form action="./services">
+            <form action="./services" method="POST">
                 <input type="submit" value="Servicios">    
             </form>
 
@@ -39,7 +39,6 @@
 
     <h1>Fumigadores</h1>
     <a href="./registerFumigator.jsp">Registrar</a>
-    <a href="./menu.jsp">Menú</a>
     <form action="./consultFumigator">
         Nombre: <input type="text" name="fumigatorToConsult" />
         <input type="submit" value="Buscar">

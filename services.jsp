@@ -15,7 +15,7 @@
                 <input type="submit" value="Usuarios">    
             </form>
 
-            <form action="./services">
+            <form action="./services" method="POST">
                 <input type="submit" value="Servicios">    
             </form>
 
@@ -39,7 +39,6 @@
 
     <h1>Servicios</h1>
     <a href="./preRegisterService.jsp">Pre-Registrar</a>
-    <a href="./menu.jsp">Menú</a>
     
     <table border="1">
         <thead>

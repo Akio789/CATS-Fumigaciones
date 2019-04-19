@@ -15,7 +15,7 @@
                 <input type="submit" value="Usuarios">    
             </form>
 
-            <form action="./services">
+            <form action="./services" method="POST">
                 <input type="submit" value="Servicios">    
             </form>
 
@@ -39,8 +39,7 @@
 
     <h1>Productos</h1>
     <a href="./registerProduct.jsp">Registrar</a>
-    <a href="./menu.jsp">Menú</a>
-    <form action="./consultProduct">
+    <form action="./consultProduct" method="POST">
         Nombre: <input type="text" name="productToConsult" />
         <input type="submit" value="Buscar">
     </form>

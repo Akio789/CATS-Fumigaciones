@@ -8,9 +8,37 @@
     <title>Sistema de proveedores</title>
 </head>
 <body>
+    <header>
+        <h2>CATS Fumigaciones</h2>
+        <nav>
+            <form action="./users">
+                <input type="submit" value="Usuarios">    
+            </form>
+
+            <form action="./services" method="POST">
+                <input type="submit" value="Servicios">    
+            </form>
+
+            <form action="./products" method="POST">
+                <input type="submit" value="Productos">    
+            </form>
+
+            <form action="./fumigators">
+                <input type="submit" value="Fumigadores">    
+            </form>
+
+            <form action="./client">
+                <input type="submit" value="Clientes">    
+            </form>
+
+            <form action="./providers">
+                <input type="submit" value="Proveedores">
+            </form>
+        </nav>
+    </header>
+
     <h1>Proveedor consultado</h1>
     <a href="./providers">Regresar a proveedores</a>
-    <a href="./menu.jsp">Menú</a>
     <form action="./consultProvider">
         Nombre: <input type="text" name="providerToConsult" />
         <input type="submit" value="Buscar">

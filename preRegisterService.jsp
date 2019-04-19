@@ -12,7 +12,7 @@
     <form action="./preRegisterService" method="GET">
         Costo: <input type="text" name="costo" id="costo" placeholder="Costo MXN del servicio" required>
         <br>
-        Fecha: <input type="text" name="cant_disp" id="cant_disp" placeholder="Fecha del Servicio" required>
+        Fecha: <input type="date" name="cant_disp" id="cant_disp" placeholder="Fecha del Servicio" required>
         <br>
         Fumigador: <input type="text" name="idFumigador" id="idFumigador" placeholder="Fumigador" required>
         <br>

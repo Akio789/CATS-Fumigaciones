@@ -33,7 +33,11 @@ public class preRegisterService extends HttpServlet {
 
             double costo = Double.parseDouble(request.getParameter("costo"));
             String nombreFumigador = request.getParameter("nombre_fumigador");
+<<<<<<< HEAD
             java.sql.Date fecha = new java.sql.Date(parsed.getTime());
+=======
+            String fecha = request.getParameter("fecha");
+>>>>>>> parent of 78ea8cb... lel
             String nombreCliente = request.getParameter("nombre_cliente");
 
 

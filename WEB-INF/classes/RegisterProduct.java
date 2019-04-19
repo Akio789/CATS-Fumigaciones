@@ -3,6 +3,8 @@ import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+import java.util.ArrayList;
+import pojos.Provider;;
 
 @WebServlet("/registerProduct")
 public class RegisterProduct extends HttpServlet {
@@ -49,6 +51,23 @@ public class RegisterProduct extends HttpServlet {
                     exists = true;
                 }
             }
+
+            res = stat.executeQuery(sql);
+            ArrayList<Provider> providers = new ArrayList<>();
+
+            // Iterate through ResultSet
+            while (res.next()) {
+                Provider newProvider = new Provider();
+                newProvider.setId(res.getInt("id"));
+                newProvider.setNombre(res.getString("nombre"));
+                newProvider.setDireccion(res.getString("direccion"));
+                newProvider.setCorreo(res.getString("correo"));
+
+                providers.add(newProvider);
+            }
+
+            // Save users in session
+            request.setAttribute("providers", providers);
 
             // Only insert new product if provider exists
             if (exists) {

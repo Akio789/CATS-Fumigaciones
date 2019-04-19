@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Pre-Registrar Servicio</h1>
-    <form action="./preRegisterService" method="GET">
+    <form action="./preRegisterService" method="POST">
         Costo: <input type="text" name="costo" id="costo" placeholder="Costo MXN del servicio" required>
         <br>
         Fecha: <input type="date" name="cant_disp" id="cant_disp" placeholder="Fecha del Servicio" required>

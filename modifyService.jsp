@@ -14,7 +14,7 @@
         <input type="text" name="id" value=${param.id} style="display: none;">
         Costo: <input type="text" name="costo" value="${param.costo}">
         <br>
-        Fecha: <input type="text" name="fecha" value="${param.fecha}">
+        Fecha: <input type="date" name="fecha" value="${param.fecha}">
         <br>
         Fumigador: 
         <select name="nombre_fumigador" id="fumigator">

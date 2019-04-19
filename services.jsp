@@ -60,7 +60,7 @@
                     <c:out value="${service.idFumigador}" />
                 </td>
                 <td>
-                    <c:out value="${service.idCliente}" />
+                    <c:out value="${service.nombreCliente}" />
                 </td>
                 <td>
                     <form action="./modifyService.jsp">

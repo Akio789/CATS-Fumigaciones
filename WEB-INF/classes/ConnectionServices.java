@@ -46,6 +46,35 @@ public class ConnectionServices extends HttpServlet {
                 services.add(newService);
             }
 
+            Connection con2 = DriverManager.getConnection(url, user, pass);
+            Statement stat2 = con2.createStatement();
+            String sql2 = "SELECT * FROM Cliente;";
+            ResultSet res2 = stat.executeQuery(sql2);
+            ArrayList<Client> Clients = new ArrayList<>();
+
+            // Iterate through ResultSet
+            while (res2.next()) {
+                Client newClient = new Client();
+                newClient.setId(res2.getInt("id"));
+                newClient.setNombre(res2.getString("nombre"));
+                newClient.setDireccion(res2.getString("direccion"));
+                newClient.setCorreo(res2.getString("correo"));
+                newClient.setTelefono(res2.getString("telefono"));
+
+                Clients.add(newClient);
+            }
+
+            for (int i = 0; i < services.size(); i++) {
+                for (int j = 0; j < Clients.size(); j++) {
+                    if (services.get(i).getIdCliente() == Clients.get(j).getId()) {
+                        services.get(i).setNombreCliente(Clients.get(j).getNombre());
+                    }
+                }
+            }
+
+            HttpSession session = request.getSession();
+            session.setAttribute("Clients", Clients);
+
             // Save users in session
             request.setAttribute("services", services);
 

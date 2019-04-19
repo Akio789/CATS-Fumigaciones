@@ -22,8 +22,8 @@
         </select>
         <br>
         Cliente: 
-        <select name="nombre_cliente" id="cliente">
-            <c:forEach items="${sessionScope.cliente}" var="cliente">
+        <select name="nombre_cliente" id="client">
+            <c:forEach items="${sessionScope.clients}" var="client">
                 <option value="${cliente.nombre}">${cliente.nombre}</option>
             </c:forEach>
         </select>

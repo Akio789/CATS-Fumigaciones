@@ -39,7 +39,7 @@ public class preRegisterService extends HttpServlet {
             Statement stat = con.createStatement();
 
             // Check if client exists
-            String sql = "SELECT * FROM Cliente;";
+            String sql = "SELECT * FROM Cliente WHERE nombre='" + nombreCliente + "' ;";
             ResultSet res = stat.executeQuery(sql);
 
 

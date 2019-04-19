@@ -21,8 +21,13 @@
             </c:forEach>
         </select>
         <br>
-        Cliente: <input type="text" name="idCliente" id="idCliente" placeholder="Cliente" required>
-        <input type="submit" value="Pre-Registrar">
+        Cliente: 
+        <select name="nombre_cliente" id="cliente">
+            <c:forEach items="${sessionScope.cliente}" var="cliente">
+                <option value="${cliente.nombre}">${cliente.nombre}</option>
+            </c:forEach>
+        </select>
+        <br>
         <br>
     </form>
     <form action="./products.jsp">

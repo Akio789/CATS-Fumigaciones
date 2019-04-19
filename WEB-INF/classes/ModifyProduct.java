@@ -40,7 +40,7 @@ public class ModifyProduct extends HttpServlet {
             
 
             String sql2 = "SELECT * FROM Proveedor WHERE nombre='" + nombreProveedor + "';";
-            ResultSet res2 = stat.executeQuery(sql);
+            ResultSet res2 = stat.executeQuery(sql2);
 
             res2.next();
             int idProveedor = res2.getInt("id");

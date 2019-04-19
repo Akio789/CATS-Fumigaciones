@@ -3,6 +3,8 @@ import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+import java.util.ArrayList;
+import pojos.Provider;;
 
 @WebServlet("/modifyProduct")
 public class ModifyProduct extends HttpServlet {
@@ -26,7 +28,13 @@ public class ModifyProduct extends HttpServlet {
             String id = request.getParameter("id");
             String nombre = request.getParameter("nombre");
             double costo = Double.parseDouble(request.getParameter("costo"));
-            int idProveedor = Integer.parseInt(request.getParameter("idProveedor"));
+            String nombreProveedor = request.getParameter("nombre_proveedor");
+
+            String sql2 = "SELECT * FROM Proveedor WHERE nombre='" + nombreProveedor + "';";
+            ResultSet res2 = stat.executeQuery(sql);
+
+            res.next();
+            int idProveedor = res2.getInt("id");
 
             // JDBC
             Class.forName("com.mysql.jdbc.Driver");

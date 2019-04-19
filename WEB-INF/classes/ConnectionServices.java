@@ -63,7 +63,7 @@ public class ConnectionServices extends HttpServlet {
                 newClient.setCorreo(res2.getString("correo"));
                 newClient.setTelefono(res2.getString("telefono"));
 
-                Clients.add(newClient);
+                clients.add(newClient);
             }
 
             for (int i = 0; i < services.size(); i++) {

@@ -27,7 +27,7 @@
                 <option value="${client.nombre}">${client.nombre}</option>
             </c:forEach>
         </select>
-        <br>
+        <input type="submit" value="Pre-Registrar">
         <br>
     </form>
     <form action="./products.jsp">

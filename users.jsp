@@ -6,34 +6,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Sistema de usuarios</title>
+    <link rel="stylesheet" href="./css/users.css">
 </head>
 <body>
     <header>
-        <h2>CATS Fumigaciones</h2>
+        <h1>CATS Fumigaciones</h1>
         <nav>
+        <div id="navegacion">
             <form action="./users">
-                <input type="submit" value="Usuarios">    
+                <input type="submit" value="Usuarios" id="usuarios">    
             </form>
 
             <form action="./services" method="POST">
-                <input type="submit" value="Servicios">    
+                <input type="submit" value="Servicios" id="servicios">    
             </form>
 
             <form action="./products" method="POST">
-                <input type="submit" value="Productos">    
+                <input type="submit" value="Productos" id="productos">    
             </form>
 
             <form action="./fumigators">
-                <input type="submit" value="Fumigadores">    
+                <input type="submit" value="Fumigadores" id="fumigadores">    
             </form>
 
             <form action="./client">
-                <input type="submit" value="Clientes">    
+                <input type="submit" value="Clientes" id="clientes">    
             </form>
 
             <form action="./providers">
-                <input type="submit" value="Proveedores">
+                <input type="submit" value="Proveedores" id="proveedores">
             </form>
+            
+            </div>
         </nav>
     </header>
 
@@ -52,6 +56,7 @@
             <th>Teléfono</th>
             <th>Correo</th>
             <th>Dirección</th>
+            <th>Opciones</th>
         </thead>
         <c:forEach items="${users}" var="user">
             <tr>

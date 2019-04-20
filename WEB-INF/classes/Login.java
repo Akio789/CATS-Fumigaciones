@@ -31,7 +31,8 @@ public class Login extends HttpServlet {
             String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement stat = con.createStatement();
-            String sql = "SELECT username, password FROM Usuario WHERE username='" + usernameInput + "';";
+            String sql = "SELECT username, password, administrador FROM Usuario WHERE username='" + usernameInput
+                    + "';";
             ResultSet res = stat.executeQuery(sql);
 
             // Validate user
@@ -47,8 +48,12 @@ public class Login extends HttpServlet {
                     validUser = true;
 
                     // Create session
-                    HttpSession session = request.getSession(true);
+                    HttpSession session = request.getSession();
                     session.setAttribute("user", username);
+
+                    // Check if user is admin
+                    int isCurrentUserAdmin = res.getInt("administrador");
+                    session.setAttribute("isCurrentUserAdmin", isCurrentUserAdmin);
                 }
             }
 
@@ -56,7 +61,7 @@ public class Login extends HttpServlet {
             con.close();
 
             // Determine page to dispatch to
-            String nextPage = validUser ? "/products" : "/loginError.jsp";
+            String nextPage = validUser ? "/services" : "/loginError.jsp";
             RequestDispatcher disp = getServletContext().getRequestDispatcher(nextPage);
 
             if (disp != null) {

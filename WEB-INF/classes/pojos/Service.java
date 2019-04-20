@@ -1,4 +1,5 @@
 package pojos;
+
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
@@ -6,7 +7,7 @@ public class Service {
     private int id, idCliente, idFumigador;
     private double costo;
     private String fecha, nombreCliente, nombreFumigador;
-    private 
+    private
 
     final String NEW_FORMAT = "dd/MM/yyyy";
     final String OLD_FORMAT = "yyyy-MM-dd";
@@ -52,11 +53,14 @@ public class Service {
 
     public void setFecha(String fecha) {
         SimpleDateFormat sdf = new SimpleDateFormat(OLD_FORMAT);
-        Date d = sdf.parse(fecha);
-        sdf.applyPattern(NEW_FORMAT);
-        String newFecha = sdf.format(d);
-
-        this.fecha = newFecha;
+        try {
+            Date d = sdf.parse(fecha);
+            sdf.applyPattern(NEW_FORMAT);
+            String newFecha = sdf.format(d);
+            this.fecha = newFecha;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public String getNombreCliente() {

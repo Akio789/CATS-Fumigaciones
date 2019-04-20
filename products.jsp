@@ -10,10 +10,16 @@
 <body>
     <header>
         <h2>CATS Fumigaciones</h2>
+        <form action="./logout" method="POST">
+            <input type="submit" value="Salir">
+        </form>
+
         <nav>
-            <form action="./users">
-                <input type="submit" value="Usuarios">    
-            </form>
+            <c:if test = "${sessionScope.isCurrentUserAdmin == 1}">
+                <form action="./users">
+                    <input type="submit" value="Usuarios">    
+                </form>
+            </c:if>
 
             <form action="./services" method="POST">
                 <input type="submit" value="Servicios">    

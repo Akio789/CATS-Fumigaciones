@@ -74,8 +74,6 @@ public class ConnectionServices extends HttpServlet {
                 }
             }
 
-
-
             Connection con3 = DriverManager.getConnection(url, user, pass);
             Statement stat3 = con3.createStatement();
             String sql3 = "SELECT * FROM Fumigador;";
@@ -104,7 +102,8 @@ public class ConnectionServices extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("clients", clients);
             session.setAttribute("fumigators", fumigators);
-            // Save users in session
+
+            // Save clients and fumigators in session
             request.setAttribute("services", services);
 
             // Determine page to dispatch to

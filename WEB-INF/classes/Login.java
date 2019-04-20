@@ -31,7 +31,7 @@ public class Login extends HttpServlet {
             String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement stat = con.createStatement();
-            String sql = "SELECT username, password, administrador FROM Usuario WHERE username='" + usernameInput
+            String sql = "SELECT id, username, password, administrador FROM Usuario WHERE username='" + usernameInput
                     + "';";
             ResultSet res = stat.executeQuery(sql);
 
@@ -54,6 +54,10 @@ public class Login extends HttpServlet {
                     // Check if user is admin
                     int isCurrentUserAdmin = res.getInt("administrador");
                     session.setAttribute("isCurrentUserAdmin", isCurrentUserAdmin);
+
+                    // Save user id in session
+                    int currentUserId = res.getInt("id");
+                    session.setAttribute("currentUserId", currentUserId);
                 }
             }
 

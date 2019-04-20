@@ -52,7 +52,7 @@ public class Service {
     }
 
     public void setFecha(String fecha) {
-        SimpleDateFormat sdf = new SimpleDateFormat(OLD_FORMAT, Locale.US);
+        SimpleDateFormat sdf = new SimpleDateFormat(OLD_FORMAT);
         try {
             Date d = sdf.parse(fecha);
             sdf.applyPattern(NEW_FORMAT);

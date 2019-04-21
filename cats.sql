@@ -65,6 +65,7 @@ CREATE TABLE Servicio (
 CREATE TABLE ProductoServicio (
     id_producto INT NOT NULL,
     id_servicio INT NOT NULL,
+    cantidad INT,
     PRIMARY KEY (id_producto, id_servicio),
     FOREIGN KEY (id_producto) REFERENCES Producto(id),
     FOREIGN KEY (id_servicio) REFERENCES Servicio(id)

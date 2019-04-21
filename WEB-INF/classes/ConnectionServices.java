@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import pojos.Service;
 import pojos.Client;
 import pojos.Fumigator;
+import pojos.Product;
+import pojos.ProductService;
 
 @WebServlet("/services")
 public class ConnectionServices extends HttpServlet {
@@ -51,7 +53,7 @@ public class ConnectionServices extends HttpServlet {
             Connection con2 = DriverManager.getConnection(url, user, pass);
             Statement stat2 = con2.createStatement();
             String sql2 = "SELECT * FROM Cliente;";
-            ResultSet res2 = stat.executeQuery(sql2);
+            ResultSet res2 = stat2.executeQuery(sql2);
             ArrayList<Client> clients = new ArrayList<>();
 
             // Iterate through ResultSet
@@ -77,7 +79,7 @@ public class ConnectionServices extends HttpServlet {
             Connection con3 = DriverManager.getConnection(url, user, pass);
             Statement stat3 = con3.createStatement();
             String sql3 = "SELECT * FROM Fumigador;";
-            ResultSet res3 = stat.executeQuery(sql3);
+            ResultSet res3 = stat3.executeQuery(sql3);
             ArrayList<Fumigator> fumigators = new ArrayList<>();
 
             // Iterate through ResultSet
@@ -98,10 +100,51 @@ public class ConnectionServices extends HttpServlet {
                     }
                 }
             }
+            
+            Connection con4 = DriverManager.getConnection(url, user, pass);
+            Statement stat4 = con4.createStatement();
+            String sql4 = "SELECT * FROM Producto;";
+            ResultSet res4 = stat4.executeQuery(sql4);
+            ArrayList<Product> products = new ArrayList<>();
+            
 
+            // Iterate through ResultSet
+            while (res4.next()) {
+            	Product newProduct = new Product();
+                newProduct.setCant_disp(res4.getInt("cant_disp"));
+                newProduct.setId(res4.getInt("id"));
+                newProduct.setIdProveedor(res4.getInt("idProveedor"));
+                newProduct.setCosto(res4.getDouble("costo"));
+                newProduct.setNombre(res4.getString("nombre"));
+                newProduct.setDescripcion(res4.getString("descripcion"));
+
+                products.add(newProduct);
+            }
+            
+            Connection con5 = DriverManager.getConnection(url, user, pass);
+            Statement stat5 = con5.createStatement();
+            String sql5 = "SELECT * FROM ProductoServicio;";
+            ResultSet res5 = stat5.executeQuery(sql5);
+            ArrayList<ProductService> productsServices = new ArrayList<>();
+            
+
+            // Iterate through ResultSet
+            while (res5.next()) {
+            	ProductService newProductService = new ProductService();
+                newProductService.setId_producto(res5.getInt("id_producto"));
+                newProductService.setId_servicio(res5.getInt("id_servicio"));
+                newProductService.setCantidad(res5.getInt("cantidad"));
+
+                productsServices.add(newProductService);
+            }
+            
+            
+
+            
             HttpSession session = request.getSession();
             session.setAttribute("clients", clients);
             session.setAttribute("fumigators", fumigators);
+            session.setAttribute("products", products);
 
             // Save clients and fumigators in session
             request.setAttribute("services", services);
@@ -115,6 +158,10 @@ public class ConnectionServices extends HttpServlet {
             con2.close();
             stat3.close();
             con3.close();
+            stat4.close();
+            con4.close();
+            stat5.close();
+            con5.close();
 
             if (disp != null) {
                 disp.forward(request, response);

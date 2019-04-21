@@ -52,6 +52,7 @@
             <th>Fecha</th>
             <th>Fumigador</th>
             <th>Cliente</th>
+            <th>Productos</th>
             <th>Opciones</th>
         </thead>
         <c:forEach items="${services}" var="service">
@@ -69,6 +70,12 @@
                     <c:out value="${service.nombreCliente}" />
                 </td>
                 <td>
+                	<form action="./productsServices"">
+                        <input type="text" name="serviceToShow" value="${service.id}" style="display: none;" />
+                        <input type="submit" value="Mostrar productos" />
+                    </form>
+                </td>
+                <td>
                     <form action="./modifyService.jsp">
                         <input type="text" name="id" value="${service.id}" style="display: none;" />
                         <input type="text" name="costo" value="${service.costo}" style="display: none;" />
@@ -76,6 +83,11 @@
                         <input type="text" name="idFumigador" value="${service.idFumigador}" style="display: none;" />
                         <input type="text" name="idCliente" value="${service.idCliente}" style="display: none;" />
                         <input type="submit" value="Modificar" />
+                    </form>
+                    
+                    <form action="./addProduct.jsp">
+                        <input type="text" name="serviceToAddId" value="${service.id}" style="display: none;" />
+                        <input type="submit" value="Agregar Producto" />
                     </form>
 
                     <form action="./deleteService.jsp">

@@ -27,17 +27,6 @@
                 <option value="${client.nombre}">${client.nombre}</option>
             </c:forEach>
         </select>
-        <br>
-        Tipos de productos: <input type="text" name="length" id="length" placeholder="Número de productos en el servico" required>
-        
-        <br>
-        Producto utilizado: 
-        <select name="nombre_product" id="product">
-            <c:forEach items="${sessionScope.products}" var="product">
-                <option value="${product.nombre}">${product.nombre}</option>
-            </c:forEach>
-        </select>
-        <br>
         <input type="submit" value="Pre-Registrar">
         <br>
     </form>

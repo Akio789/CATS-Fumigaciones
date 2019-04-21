@@ -85,7 +85,7 @@
                         <input type="submit" value="Modificar" />
                     </form>
                     
-                    <form action="./addProduct.jsp">
+                    <form action="./addProduct.jsp" method="post">
                         <input type="text" name="serviceToAddId" value="${service.id}" style="display: none;" />
                         <input type="submit" value="Agregar Producto" />
                     </form>

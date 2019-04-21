@@ -43,6 +43,10 @@
             <form action="./providers">
                 <input type="submit" value="Proveedores" id="proveedores">
             </form>
+            
+           <form action="./reports">
+		        <input type="submit" value="Reportes" id="reports">
+		    </form>
         </nav>
         </div>
     </header>

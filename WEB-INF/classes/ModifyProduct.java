@@ -30,14 +30,11 @@ public class ModifyProduct extends HttpServlet {
             double costo = Double.parseDouble(request.getParameter("costo"));
             String nombreProveedor = request.getParameter("nombre_proveedor");
 
-            
-
             // JDBC
             Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement stat = con.createStatement();
-            
 
             String sql2 = "SELECT * FROM Proveedor WHERE nombre='" + nombreProveedor + "';";
             ResultSet res2 = stat.executeQuery(sql2);
@@ -45,13 +42,9 @@ public class ModifyProduct extends HttpServlet {
             res2.next();
             int idProveedor = res2.getInt("id");
 
-
-
-
-
             String sql = "UPDATE Producto SET nombre='" + nombre + "', costo='" + costo + "', idProveedor='"
                     + idProveedor + "' WHERE id='" + id + "';";
-            ;
+
             stat.executeUpdate(sql);
 
             stat.close();

@@ -30,7 +30,7 @@ public class ConsultUser extends HttpServlet {
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement stat = con.createStatement();
             String userToConsult = request.getParameter("userToConsult");
-            String sql = "SELECT * FROM Usuario WHERE nombre='" + userToConsult + "';";
+            String sql = "SELECT * FROM Usuario WHERE username='" + userToConsult + "';";
             ResultSet res = stat.executeQuery(sql);
 
             ArrayList<User> users = new ArrayList<>();

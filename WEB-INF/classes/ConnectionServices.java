@@ -120,24 +120,7 @@ public class ConnectionServices extends HttpServlet {
 
                 products.add(newProduct);
             }
-            
-            Connection con5 = DriverManager.getConnection(url, user, pass);
-            Statement stat5 = con5.createStatement();
-            String sql5 = "SELECT * FROM ProductoServicio;";
-            ResultSet res5 = stat5.executeQuery(sql5);
-            ArrayList<ProductService> productsServices = new ArrayList<>();
-            
-
-            // Iterate through ResultSet
-            while (res5.next()) {
-            	ProductService newProductService = new ProductService();
-                newProductService.setId_producto(res5.getInt("id_producto"));
-                newProductService.setId_servicio(res5.getInt("id_servicio"));
-                newProductService.setCantidad(res5.getInt("cantidad"));
-
-                productsServices.add(newProductService);
-            }
-            
+          
             
 
             
@@ -160,8 +143,6 @@ public class ConnectionServices extends HttpServlet {
             con3.close();
             stat4.close();
             con4.close();
-            stat5.close();
-            con5.close();
 
             if (disp != null) {
                 disp.forward(request, response);

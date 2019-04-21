@@ -252,12 +252,14 @@ td {
 }
 #registrar {
     font-size: 30px;
+    background-color: transparent;
+    text-decoration: underline;
 }
 #nom {
   margin-top: 20px;
   margin-bottom: 6px;
 }
-#usertoconsult {
+#producttoconsult {
   margin-bottom: 35px;
     background-color: #718792;
     width:35%;

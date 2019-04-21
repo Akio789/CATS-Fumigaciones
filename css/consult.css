@@ -133,7 +133,6 @@ table {
 }
 /*MY STYLES*/
 h1 {
-  margin: 0 auto;
   font-size: 300%;
 }
 #salir{
@@ -250,7 +249,7 @@ td {
   color: white;
   width: calc(100 / 6);
 }
-#registrar {
+#regresar {
     font-size: 30px;
 }
 #nom {
@@ -274,4 +273,9 @@ td {
 }
 #nav{
     display: block;
+}
+#regresarbotonfeo{
+    font-size: 20px;
+    background-color: #1c313a;
+    color:white;
 }

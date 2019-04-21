@@ -6,33 +6,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Pre-Registro de servicio</title>
+    <link rel="stylesheet" href="css/preregister.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-    <h1>Pre-Registrar Servicio</h1>
+    <div id="box">
+        <div class="w3-container">
+    <h1 id="titulo">Pre-Registrar Servicio</h1>
+        </div>
+        <div class="w3-container" id="box2">
     <form action="./preRegisterService" method="POST">
-        Costo: <input type="text" name="costo" id="costo" placeholder="Costo MXN del servicio" required>
+        <p id="texto">Costo:</p> <input type="text" name="costo" id="costo" placeholder="Costo MXN del servicio" required id="cuadro">
         <br>
-        Fecha: <input type="date" name="fecha" id="fecha" placeholder="Fecha del Servicio" required>
+        <p id="texto">Fecha:</p> <input type="date" name="fecha" id="fecha" placeholder="Fecha del Servicio" required id="cuadro">
         <br>
-        Fumigador: 
-        <select name="nombre_fumigador" id="fumigator">
+        <p id="texto">Fumigador:</p> 
+        <select name="nombre_fumigador" id="opcion">
             <c:forEach items="${sessionScope.fumigators}" var="fumigator">
                 <option value="${fumigator.nombre}">${fumigator.nombre}</option>
             </c:forEach>
         </select>
         <br>
-        Cliente: 
-        <select name="nombre_cliente" id="client">
+        <p id="texto">Cliente:</p> 
+        <select name="nombre_cliente" id="opcion2">
             <c:forEach items="${sessionScope.clients}" var="client">
-                <option value="${client.nombre}">${client.nombre}</option>
+                <option value="${client.nombre}" >${client.nombre}</option>
             </c:forEach>
         </select>
-        <input type="submit" value="Pre-Registrar">
+        <input type="submit" value="Pre-Registrar" id="preregistrar">
         <br>
     </form>
     <form action="./products" method="POST">
             <input type="hidden" name="${sessionScope.fumigators}">
-            <input type="submit" value="Regresar">
-    </form>
+            <input type="submit" value="Regresar" id="regresar">
+                </form>
+        
+        </div>
+    </div>
 </body>
 </html>

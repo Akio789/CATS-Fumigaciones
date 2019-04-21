@@ -137,7 +137,7 @@ h1 {
   font-size: 300%;
 }
 #salir{
-    float:right;
+        float:right;
     transform:translateY(-80%);
     width:20%;
     height:39px;
@@ -253,22 +253,7 @@ td {
 #registrar {
     font-size: 30px;
 }
-#nom {
-  margin-top: 20px;
-  margin-bottom: 6px;
-}
-#usertoconsult {
-  margin-bottom: 35px;
-    background-color: #718792;
-    width:35%;
-}
-#buscar {
-  width: 100px;
-  height: 25px;
-  color: white;
-  background-color: black;
-  border-radius: 10px;
-}
+
 td {
   color: white;
 }

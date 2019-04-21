@@ -131,23 +131,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/*MY STYLES*/
 h1 {
-  margin: 0 auto;
-  font-size: 300%;
-}
-#salir{
-    float:right;
-    transform:translateY(-80%);
-    width:20%;
-    height:39px;
-    color: white;
-  background-color: black;
-}
-h2 {
-  margin-top: 50px;
-  font-size: 300%;
-  margin-bottom: 20px;
+  text-align: center;
+    padding: 5%;
 }
 #usuarios {
   float: left;
@@ -227,51 +213,6 @@ active {
 #proveedores:focus {
   background-color: greenyellow;
 }
-table {
-  width: 70%;
-  margin: 0 auto;
-}
-tr {
-  padding-top: 12px;
-  padding-bottom: 17px;
-}
-td {
-  width: calc(100 / 6);
-}
-th {
-  border: 3px solid black;
-}
-th,
-td {
-  background-color: #1c313a;
-  padding-top: 12px;
-  padding-bottom: 17px;
-  text-align: center;
-  color: white;
-  width: calc(100 / 6);
-}
-#registrar {
-    font-size: 30px;
-}
-#nom {
-  margin-top: 20px;
-  margin-bottom: 6px;
-}
-#usertoconsult {
-  margin-bottom: 35px;
-    background-color: #718792;
-    width:35%;
-}
-#buscar {
-  width: 100px;
-  height: 25px;
-  color: white;
-  background-color: black;
-  border-radius: 10px;
-}
-td {
-  color: white;
-}
-#nav{
-    display: block;
+#logo{
+    transform: translate(95%,80%);
 }

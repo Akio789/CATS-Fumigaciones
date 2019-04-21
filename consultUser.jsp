@@ -6,42 +6,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Sistema de usuarios</title>
+    <link rel="stylesheet" href="css/consult.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
     <header>
-        <h2>CATS Fumigaciones</h2>
+        <div class="w3-container">
+        <h1>CATS Fumigaciones</h1>
+        <form action="./logout" method="POST">
+            <input type="submit" value="Salir" id="salir">
+        </form>
+        </div>
+        <div id="nav">
         <nav>
             <form action="./users">
-                <input type="submit" value="Usuarios">    
+                <input type="submit" value="Usuarios" id="usuarios">    
             </form>
 
             <form action="./services" method="POST">
-                <input type="submit" value="Servicios">    
+                <input type="submit" value="Servicios" id="servicios">    
             </form>
 
             <form action="./products" method="POST">
-                <input type="submit" value="Productos">    
+                <input type="submit" value="Productos" id="productos">    
             </form>
 
             <form action="./fumigators">
-                <input type="submit" value="Fumigadores">    
+                <input type="submit" value="Fumigadores" id="fumigadores">    
             </form>
 
             <form action="./client">
-                <input type="submit" value="Clientes">    
+                <input type="submit" value="Clientes" id="clientes">    
             </form>
 
             <form action="./providers">
-                <input type="submit" value="Proveedores">
+                <input type="submit" value="Proveedores" id="proveedores">
             </form>
         </nav>
+        </div>
     </header>
-
-    <h1>Usuario consultado</h1>
-    <a href="./users">Regresar a usuarios</a>
+    
+    <div class="w3-container">
+    <h2>Usuario consultado</h2>
+    <a href="./users" id="regresar">Regresar a usuarios</a>
     <form action="./consultUser">
-        Nombre: <input type="text" name="userToConsult" />
-        <input type="submit" value="Buscar">
+        <p id="nom">Nombre: </p><input type="text" name="userToConsult" id="usertoconsult" />
+        <input type="submit" value="Buscar" id="buscar">
     </form>
 
     <table border="1">
@@ -52,6 +62,7 @@
             <th>Teléfono</th>
             <th>Correo</th>
             <th>Dirección</th>
+            <th>Opciones</th>
         </thead>
         <c:forEach items="${users}" var="user">
             <tr>
@@ -94,5 +105,6 @@
             </tr>
         </c:forEach>
     </table>
+    </div>
 </body>
 </html>

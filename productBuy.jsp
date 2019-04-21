@@ -15,6 +15,8 @@
         <input type="submit" value="Aceptar">
     </form>
 
-    <a href="./products">Regresar</a>
+    <form action="./products" method="POST">
+        <input type="submit" value="Regresar">
+    </form>
 </body>
 </html>

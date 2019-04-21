@@ -6,52 +6,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Sistema de productos</title>
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
     <header>
-        <h2>CATS Fumigaciones</h2>
+        <div class="w3-container">
+        <h1>CATS Fumigaciones</h1>
         <form action="./logout" method="POST">
-            <input type="submit" value="Salir">
+            <input type="submit" value="Salir" id="salir">
         </form>
-
+        </div>
+        <div id="nav">
         <nav>
             <c:if test = "${sessionScope.isCurrentUserAdmin == 1}">
                 <form action="./users">
-                    <input type="submit" value="Usuarios">    
+                    <input type="submit" value="Usuarios" id="usuarios">    
                 </form>
             </c:if>
 
             <form action="./services" method="POST">
-                <input type="submit" value="Servicios">    
+                <input type="submit" value="Servicios" id="servicios">    
             </form>
 
             <form action="./products" method="POST">
-                <input type="submit" value="Productos">    
+                <input type="submit" value="Productos" id="productos">    
             </form>
 
             <form action="./fumigators">
-                <input type="submit" value="Fumigadores">    
+                <input type="submit" value="Fumigadores" id="fumigadores">    
             </form>
 
             <form action="./client">
-                <input type="submit" value="Clientes">    
+                <input type="submit" value="Clientes" id="clientes">    
             </form>
 
             <form action="./providers">
-                <input type="submit" value="Proveedores">
+                <input type="submit" value="Proveedores" id="proveedores">
             </form>
         </nav>
+        </div>
     </header>
-
-    <h1>Productos</h1>
+    
+    <div class="w3-container">
+    <h2>Productos</h2>
     <form action="./registerProduct.jsp">
         <input type="hidden" name="${providers}">
-        <input type="submit" value="Registar">
+        <input type="submit" value="Registar" id="registrar">
     </form>
 
     <form action="./consultProduct" method="POST">
-        Nombre: <input type="text" name="productToConsult" />
-        <input type="submit" value="Buscar">
+        <p id="nom">Nombre: </p><input type="text" name="productToConsult" id="producttoconsult"/>
+        <input type="submit" value="Buscar" id="buscar">
     </form>
 
     <table border="1">
@@ -101,5 +107,6 @@
             </tr>
         </c:forEach>
     </table>
+    </div>
 </body>
 </html>

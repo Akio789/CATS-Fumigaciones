@@ -6,6 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Modificación de Cliente</title>
+    <link rel="stylesheet" href="css/users.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
     <h1>Modificar cliente</h1>

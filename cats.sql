@@ -31,7 +31,7 @@ CREATE TABLE Producto (
     descripcion VARCHAR(100),
     cant_disp INT,
     costo DOUBLE,
-    idProveedor INT NOT NULL,
+    idProveedor INT,
     FOREIGN KEY (idProveedor) REFERENCES Proveedor(id)
 );
 
@@ -56,59 +56,53 @@ CREATE TABLE Servicio (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     costo DOUBLE,
     fecha VARCHAR(100),
-    idFumigador INT NOT NULL,
-    idCliente INT NOT NULL,
+    idFumigador INT,
+    idCliente INT,
     FOREIGN KEY (idFumigador) REFERENCES Fumigador(id),
 	FOREIGN KEY (idCliente) REFERENCES Cliente(id)
 );
 
 CREATE TABLE ProductoServicio (
-    id_producto INT NOT NULL,
-    id_servicio INT NOT NULL,
+    id_producto INT,
+    id_servicio INT,
     cantidad INT,
-    PRIMARY KEY (id_producto, id_servicio),
     FOREIGN KEY (id_producto) REFERENCES Producto(id),
     FOREIGN KEY (id_servicio) REFERENCES Servicio(id)
 );
 
 CREATE TABLE UsuarioProducto (
-    id_usuario INT NOT NULL,
-    id_producto INT NOT NULL,
-    PRIMARY KEY (id_usuario,id_producto),
+    id_usuario INT,
+    id_producto INT,
     FOREIGN KEY (id_producto) REFERENCES Producto(id)
 );
 
 CREATE TABLE UsuarioServicio (
-    id_usuario INT NOT NULL,
-    id_servicio INT NOT NULL,
-    PRIMARY KEY (id_usuario,id_servicio),
+    id_usuario INT,
+    id_servicio INT,
     FOREIGN KEY (id_usuario) REFERENCES Usuario(id),
     FOREIGN KEY (id_servicio) REFERENCES Servicio(id)
 );
 
 
 CREATE TABLE UsuarioCliente (
-    id_usuario INT NOT NULL,
-    id_cliente INT NOT NULL,
-    PRIMARY KEY (id_usuario, id_cliente),
+    id_usuario INT,
+    id_cliente INT,
     FOREIGN KEY (id_usuario) REFERENCES Usuario(id),
     FOREIGN KEY (id_cliente) REFERENCES Cliente(id),
 	fecha TIMESTAMP
 );
 
 CREATE TABLE UsuarioProveedor (
-    id_usuario INT NOT NULL,
-    id_proveedor INT NOT NULL,
-    PRIMARY KEY (id_usuario, id_proveedor),
+    id_usuario INT,
+    id_proveedor INT,
     FOREIGN KEY (id_usuario) REFERENCES Usuario(id),
     FOREIGN KEY (id_proveedor) REFERENCES Proveedor(id),
 	fecha TIMESTAMP
 );
 
 CREATE TABLE UsuarioFumigador (
-    id_usuario INT NOT NULL,
-    id_fumigador INT NOT NULL,
-    PRIMARY KEY (id_usuario, id_fumigador),
+    id_usuario INT,
+    id_fumigador INT,
     FOREIGN KEY (id_usuario) REFERENCES Usuario(id),
     FOREIGN KEY (id_fumigador) REFERENCES Fumigador(id),
 	fecha TIMESTAMP

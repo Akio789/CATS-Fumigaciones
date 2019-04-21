@@ -13,7 +13,7 @@
         <input type="text" name="id" style="display: none;" value=${param.serviceToAddId}>
         Producto: 
         <select name="nombre_producto" id="product">
-            <c:forEach items="${products}" var="product">
+            <c:forEach items="${sessionScope.products}" var="product">
                 <option value="${product.nombre}">${product.nombre}</option>
             </c:forEach>
         </select>

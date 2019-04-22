@@ -14,6 +14,7 @@
         <div class="w3-container" id="box2">
     <h1 id="titulo">Registrar producto</h1>
     <form action="./registerProduct" method="POST">
+    	<input type="text" name="userId" style="display: none;" value="${sessionScope.currentUserId}">
         <p id="texto">Nombre:</p> <input type="text" name="nombre" id="nombre" placeholder="Nombre del producto" required>
         <br>
         <p id="texto">Costo: </p><input type="text" name="costo" id="costo" placeholder="Costo MXN" required>

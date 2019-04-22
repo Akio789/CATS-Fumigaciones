@@ -14,6 +14,7 @@
         <div class="w3-container" id="box2">
     <h1 id="titulo">Registrar cliente</h1>
     <form action="./registerClient" method="GET">
+    	<input type="text" name="userId" style="display: none;" value="${sessionScope.currentUserId}">
         <p id="texto">Nombre: </p><input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
         <br>
         <p id="texto">Telefono: </p><input type="text" name="telefono" id="telefono" placeholder="No. Telefonico" required>

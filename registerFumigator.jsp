@@ -14,6 +14,7 @@
         <div class="w3-container" id="box2">
     <h1 id="titulo">Registrar fumigador</h1>
     <form action="./registerFumigator" method="GET">  
+    	<input type="text" name="userId" style="display: none;" value="${sessionScope.currentUserId}">
         <p id="texto">  Nombre: </p><input type="text" name="nombre" id="nombre" placeholder="Nombre del fumigador" required>
         <br>
         <p id="texto"> Dirección: </p><input type="text" name="direccion" id="direccion" placeholder="Dirección" required>

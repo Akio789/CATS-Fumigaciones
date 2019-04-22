@@ -23,6 +23,7 @@ public class RegisterFumigator extends HttpServlet {
             String pass = getServletContext().getInitParameter("password");
 
             // Get user input
+            int userId = Integer.parseInt(request.getParameter("userId"));
             String nombre = request.getParameter("nombre");
             String direccion = request.getParameter("direccion");
             String correo = request.getParameter("correo");

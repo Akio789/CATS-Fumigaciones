@@ -16,6 +16,7 @@
         </div>
         <div class="w3-container" id="box2">
     <form action="./preRegisterService" method="POST">
+    	<input type="text" name="userId" style="display: none;" value="${sessionScope.currentUserId}">
         <p id="texto">Costo:</p> <input type="text" name="costo" id="costo" placeholder="Costo MXN del servicio" required id="cuadro">
         <br>
         <p id="texto">Fecha:</p> <input type="date" name="fecha" id="fecha" placeholder="Fecha del Servicio" required id="cuadro">

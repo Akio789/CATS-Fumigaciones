@@ -25,6 +25,7 @@ public class RegisterProduct extends HttpServlet {
             String pass = getServletContext().getInitParameter("password");
 
             // Get user input
+            int userId = Integer.parseInt(request.getParameter("userId"));
             String nombre = request.getParameter("nombre");
             double costo = Double.parseDouble(request.getParameter("costo"));
             int cant_disp = Integer.parseInt(request.getParameter("cant_disp"));
@@ -49,10 +50,31 @@ public class RegisterProduct extends HttpServlet {
             Statement stat2 = con2.createStatement();
             String sql2 = "INSERT INTO Producto (nombre, descripcion, cant_disp, costo, idProveedor)" + " VALUES ('"
                     + nombre + "', '" + descr + "', '" + cant_disp + "', '" + costo + "', '" + idProveedor + "');";
-            stat2.executeUpdate(sql2);
+            stat2.executeUpdate(sql2, Statement.RETURN_GENERATED_KEYS);
+            
+            
+            int productId = 0;
+            ResultSet rs = stat2.getGeneratedKeys();
+            if (rs.next()){
+            	productId=rs.getInt(1);
+            }	
 
             stat2.close();
             con2.close();
+           
+            System.out.println("$$$$$$$$$$$$$$$$$$$$$$$");
+            System.out.println(productId);
+            
+            Connection con3 = DriverManager.getConnection(url, user, pass);
+            Statement stat3 = con3.createStatement();
+
+            // Check if provider exists
+            String sql3 = "INSERT INTO UsuarioProducto (id_usuario, id_producto) VALUES ('"+ userId +"', '"+ productId + "');";
+            stat3.executeUpdate(sql3);
+
+            stat3.close();
+            con3.close();
+            
 
             // Determine page to dispatch to
             RequestDispatcher disp = getServletContext().getRequestDispatcher("/registerSuccess.jsp");

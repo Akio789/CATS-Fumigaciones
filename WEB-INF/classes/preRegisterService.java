@@ -59,10 +59,30 @@ public class preRegisterService extends HttpServlet {
             Statement stat2 = con2.createStatement();
             String sql2 = "INSERT INTO Servicio (costo, fecha, idFumigador, idCliente)" + " VALUES ('" + costo
                             + "', '" + fecha + "', '" + idFumigador + "', '" + idCliente + "');";
-            stat2.executeUpdate(sql2);
+            stat2.executeUpdate(sql2, Statement.RETURN_GENERATED_KEYS);
+            
+            
+            int serviceId = 0;
+            ResultSet rs = stat2.getGeneratedKeys();
+            if (rs.next()){
+            	serviceId=rs.getInt(1);
+            }	
 
             stat2.close();
             con2.close();
+           
+            System.out.println("$$$$$$$$$$$$$$$$$$$$$$$");
+            System.out.println(serviceId);
+            
+            Connection con3 = DriverManager.getConnection(url, user, pass);
+            Statement stat3 = con3.createStatement();
+
+            // Check if provider exists
+            String sql4 = "INSERT INTO UsuarioServicio (id_usuario, id_servicio) VALUES ('"+ userId +"', '"+ serviceId + "');";
+            stat3.executeUpdate(sql4);
+
+            stat3.close();
+            con3.close();
 
             stat.close();
             con.close();

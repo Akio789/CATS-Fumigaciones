@@ -5,7 +5,7 @@ use cats;
 
 -- Create tables 
 CREATE TABLE Usuario (
-    id INT NOT NULL AUTO_INCREMENT,
+    id INT AUTO_INCREMENT,
     username VARCHAR(20),
     password VARCHAR(20),
     nombre VARCHAR(100),
@@ -18,7 +18,7 @@ CREATE TABLE Usuario (
 );
 
 CREATE TABLE Proveedor (
-    id INT NOT NULL AUTO_INCREMENT,
+    id INT AUTO_INCREMENT,
     nombre VARCHAR(100),
     direccion VARCHAR(100),
     correo VARCHAR(100),
@@ -26,7 +26,7 @@ CREATE TABLE Proveedor (
 );
 
 CREATE TABLE Producto (
- 	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+ 	id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100),
     descripcion VARCHAR(100),
     cant_disp INT,
@@ -36,7 +36,7 @@ CREATE TABLE Producto (
 );
 
 CREATE TABLE Cliente (
-    id INT NOT NULL AUTO_INCREMENT,
+    id INT AUTO_INCREMENT,
     nombre VARCHAR(100),
     telefono VARCHAR(100),
     direccion VARCHAR(100),
@@ -45,7 +45,7 @@ CREATE TABLE Cliente (
 );
 
 CREATE TABLE Fumigador (
-    id INT NOT NULL AUTO_INCREMENT,
+    id INT AUTO_INCREMENT,
     nombre VARCHAR(100),
     direccion VARCHAR(100),
     correo VARCHAR(100),
@@ -53,7 +53,7 @@ CREATE TABLE Fumigador (
 );
 
 CREATE TABLE Servicio (
-    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     costo DOUBLE,
     fecha VARCHAR(100),
     idFumigador INT,
@@ -109,7 +109,7 @@ CREATE TABLE UsuarioFumigador (
 );
 
 -- Dummy data
-INSERT INTO `Usuario` (username, password, nombre, puesto, telefono, correo, direccion, administrador) VALUES ('user1', '123', 'Akio', 'Manager', '123456', 'user1@gmail.com', 'Insurgentes Sur', false);
+INSERT INTO `Usuario` (username, password, nombre, puesto, telefono, correo, direccion, administrador) VALUES ('user1', '123', 'Akio', 'Manager', '123456', 'user1@gmail.com', 'Insurgentes Sur', true);
 
 CREATE USER 'catsUser'@'localhost' IDENTIFIED BY 'myPassword';
 GRANT ALL PRIVILEGES ON *.* TO 'catsUser'@'localhost';

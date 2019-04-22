@@ -10,6 +10,7 @@
 <body>
     <h1>Registrar proveedor</h1>
     <form action="./registerProvider" method="GET">
+    <input type="text" name="userId" style="display: none;" value="${sessionScope.currentUserId}">
         Nombre: <input type="text" name="nombre" id="nombre" placeholder="Nombre del proveedor" required>
         <br>
         Dirección: <input type="text" name="direccion" id="direccion" placeholder="Dirección" required>

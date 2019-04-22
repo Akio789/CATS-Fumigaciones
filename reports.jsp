@@ -53,11 +53,11 @@
         </div>
     </header>
 
-    <div class="w3-container">
-    <h1>Reporte Ventas</h1>
-    <p>Servicios generados: ${serviceSize}</p>
-    <p>Costo total servicios: ${serviceTotal} </p>
-    <p>Costo total productos: ${serviceCost} </p>
+	    <div class="w3-container">
+	    <h1>Reporte Ventas</h1>
+	    <p>Servicios generados: ${serviceSize}</p>
+	    <p>Costo total servicios: ${serviceTotal} </p>
+	    <p>Costo total productos: ${serviceCost} </p>
     </div>
     </body>
 </html>

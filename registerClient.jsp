@@ -6,20 +6,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Registro de Cliente</title>
+      <link rel="stylesheet" href="css/Register.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-    <h1>Registrar cliente</h1>
+     <div id="box">
+        <div class="w3-container" id="box2">
+    <h1 id="titulo">Registrar cliente</h1>
     <form action="./registerClient" method="GET">
-        Nombre: <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+        <p id="texto">Nombre: </p><input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
         <br>
-        Telefono: <input type="text" name="telefono" id="telefono" placeholder="No. Telefonico" required>
+        <p id="texto">Telefono: </p><input type="text" name="telefono" id="telefono" placeholder="No. Telefonico" required>
         <br>
-        Direccion: <input type="text" name="direccion" id="direccion" placeholder="Direccion" required>
+        <p id="texto">Direccion:</p> <input type="text" name="direccion" id="direccion" placeholder="Direccion" required>
         <br>
-        Correo: <input type="text" name="correo" id="correo" placeholder="Correo Electronico" required>
-        <input type="submit" value="Registrar">        
+        <p id="texto">Correo:</p> <input type="text" name="correo" id="correo" placeholder="Correo Electronico" required>
+        <input type="submit" value="Registrar" id="registrar">        
         <br>
-        <a href="./client.jsp">Regresar</a>
+        <a href="./client.jsp" id="regresar">Regresar</a>
     </form>
+         </div>
+    </div>
 </body>
 </html>

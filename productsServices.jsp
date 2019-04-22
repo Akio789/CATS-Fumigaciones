@@ -6,9 +6,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Añadir producto</title>
+      <link rel="stylesheet" href="css/Ps.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-    <h1>Productos Servicio ${param.serviceToShow}</h1>
+     <div id="box">
+        <div class="w3-container" id="box2">
+    <h1 id="titulo">Productos Servicio ${param.serviceToShow}</h1>
    <table border="1">
         <thead>
             <th>Nombre</th>
@@ -25,6 +29,8 @@
             </tr>
         </c:forEach>
     </table>
-	<a href="./services.jsp">Regresar</a>
+	<a href="./services.jsp" id="regresar">Regresar</a>
+         </div>
+    </div>
 </body>
 </html>

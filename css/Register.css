@@ -152,84 +152,60 @@ table {
 #box2 {
   text-align: center;
 }
-#aceptar{
-    transform: translate(-194%,160%)
+#registrar{
+    transform: translate(-126%,160%)
 }
-#regresar2{
-     height: 50px;
-  float: left;
-  transform: translateY(300%);
-    font-size: 15px;
+#correo{
+    transform: translateX(20%);
 }
-#aceptar2{
-    transform: translate(-170%,160%)
+#box3{
+    text-align: center;
+    transform: translateY(100%);
+    height: 50px; 
+}
+#regresarR{
+    font-size: 170%;
+    margin-bottom: 5%;
+}
+#regresarM{
+    font-size: 170%;
 }
 #provider{
     width: 20%;
+    transform: translateX(25%);
 }
-#regresar3{
-     height: 50px;
-  float: left;
-  transform: translateY(160%);
-    font-size: 15px;
-}
-/*ModifyService*/
-#fondo {
-  width: 70%;
-  height: 29px;
-  margin: 0 auto;
-}
-#box {
-  background-color: #1c313a;
-  width: 60%;
-  margin: 0 auto;
-  height: 450px;
-  transform: translateY(40%);
-}
-#titulo {
-  text-align: center;
-}
-#fumigator {
-  width: 20%;
-}
-#cliente {
-  width: 20%;
-}
-#regresar {
-  height: 50px;
-  float: left;
-  transform: translateY(180%);
-}
-#box2 {
-  text-align: center;
-}
-/*ModifyUser*/
-#boxnene {
-  background-color: #1c313a;
-  width: 60%;
-  margin: 0 auto;
-  height: 500px;
-  transform: translateY(40%);
-}
-#aceptar3{
-    transform: translate(-200%,160%)
-}
-#regresar5{
+#regresar2{
     height: 50px;
   float: left;
-  transform: translateY(300%);
+  transform: translate(40%,280%);
     font-size: 15px;
 }
-#titulo2{
-    text-align: center;
-    margin-bottom: 2%;
+#registrar2{
+    transform: translate(-100%,160%);
 }
-#aceptar4{
-     transform: translate(-180%,160%)
+#regresar3 {
+  height: 50px;
+  float: left;
+  transform: translateY(50%);
+    font-size: 15px;
 }
 #regresar4{
+    width: 60%;
+    height: 140px;
+    margin-top: 10%;
+}
+#registrar3{
+     margin-top: 2%;
+}
+#box3{
+      background-color: #1c313a;
+  width: 60%;
+  margin: 0 auto;
+  transform: translateY(100%);
+}
+#regresar5{
      height: 50px;
   float: left;
-  transform: translateY(130%);
+  transform: translateY(-40%);
     font-size: 15px;
 }

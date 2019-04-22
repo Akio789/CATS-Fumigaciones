@@ -6,17 +6,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Inventario</title>
+    <link rel="stylesheet" href="css/buy.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-    <h1>Producto ${param.nombre}</h1>
+    <div id="box">
+        <div class="w3-container" id="box2">
+    <h1 id="titulo">Producto ${param.nombre}</h1>
     <form action="./productBuy" method="POST">
         <input type="hidden" name="id" value="${param.id}">
-        Cantidad: <input type="text" name="quantity" id="quantity" placeholder="100">
-        <input type="submit" value="Aceptar">
+        <p id="texto">Cantidad:</p> <input type="text" name="quantity" id="quantity" placeholder="100">
+        <input type="submit" value="Aceptar" id="aceptar">
     </form>
 
     <form action="./products" method="POST">
-        <input type="submit" value="Regresar">
+        <input type="submit" value="Regresar" id="regresar">
     </form>
+        </div>
+    </div>
 </body>
 </html>

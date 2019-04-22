@@ -6,23 +6,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Añadir producto</title>
+     <link rel="stylesheet" href="css/Ap.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-    <h1>Añadir producto</h1>
+    <div id="box">
+        <div class="w3-container" id="box2">
+    <h1 id="titulo">Añadir producto</h1>
     <form action="./addProduct" method="POST">
         <input type="text" name="id" style="display: none;" value=${param.serviceToAddId}>
-        Producto: 
+        <p id="texto"> Producto:</p> 
         <select name="nombre_producto" id="product">
             <c:forEach items="${sessionScope.products}" var="product">
                 <option value="${product.nombre}">${product.nombre}</option>
             </c:forEach>
         </select>
         <br>
-        Cantidad Utilizada: <input type="text" name="cantidad" id="cantidad" placeholder="Cantidad utilizada" required>
+        <p id="texto">Cantidad Utilizada:</p> <input type="text" name="cantidad" id="cantidad" placeholder="Cantidad utilizada" required>
         <br>
-        <input type="submit" value="Registrar">
+        <input type="submit" value="Registrar" id="registrar">
         <br>
-		<a href="./services.jsp">Regresar</a>
+		<a href="./services.jsp" id="regresar">Regresar</a>
     </form>
+        </div>
+    </div>
 </body>
 </html>

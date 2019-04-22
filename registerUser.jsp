@@ -6,29 +6,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Registro de usuario</title>
+    <link rel="stylesheet" href="css/Register.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-    <h1>Registrar usuario</h1>
+    <div id="box3">
+        <div class="w3-container" id="box2">
+    <h1 id="titulo">Registrar usuario</h1>
     <form action="./registerUser" method="GET">
-        Cuenta: <input type="text" name="username" id="username" placeholder="Usuario" required>
+        <p id="texto">Cuenta: </p><input type="text" name="username" id="username" placeholder="Usuario" required>
         <br>
-        Contraseña: <input type="password" name="password" id="password" placeholder="Contraseña" required>
+        <p id="texto">Contraseña: </p><input type="password" name="password" id="password" placeholder="Contraseña" required>
         <br>
-        Repetir Contraseña: <input type="password" name="password2" id="password2" placeholder="Constraseña" required>
+        <p id="texto">Repetir Contraseña:</p> <input type="password" name="password2" id="password2" placeholder="Constraseña" required>
         <br>
-        Nombre: <input type="text" name="name" id="name" placeholder="Nombre" required>
+        <p id="texto">Nombre: </p><input type="text" name="name" id="name" placeholder="Nombre" required>
         <br>
-        Puesto: <input type="text" name="position" id="position" placeholder="Puesto" required>
+        <p id="texto">Puesto: </p><input type="text" name="position" id="position" placeholder="Puesto" required>
         <br>
-        Telefono: <input type="text" name="phoneNum" id="phoneNum" placeholder="Telefono" required>
+        <p id="texto">Telefono: </p><input type="text" name="phoneNum" id="phoneNum" placeholder="Telefono" required>
         <br>
-        Correo: <input type="email" name="email" id="email" placeholder="Correo electrónico" required>
+        <p id="texto">Correo:</p> <input type="email" name="email" id="email" placeholder="Correo electrónico" required>
         <br>
-        Dirección: <input type="text" name="address" id="address" placeholder="Dirección" required>
+        <p id="texto">Dirección:</p> <input type="text" name="address" id="address" placeholder="Dirección" required>
         <br>
-        <input type="submit" value="Registrar">
+        <input type="submit" value="Registrar" id="registrar3">
         <br>
-        <a href="./users.jsp">Regresar</a>
+        <a href="./users.jsp" id="regresar5">Regresar</a>
     </form>
+        </div>
+    </div>
 </body>
 </html>

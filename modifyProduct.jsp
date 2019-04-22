@@ -6,25 +6,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Modificación de Producto</title>
+    <link rel="stylesheet" href="css/modify.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-    <h1>Modificar producto</h1>
+    <div id="box">
+        <div class="w3-container" id="box2">
+    <h1 id="titulo">Modificar producto</h1>
 
     <form action="./modifyProduct" method="POST">
         <input type="text" name="id" value=${param.id} style="display: none;">
-        Nombre: <input type="text" name="nombre" value="${param.nombre}">
+        <p id="texto">Nombre:</p> <input type="text" name="nombre" value="${param.nombre}">
         <br>
-        Costo: <input type="text" name="costo" value="${param.costo}">
+        <p id="texto">Costo:</p> <input type="text" name="costo" value="${param.costo}">
         <br>
-        Proveedor: 
+        <p id="texto">Proveedor:</p> 
         <select name="nombre_proveedor" id="provider">
             <c:forEach items="${sessionScope.providers}" var="provider">
                 <option value="${provider.nombre}">${provider.nombre}</option>
             </c:forEach>
         </select>
 
-        <input type="submit" value="Aceptar">
-        <a href="./products.jsp">Regresar</a>
+        <input type="submit" value="Aceptar" id="aceptar2">
+        <a href="./products.jsp"id="regresar5">Regresar</a>
     </form>
+        </div>
+    </div>
 </body>
 </html>

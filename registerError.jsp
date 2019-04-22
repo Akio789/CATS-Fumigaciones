@@ -6,11 +6,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Error de registro</title>
+     <link rel="stylesheet" href="css/Register.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-    <p>Hubo un error de llenado de la forma.</p>
-    <a href="${lastPageForFailure}">Regresar a registro</a>
+     <div id="box">
+        <div class="w3-container" id="box2">
+    <h1 id="titulo">Hubo un error de llenado de la forma.</h1>
+            <div id="box3">
+    <a href="${lastPageForFailure}" id="regresarR">Regresar a registro</a>
     <br>
-    <a href="./menu.jsp">Regresar al menú</a>
+    <a href="./menu.jsp" id="regresarM">Regresar al menú</a>
+            </div>
+         </div>
+    </div>
 </body>
 </html>

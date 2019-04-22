@@ -270,6 +270,7 @@ td {
 }
 td {
   color: white;
+     border: 3px solid black;
 }
 #nav{
     display: block;

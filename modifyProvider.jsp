@@ -5,21 +5,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Modificación de Producto</title>
+    <title>Modificación de Proveedor</title>
+    <link rel="stylesheet" href="css/modify.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-    <h1>Modificar Proveedor</h1>
+    <div id="box">
+        <div class="w3-container" id="box2">
+    <h1 id="titulo">Modificar Proveedor</h1>
 
     <form action="./modifyProvider">
         <input type="text" name="id" value=${param.id} style="display: none;">
-        Nombre: <input type="text" name="nombre" value="${param.nombre}">
+        <p id="texto">Nombre: </p><input type="text" name="nombre" value="${param.nombre}">
         <br>
-        Dirección: <input type="text" name="direccion" value="${param.direccion}">
+        <p id="texto">Dirección:</p> <input type="text" name="direccion" value="${param.direccion}">
         <br>
-        Correo: <input type="text" name="correo" value="${param.correo}">
+        <p id="texto">Correo:</p> <input type="text" name="correo" value="${param.correo}">
 
-        <input type="submit" value="Aceptar">
-        <a href="./providers">Regresar</a>
+        <input type="submit" value="Aceptar" id="aceptar">
+        <a href="./providers" id="regresar2">Regresar</a>
     </form>
+        </div>
+    </div>
 </body>
 </html>

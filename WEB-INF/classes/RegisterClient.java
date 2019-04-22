@@ -41,10 +41,31 @@ public class RegisterClient extends HttpServlet {
 
             String sql = "INSERT INTO Cliente (nombre, direccion, correo, telefono) VALUES ('" + nombre + "', '"
                     + direccion + "', '" + correo + "', '" + telefono + "');";
-            stat.executeUpdate(sql);
+stat.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
+            
+            
+            int clientId = 0;
+            ResultSet rs = stat.getGeneratedKeys();
+            if (rs.next()){
+            	clientId=rs.getInt(1);
+            }	
 
             stat.close();
             con.close();
+           
+            System.out.println("$$$$$$$$$$$$$$$$$$$$$$$");
+            System.out.println(clientId);
+            
+            Connection con3 = DriverManager.getConnection(url, user, pass);
+            Statement stat3 = con3.createStatement();
+
+            // Check if provider exists
+            String sql3 = "INSERT INTO UsuarioCliente (id_usuario, id_cliente) VALUES ('"+ userId +"', '"+ clientId + "');";
+            stat3.executeUpdate(sql3);
+
+            stat3.close();
+            con3.close();
+            
 
             request.setAttribute("lastPageForSuccess", "./client");
             request.setAttribute("lastPageForFailure", "./registerClient.jsp");

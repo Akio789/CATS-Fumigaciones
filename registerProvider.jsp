@@ -14,7 +14,10 @@
         <div class="w3-container" id="box2">
     <h1 id="titulo">Registrar proveedor</h1>
     <form action="./registerProvider" method="GET">
-        <p id="texto">Nombre: </p><input type="text" name="nombre" id="nombre" placeholder="Nombre del proveedor" required>
+
+
+    	<input type="text" name="userId" style="display: none;" value="${sessionScope.currentUserId}">
+         <p id="texto">Nombre:</p><input type="text" name="nombre" id="nombre" placeholder="Nombre del proveedor" required>
         <br>
         <p id="texto">Dirección:</p> <input type="text" name="direccion" id="direccion" placeholder="Dirección" required>
         <br>

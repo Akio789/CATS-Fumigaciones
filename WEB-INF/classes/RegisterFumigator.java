@@ -37,10 +37,31 @@ public class RegisterFumigator extends HttpServlet {
             // Check if provider exists
             String sql = "INSERT INTO Fumigador (nombre, direccion, correo) VALUES ('" + nombre + "', '" + direccion
                     + "', '" + correo + "');";
-            stat.executeUpdate(sql);
+stat.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
+            
+            
+            int fumigatorId = 0;
+            ResultSet rs = stat.getGeneratedKeys();
+            if (rs.next()){
+            	fumigatorId=rs.getInt(1);
+            }	
 
             stat.close();
             con.close();
+           
+            System.out.println("$$$$$$$$$$$$$$$$$$$$$$$");
+            System.out.println(fumigatorId);
+            
+            Connection con3 = DriverManager.getConnection(url, user, pass);
+            Statement stat3 = con3.createStatement();
+
+            // Check if provider exists
+            String sql3 = "INSERT INTO UsuarioFumigador (id_usuario, id_fumigador) VALUES ('"+ userId +"', '"+ fumigatorId + "');";
+            stat3.executeUpdate(sql3);
+
+            stat3.close();
+            con3.close();
+            
 
             request.setAttribute("lastPageForSuccess", "./fumigators");
 

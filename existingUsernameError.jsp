@@ -14,9 +14,7 @@
         <div class="w3-container" id="box2">
     <h1 id="titulo">El username ingresado ya está en uso.</h1>
             <div id="box3">
-    <a href="${lastPageForFailure}" id="regresarR">Regresar a registro</a>
-    <br>
-    <a href="${lastPageForSuccess}" id="regresarM">Regresar al menú</a>
+    <a href="${lastPageForSuccess}" id="regresarM">Regresar</a>
             </div>
          </div>
     </div>

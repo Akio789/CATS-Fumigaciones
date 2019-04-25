@@ -22,6 +22,14 @@ public class ModifyUser extends HttpServlet {
             String user = getServletContext().getInitParameter("username");
             String pass = getServletContext().getInitParameter("password");
 
+            // JDBC
+            Class.forName("com.mysql.jdbc.Driver");
+            String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
+            Connection con2 = DriverManager.getConnection(url, user, pass);
+            Statement stat2 = con2.createStatement();
+            String sql2 = "SELECT * FROM Usuario;";
+            ResultSet res2 = stat2.executeQuery(sql2);
+
             // Get user input
             String id = request.getParameter("id");
             String name = request.getParameter("name");
@@ -31,22 +39,37 @@ public class ModifyUser extends HttpServlet {
             String email = request.getParameter("email");
             String address = request.getParameter("address");
 
-            // JDBC
-            Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
-            Connection con = DriverManager.getConnection(url, user, pass);
-            Statement stat = con.createStatement();
-            String sql = "UPDATE Usuario SET nombre='" + name + "', username='" + username + "', puesto='" + job
-                    + "', telefono='" + phoneNum + "', correo='" + email + "', direccion='" + address + "' WHERE id='"
-                    + id + "';";
-            ;
-            stat.executeUpdate(sql);
+            String nextPage = "";
 
-            stat.close();
-            con.close();
+            while (res2.next()) {
+                String existingUsername = res2.getString("username");
+                if (username.equals(existingUsername)) {
+                    nextPage = "/existingUsernameError.jsp";
+                    break;
+                } else {
+                    Connection con = DriverManager.getConnection(url, user, pass);
+                    Statement stat = con.createStatement();
+                    String sql = "UPDATE Usuario SET nombre='" + name + "', username='" + username + "', puesto='" + job
+                            + "', telefono='" + phoneNum + "', correo='" + email + "', direccion='" + address
+                            + "' WHERE id='" + id + "';";
+
+                    stat.executeUpdate(sql);
+
+                    stat.close();
+                    con.close();
+
+                    nextPage = "/users";
+                }
+            }
+
+            request.setAttribute("lastPageForSuccess", "./users");
+            request.setAttribute("lastPageForFailure", "./modifyUser.jsp");
+
+            stat2.close();
+            con2.close();
 
             // Determine page to dispatch to
-            RequestDispatcher disp = getServletContext().getRequestDispatcher("/users");
+            RequestDispatcher disp = getServletContext().getRequestDispatcher(nextPage);
 
             if (disp != null) {
                 disp.forward(request, response);

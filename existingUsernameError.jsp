@@ -12,7 +12,7 @@
 <body>
      <div id="box">
         <div class="w3-container" id="box2">
-    <h1 id="titulo">Hubo un error de llenado de la forma.</h1>
+    <h1 id="titulo">El username ingresado ya está en uso.</h1>
             <div id="box3">
     <a href="${lastPageForFailure}" id="regresarR">Regresar a registro</a>
     <br>

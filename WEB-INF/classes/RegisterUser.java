@@ -32,25 +32,41 @@ public class RegisterUser extends HttpServlet {
             String emailInput = request.getParameter("email");
             String addressInput = request.getParameter("address");
 
-            // Only execute insert if passwords are equal
-            String nextPage;
-            if (passwordInput.equals(passwordInput2)) {
-                // JDBC
-                Class.forName("com.mysql.jdbc.Driver");
-                String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
-                Connection con = DriverManager.getConnection(url, user, pass);
-                Statement stat = con.createStatement();
-                String sql = "INSERT INTO Usuario (username, password, nombre, puesto, telefono, correo, direccion)"
-                        + "VALUES ('" + usernameInput + "', '" + passwordInput + "', '" + nameInput + "', '"
-                        + positionInput + "', '" + phoneNumInput + "', '" + emailInput + "', '" + addressInput + "');";
-                stat.executeUpdate(sql);
-                nextPage = "/registerSuccess.jsp";
+            // JDBC
+            Class.forName("com.mysql.jdbc.Driver");
+            String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
+            Connection con2 = DriverManager.getConnection(url, user, pass);
+            Statement stat2 = con2.createStatement();
+            String sql2 = "SELECT * FROM Usuario;";
+            ResultSet res2 = stat2.executeQuery(sql2);
 
-                stat.close();
-                con.close();
-            } else {
-                nextPage = "/registerError.jsp";
+            // Only execute insert if passwords are equal
+            String nextPage = "";
+
+            while (res2.next()) {
+                String existingUsername = res2.getString("username");
+                if (usernameInput.equals(existingUsername)) {
+                    nextPage = "/existingUsernameError.jsp";
+                } else if (passwordInput.equals(passwordInput2)) {
+                    // JDBC
+                    Connection con = DriverManager.getConnection(url, user, pass);
+                    Statement stat = con.createStatement();
+                    String sql = "INSERT INTO Usuario (username, password, nombre, puesto, telefono, correo, direccion)"
+                            + "VALUES ('" + usernameInput + "', '" + passwordInput + "', '" + nameInput + "', '"
+                            + positionInput + "', '" + phoneNumInput + "', '" + emailInput + "', '" + addressInput
+                            + "');";
+                    stat.executeUpdate(sql);
+                    nextPage = "/registerSuccess.jsp";
+
+                    stat.close();
+                    con.close();
+                } else {
+                    nextPage = "/registerError.jsp";
+                }
             }
+
+            stat2.close();
+            con2.close();
 
             request.setAttribute("lastPageForSuccess", "./users");
             request.setAttribute("lastPageForFailure", "./registerUser.jsp");

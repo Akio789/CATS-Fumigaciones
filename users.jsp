@@ -55,7 +55,7 @@
     <h2>Usuarios</h2>
     <a href="./registerUser.jsp" id="registrar">Registrar</a>
     <form action="./consultUser">
-        <p id="nom"> Nombre:</p> <input type="text" name="userToConsult" id="usertoconsult" />
+        <p id="nom"> Nombre de usuario:</p> <input type="text" name="userToConsult" id="usertoconsult" />
         <input type="submit" value="Buscar" id="buscar">
     </form>
 

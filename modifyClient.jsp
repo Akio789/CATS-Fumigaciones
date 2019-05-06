@@ -28,8 +28,13 @@
 
         <input type="submit" value="Aceptar" id="aceptar">
       
-        <a href="./client.jsp" id="regresar">Regresar</a>
+        
            
+    </form>
+
+    <form action="./client" method="POST">
+            <input type="hidden" name="${sessionScope.fumigators}">
+            <input type="submit" value="Regresar" id="regresar">
     </form>
         </div>
     </div>

@@ -37,7 +37,10 @@
         </select>
 
         <input type="submit" value="Aceptar" id="aceptar4">
-        <a href="./services.jsp" id="regresar">Regresar</a>
+    </form>
+    <form action="./services">
+            <input type="hidden" name="${sessionScope.fumigators}">
+            <input type="submit" value="Regresar" id="regresar">
     </form>
          </div>
     </div>

@@ -30,7 +30,9 @@
             </tr>
         </c:forEach>
     </table>
-	<a href="./services.jsp" id="regresar">Regresar</a>
+	<form action="./services" method="POST">
+        <input type="submit" value="Regresar" id="regresar">
+    </form>
          </div>
     </div>
 </body>

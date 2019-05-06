@@ -66,7 +66,7 @@ input[type=submit] {
   transition: none;
 }
 input[type=submit]:hover {
-  background-color: red;
+  background-color: green;
 }
 #neko{
     padding:10px;

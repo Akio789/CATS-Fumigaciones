@@ -60,11 +60,6 @@ h1{
     margin-top: 35px;
     margin-bottom: 33px;
 }
-input[type=submit] {
-  background: black;
-  color: white;
-  transition: none;
-}
 input[type=submit]:hover {
   background-color: red;
 }

@@ -94,6 +94,14 @@ video {
   color: white;
   vertical-align: baseline;
 }
+input[type=submit] {
+  background: black;
+  color: white;
+  transition: none;
+}
+input[type=submit]:hover {
+  background-color: red;
+}
 /* HTML5 display-role reset for older browsers */
 article,
 aside,

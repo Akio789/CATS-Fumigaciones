@@ -253,6 +253,14 @@ active {
 #reportes:hover {
   background-color: red;
 }
+input[type=submit] {
+  background: black;
+  color: white;
+  transition: none;
+}
+input[type=submit]:hover {
+  background-color: red;
+}
 table {
   width: 70%;
   margin: 0 auto;

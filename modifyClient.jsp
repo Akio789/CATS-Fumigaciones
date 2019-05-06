@@ -32,7 +32,7 @@
            
     </form>
 
-    <form action="./client" method="POST">
+    <form action="./client">
             <input type="hidden" name="${sessionScope.fumigators}">
             <input type="submit" value="Regresar" id="regresar">
     </form>

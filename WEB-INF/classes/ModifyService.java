@@ -27,32 +27,28 @@ public class ModifyService extends HttpServlet {
             // Get user input
             String id = request.getParameter("id");
             double costo = Double.parseDouble(request.getParameter("costo"));
-            String nombreFumigador = request.getParameter("nombre_fumigador");
+            int idFumigador = Integer.parseInt(request.getParameter("id_fumigador"));
             String fecha = request.getParameter("fecha");
-            String nombreCliente = request.getParameter("nombre_cliente");
+            int idCliente = Integer.parseInt(request.getParameter("id_cliente"));
             // JDBC
             Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://localhost/" + db + "?useSSL=false&allowPublicKeyRetrieval=true";
             Connection con = DriverManager.getConnection(url, user, pass);
             Statement stat = con.createStatement();
 
-            String sql2 = "SELECT * FROM Cliente WHERE nombre='" + nombreCliente + "' ;";
+            String sql2 = "SELECT * FROM Cliente WHERE id='" + idCliente + "' ;";
             ResultSet res = stat.executeQuery(sql2);
 
             res.next();
-            int idCliente = res.getInt("id");
-
 
             // Check if fumigator exists
-            String sql3 = "SELECT * FROM Fumigador WHERE nombre='" + nombreFumigador + "';";
+            String sql3 = "SELECT * FROM Fumigador WHERE id='" + idFumigador + "';";
             ResultSet res2 = stat.executeQuery(sql3);
 
             res2.next();
-            int idFumigador = res2.getInt("id");
 
-
-            String sql = "UPDATE Servicio SET costo='" + costo + "', fecha='" + fecha + "', idFumigador='"
-                    + idFumigador + "', idCliente='" + idCliente + "' WHERE id='" + id + "';";
+            String sql = "UPDATE Servicio SET costo='" + costo + "', fecha='" + fecha + "', idFumigador='" + idFumigador
+                    + "', idCliente='" + idCliente + "' WHERE id='" + id + "';";
             ;
             stat.executeUpdate(sql);
 

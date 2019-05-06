@@ -29,7 +29,11 @@
         <br>
         <input type="submit" value="Registrar" id="registrar">
         <br>
-		<a href="./services.jsp" id="regresar">Regresar</a>
+		
+    </form>
+    <form action="./services">
+            <input type="hidden" name="${sessionScope.fumigators}">
+            <input type="submit" value="Regresar" id="regresar">
     </form>
         </div>
     </div>

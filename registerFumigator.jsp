@@ -25,7 +25,10 @@
         <p id="texto"> Correo: </p><input type="text" name="correo" id="correo" placeholder="Email" required>
         <input type="submit" value="Registrar" id="registrar">
         <br>
-        <a href="./fumigators" id="regresar2">Regresar</a>
+    </form>
+    <form action="./fumigators">
+            <input type="hidden" name="${sessionScope.fumigators}">
+            <input type="submit" value="Regresar" id="regresar">
     </form>
          </div>
     </div>

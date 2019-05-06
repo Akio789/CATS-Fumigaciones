@@ -31,7 +31,7 @@
 
         <input type="submit" value="Aceptar" id="aceptar2">
     </form>
-        <form action="./products">
+        <form action="./products" method="POST">
             <input type="hidden" name="${sessionScope.fumigators}">
             <input type="submit" value="Regresar" id="regresar">
     </form>

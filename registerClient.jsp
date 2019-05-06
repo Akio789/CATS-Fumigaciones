@@ -27,7 +27,10 @@
         <p id="texto">Correo:</p> <input type="text" name="correo" id="correo" placeholder="Correo Electronico" required>
         <input type="submit" value="Registrar" id="registrar">        
         <br>
-        <a href="./client.jsp" id="regresar">Regresar</a>
+    </form>
+    <form action="./client">
+            <input type="hidden" name="${sessionScope.fumigators}">
+            <input type="submit" value="Regresar" id="regresar">
     </form>
          </div>
     </div>

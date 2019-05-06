@@ -23,16 +23,16 @@
         <p id="texto">Fecha:</p> <input type="date" name="fecha" id="fecha" placeholder="Fecha del Servicio" required id="cuadro">
         <br>
         <p id="texto">Fumigador:</p> 
-        <select name="nombre_fumigador" id="opcion">
+        <select name="id_fumigador" id="opcion">
             <c:forEach items="${sessionScope.fumigators}" var="fumigator">
-                <option value="${fumigator.nombre}">${fumigator.nombre}</option>
+                <option value="${fumigator.id}">${fumigator.nombre}</option>
             </c:forEach>
         </select>
         <br>
         <p id="texto">Cliente:</p> 
-        <select name="nombre_cliente" id="opcion2">
+        <select name="id_cliente" id="opcion2">
             <c:forEach items="${sessionScope.clients}" var="client">
-                <option value="${client.nombre}" >${client.nombre}</option>
+                <option value="${client.id}" >${client.nombre}</option>
             </c:forEach>
         </select>
         <input type="submit" value="Pre-Registrar" id="preregistrar">

@@ -27,11 +27,9 @@ public class preRegisterService extends HttpServlet {
             // Get user input
             int userId = Integer.parseInt(request.getParameter("userId"));
             double costo = Double.parseDouble(request.getParameter("costo"));
-            String nombreFumigador = request.getParameter("nombre_fumigador");
+            int idFumigador = Integer.parseInt(request.getParameter("id_fumigador"));
             String fecha = request.getParameter("fecha");
-            String nombreCliente = request.getParameter("nombre_cliente");
-
-
+            int idCliente = Integer.parseInt(request.getParameter("id_cliente"));
 
             // JDBC
             Class.forName("com.mysql.jdbc.Driver");
@@ -40,45 +38,42 @@ public class preRegisterService extends HttpServlet {
             Statement stat = con.createStatement();
 
             // Check if client exists
-            String sql = "SELECT * FROM Cliente WHERE nombre='" + nombreCliente + "' ;";
+            String sql = "SELECT * FROM Cliente WHERE id='" + idCliente + "' ;";
             ResultSet res = stat.executeQuery(sql);
 
             res.next();
-            int idCliente = res.getInt("id");
-
 
             // Check if fumigator exists
-            String sql3 = "SELECT * FROM Fumigador WHERE nombre='" + nombreFumigador + "';";
+            String sql3 = "SELECT * FROM Fumigador WHERE id='" + idFumigador + "';";
             ResultSet res2 = stat.executeQuery(sql3);
 
             res2.next();
-            int idFumigador = res2.getInt("id");
 
             // Only insert new product if client exists
             Connection con2 = DriverManager.getConnection(url, user, pass);
             Statement stat2 = con2.createStatement();
-            String sql2 = "INSERT INTO Servicio (costo, fecha, idFumigador, idCliente)" + " VALUES ('" + costo
-                            + "', '" + fecha + "', '" + idFumigador + "', '" + idCliente + "');";
+            String sql2 = "INSERT INTO Servicio (costo, fecha, idFumigador, idCliente)" + " VALUES ('" + costo + "', '"
+                    + fecha + "', '" + idFumigador + "', '" + idCliente + "');";
             stat2.executeUpdate(sql2, Statement.RETURN_GENERATED_KEYS);
-            
-            
+
             int serviceId = 0;
             ResultSet rs = stat2.getGeneratedKeys();
-            if (rs.next()){
-            	serviceId=rs.getInt(1);
-            }	
+            if (rs.next()) {
+                serviceId = rs.getInt(1);
+            }
 
             stat2.close();
             con2.close();
-           
+
             System.out.println("$$$$$$$$$$$$$$$$$$$$$$$");
             System.out.println(serviceId);
-            
+
             Connection con3 = DriverManager.getConnection(url, user, pass);
             Statement stat3 = con3.createStatement();
 
             // Check if provider exists
-            String sql4 = "INSERT INTO UsuarioServicio (id_usuario, id_servicio) VALUES ('"+ userId +"', '"+ serviceId + "');";
+            String sql4 = "INSERT INTO UsuarioServicio (id_usuario, id_servicio) VALUES ('" + userId + "', '"
+                    + serviceId + "');";
             stat3.executeUpdate(sql4);
 
             stat3.close();

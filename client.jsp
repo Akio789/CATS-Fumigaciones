@@ -69,7 +69,7 @@
             <th>Correo</th>
             <th>Opciones</th>
         </thead>
-   <c:forEach items="${fumigators}" var="fumigator">
+   <c:forEach items="${clients}" var="client">
             <tr>
                 <td>
                   <c:out value="${client.nombre}" />                

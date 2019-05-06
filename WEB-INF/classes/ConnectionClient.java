@@ -48,7 +48,7 @@ public class ConnectionClient extends HttpServlet {
 
             // Save users in session
             HttpSession session = request.getSession(false);
-            session.setAttribute("client", client);
+            session.setAttribute("clients", client);
 
             // Determine page to dispatch to
             RequestDispatcher disp = getServletContext().getRequestDispatcher("/client.jsp");

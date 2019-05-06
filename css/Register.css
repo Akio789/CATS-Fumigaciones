@@ -111,6 +111,7 @@ section {
 body {
   line-height: 1;
   background: #455a64;
+        font-family: lato, sans-serif;
 }
 ol,
 ul {
@@ -132,12 +133,20 @@ table {
   border-spacing: 0;
 }
 /*MY STYLES*/
+#wrapper{
+    background-color: black;
+    height: 60px;
+    margin-bottom: 40px;
+}
 #box {
   background-color: #1c313a;
   width: 60%;
   margin: 0 auto;
   height: 450px;
   transform: translateY(40%);
+}
+h1{
+ margin-bottom: 40px;   
 }
 #titulo {
   text-align: center;
@@ -149,11 +158,18 @@ table {
   transform: translateY(210%);
     font-size: 15px;
 }
+#regresar:hover{
+    background-color: red;
+    text-decoration: none;
+}
 #box2 {
   text-align: center;
 }
 #registrar{
     transform: translate(-126%,160%)
+}
+#registrar:hover{
+    background-color: red;
 }
 #correo{
     transform: translateX(20%);
@@ -165,10 +181,12 @@ table {
 }
 #regresarR{
     font-size: 170%;
+    text-decoration: none;
     margin-bottom: 5%;
 }
 #regresarM{
     font-size: 170%;
+    text-decoration: none;
 }
 #provider{
     width: 20%;
@@ -179,33 +197,87 @@ table {
   float: left;
   transform: translate(40%,280%);
     font-size: 15px;
+    text-decoration: none;
+}
+#regresar2:hover{
+    background-color: red;
 }
 #registrar2{
     transform: translate(-100%,160%);
+}
+#registrar2:hover{
+    background-color: red;
 }
 #regresar3 {
   height: 50px;
   float: left;
   transform: translateY(50%);
     font-size: 15px;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    color:white;
+}
+#regresar3:hover{
+    background-color: red;
 }
 #regresar4{
     width: 60%;
     height: 140px;
     margin-top: 10%;
+    text-decoration: none;
+}
+#regresar4:hover{
+    background-color: red;
 }
 #registrar3{
      margin-top: 2%;
 }
-#box3{
-      background-color: #1c313a;
-  width: 60%;
-  margin: 0 auto;
-  transform: translateY(100%);
+#registrar3:hover{
+    background-color: red;
 }
 #regresar5{
      height: 50px;
   float: left;
   transform: translateY(-40%);
     font-size: 15px;
+    text-decoration: none;
+}
+#regresar5:hover{
+    background-color: red;
+}
+#boxerror{
+     background-color: red;
+  width: 60%;
+  margin: 0 auto;
+  height: 450px;
+  transform: translateY(40%);
+}
+#intento{
+    background-color: gray;
+    width:25%;
+    margin: 0 auto;
+}
+#intento:hover{
+    background-color: darkgray;
+}
+#caja{
+     background-color: #1c313a;
+  width: 60%;
+  margin: 0 auto;
+  transform: translateY(20%);
+}
+#exito{
+    font-size: 50px;
+    margin-bottom: 100px;
+}
+#regresarboton{
+    width: 30%;
+    background-color: #232529;
+    border: none;
+    color: white;
+    font-size: 50px;
+}
+#regresarboton:hover{
+    background-color: red;
 }

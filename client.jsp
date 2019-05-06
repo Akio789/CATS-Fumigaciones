@@ -7,11 +7,11 @@
     <meta charset="UTF-8">
     <title>Sistema de clientes</title>
         <link rel="stylesheet" href="css/client.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="w3-container">
+        <div id="wrapper">
         <h1>CATS Fumigaciones</h1>
         <form action="./logout" method="POST">
             <input type="submit" value="Salir" id="salir">
@@ -46,16 +46,17 @@
             </form>
             
             <form action="./reports">
-		        <input type="submit" value="Reportes" id="reports">
+		        <input type="submit" value="Reportes" id="reportes">
 		    </form>
         </nav>
         </div>
     </header>
     
-    <div class="w3-container">
     <h2>Clientes</h2>
-    <a href="./registerClient.jsp" id="registrar">Registrar</a>
-    <form action="./consultClient">
+    <div id="intento">
+        <center><a href="./registerClient.jsp" id="registrar">Registrar</a></center>
+    </div>
+        <form action="./consultClient">
         <p id="nom">Nombre: </p><input type="text" name="clientToConsult" id="clienttoconsult"/>
         <input type="submit" value="Buscar" id="buscar">
     </form>
@@ -68,19 +69,19 @@
             <th>Correo</th>
             <th>Opciones</th>
         </thead>
-        <c:forEach items="${client}" var="client">
+   <c:forEach items="${fumigators}" var="fumigator">
             <tr>
                 <td>
-                    <c:out value="${client.nombre}" />                
+                  <c:out value="${client.nombre}" />                
                 </td>
                 <td>
-                    <c:out value="${client.telefono}" />
+                   <c:out value="${client.telefono}" />
                 </td>
                 <td>
-                    <c:out value="${client.direccion}" />
+                   <c:out value="${client.direccion}" />
                 </td>
                 <td>
-                    <c:out value="${client.correo}" />
+               <c:out value="${client.correo}" />
                 </td>
                 <td>
                     <form action="./modifyClient.jsp">
@@ -89,18 +90,17 @@
                         <input type="text" name="telefono" value="${client.telefono}" style="display: none;" />
                         <input type="text" name="direccion" value="${client.direccion}" style="display: none;" />
                         <input type="text" name="correo" value="${client.correo}" style="display: none;" />
-                        <input type="submit" value="Modificar" />
+                        <input type="submit" value="Modificar" id="modificar" />
                     </form>
 
                     <form action="./deleteClient.jsp">
                         <input type="text" name="clientToDeleteName" value="${client.nombre}" style="display: none;" />
                         <input type="text" name="clientToDeleteId" value="${client.id}" style="display: none;" />
-                        <input type="submit" value="Eliminar" />
+                        <input type="submit" value="Eliminar" id="eliminar"/>
                     </form>
                 </td>
             </tr>
-        </c:forEach>
+       </c:forEach>
     </table>
-    </div>
 </body>
 </html>

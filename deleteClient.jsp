@@ -7,11 +7,12 @@
     <meta charset="UTF-8">
     <title>Eliminación de Cliente</title>
     <link rel="stylesheet" href="css/delete.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
 </head>
 <body>
     <div id="box">
-    <div class="w3-container">
+    <div class="w3-container" id="wrapper">
     <h1 id="titulo">Eliminar cliente</h1>
     </div>
     <div class="w3-container">

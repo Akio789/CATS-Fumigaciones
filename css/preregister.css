@@ -111,6 +111,7 @@ section {
 body {
   line-height: 1;
   background: #455a64;
+        font-family: lato, sans-serif;
 }
 ol,
 ul {
@@ -132,6 +133,11 @@ table {
   border-spacing: 0;
 }
 /*MY STYLES*/
+#wrapper{
+    background-color: black;
+    height: 80px;
+    margin-bottom: 20px;
+}
 #fondo {
   width: 70%;
   height: 29px;
@@ -158,11 +164,23 @@ table {
   float: right;
   transform: translateY(233%);
   height: 50px;
+    background-color: #232529;
+    border: none;
+    color: white;
+}
+#preregistrar:hover{
+    background-color: red;
 }
 #regresar {
   height: 50px;
   float: left;
   transform: translateY(180%);
+     background-color: #232529;
+    border: none;
+    color: white;
+}
+#regresar:hover{
+    background-color: red;
 }
 #box2 {
   text-align: center;

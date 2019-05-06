@@ -6,15 +6,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Error de registro</title>
-     <link rel="stylesheet" href="css/Register.css">
+     <link rel="stylesheet" href="css/error.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
      <div id="box">
-        <div class="w3-container" id="box2">
-    <h1 id="titulo">El username ingresado ya está en uso.</h1>
-            <div id="box3">
-    <a href="${lastPageForSuccess}" id="regresarM">Regresar</a>
+        <div class="w3-container" id="wrapper">
+    <h1>El username ingresado ya está en uso</h1>
+            <div id="intento">
+    <center><a href="${lastPageForSuccess}" id="regresar">Regresar</a></center>
             </div>
          </div>
     </div>

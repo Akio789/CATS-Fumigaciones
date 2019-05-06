@@ -111,6 +111,7 @@ section {
 body {
   line-height: 1;
   background: #455a64;
+        font-family: lato, sans-serif;
 }
 ol,
 ul {
@@ -132,6 +133,11 @@ table {
   border-spacing: 0;
 }
 /*MY STYLES*/
+#wrapper{
+    background-color: black;
+    height: 70px;
+    margin-bottom: 40px;
+}
 #fondo {
   width: 70%;
   height: 29px;
@@ -139,12 +145,19 @@ table {
 }
 #nel {
   float: left;
-  width: 50%;
+  width: 20%;
   border-radius: 10%;
+    margin-left: 30%;
+}
+#nel:hover{
+    background-color: red;
 }
 #simon {
-  width: 50%;
+  width: 20%;
   border-radius: 10%;
+}
+#simon:hover{
+    background-color: red;
 }
 #box {
   background-color: #1c313a;

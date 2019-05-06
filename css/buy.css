@@ -111,6 +111,7 @@ section {
 body {
   line-height: 1;
   background: #455a64;
+        font-family: lato, sans-serif;
 }
 ol,
 ul {
@@ -132,6 +133,11 @@ table {
   border-spacing: 0;
 }
 /*MY STYLES*/
+#wrapper{
+    background-color: black;
+    height: 80px;
+    margin-bottom: 40px;
+}
 #box {
   background-color: #1c313a;
   width: 60%;
@@ -147,5 +153,17 @@ table {
   text-align: center;
 }
 #regresar{
-    transform: translateY(200%);
+    transform: translateY(400%);
+    background-color: #232529;
+    border: none;
+    color: white;
+    margin-top: 50px;
+    float: right;
+    height: 40px;
+}
+#regresar:hover{
+    background-color: red;
+}
+#aceptar:hover{
+    background-color: red;
 }

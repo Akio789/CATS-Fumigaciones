@@ -8,11 +8,15 @@
     <title>Inventario</title>
     <link rel="stylesheet" href="css/buy.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
     <div id="box">
-        <div class="w3-container" id="box2">
+        <div id="wrapper">
     <h1 id="titulo">Producto ${param.nombre}</h1>
+        </div>
+        
+             <div class="w3-container" id="box2">
     <form action="./productBuy" method="POST">
         <input type="hidden" name="id" value="${param.id}">
         <p id="texto">Cantidad:</p> <input type="text" name="quantity" id="quantity" placeholder="100">

@@ -6,12 +6,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Sistema de servicios</title>
-    <link rel="stylesheet" href="css/service.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/report.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="w3-container">
+        <div id="wrapper">
         <h1>CATS Fumigaciones</h1>
         <form action="./logout" method="POST">
             <input type="submit" value="Salir" id="salir">
@@ -47,17 +47,19 @@
             </form>
             
             <form action="./reports">
-		        <input type="submit" value="Reportes" id="reports">
+		        <input type="submit" value="Reportes" id="reportes">
 		    </form>
         </nav>
         </div>
     </header>
 
-	    <div class="w3-container">
-	    <h1>Reporte Ventas</h1>
-	    <p>Servicios generados: ${serviceSize}</p>
-	    <p>Costo total servicios: ${serviceTotal} </p>
-	    <p>Costo total productos: ${serviceCost} </p>
+	    <div id="box">
+            <div id="wrapper2">
+            <center><h2>Reporte Ventas</h2></center>
+            </div>
+	   <center> <p id="sg">Servicios generados: ${serviceSize}</p></center> 
+	    <center><p id="cts">Costo total servicios: ${serviceTotal} </p></center> 
+	    <center><p id="ctp">Costo total productos: ${serviceCost} </p></center> 
     </div>
     </body>
 </html>

@@ -7,12 +7,15 @@
     <meta charset="UTF-8">
     <title>Añadir producto</title>
      <link rel="stylesheet" href="css/Ap.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">s
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
     <div id="box">
-        <div class="w3-container" id="box2">
+        <div id="wrapper">
     <h1 id="titulo">Añadir producto</h1>
+        </div>
+              <div class="w3-container" id="box2">
     <form action="./addProduct" method="POST">
         <input type="text" name="id" style="display: none;" value=${param.serviceToAddId}>
         <p id="texto"> Producto:</p> 

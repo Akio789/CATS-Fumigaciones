@@ -7,11 +7,11 @@
     <meta charset="UTF-8">
     <title>Sistema de proveedores</title>
     <link rel="stylesheet" href="css/provider.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="w3-container">
+        <div id="wrapper">
         <h1>CATS Fumigaciones</h1>
         <form action="./logout" method="POST">
             <input type="submit" value="Salir" id="salir">
@@ -46,17 +46,19 @@
                 <input type="submit" value="Proveedores" id="proveedores">
             </form>
             <form action="./reports">
-		        <input type="submit" value="Reportes" id="reports">
+		        <input type="submit" value="Reportes" id="reportes">
 		    </form>
         </nav>
         </div>
     </header>
     
-    <div class="w3-container">
+
     <h2>Proveedores</h2>
-    <a href="./registerProvider.jsp" id="registrar">Registrar</a>
-    <form action="./consultProvider">
-        Nombre: <input type="text" name="providerToConsult" id="providertoconsult"/>
+    <div id="intento">
+    <center><a href="./registerProvider.jsp" id="registrar">Registrar</a></center>
+    </div>
+        <form action="./consultProvider">
+            <p id="nom">Nombre:</p> <input type="text" name="providerToConsult" id="providertoconsult"/>
         <input type="submit" value="Buscar" id="buscar">
     </form>
 
@@ -84,18 +86,18 @@
                         <input type="text" name="nombre" value="${provider.nombre}"}" style="display: none;" />
                         <input type="text" name="direccion" value="${provider.direccion}" style="display: none;" />
                         <input type="text" name="correo" value="${provider.correo}" style="display: none;" />
-                        <input type="submit" value="Modificar" />
+                        <input type="submit" value="Modificar" id="modificar"/>
                     </form>
 
                     <form action="./deleteProvider.jsp">
                         <input type="text" name="providerToDeleteName" value="${provider.nombre}" style="display: none;" />
                         <input type="text" name="providerToDeleteId" value="${provider.id}" style="display: none;" />
-                        <input type="submit" value="Eliminar" />
+                        <input type="submit" value="Eliminar" id="eliminar/>
                     </form>
                 </td>
             </tr>
         </c:forEach>
     </table>
-                                                             </div>
+                                                            
 </body>
 </html>

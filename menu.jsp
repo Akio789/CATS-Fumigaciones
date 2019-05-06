@@ -8,6 +8,7 @@
     <title>Bienvenido a CATS Fumigaciones</title>
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
     <h1>Bienvenido al sistema de CATS Fumigaciones</h1>

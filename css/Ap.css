@@ -132,6 +132,11 @@ table {
   border-spacing: 0;
 }
 /*MY STYLES*/
+#wrapper{
+    background-color: black;
+    height: 80px;
+    margin-bottom: 40px;
+}
 #box {
   background-color: #1c313a;
   width: 60%;
@@ -145,14 +150,21 @@ table {
 }
 #regresar {
   float: left;
-  transform: translateY(300%);
+  transform: translateY(350%);
     font-size: 20px;
+    text-decoration: none;
+}
+#regresar:hover{
+    background-color: red;
 }
 #box2 {
   text-align: center;
 }
 #registrar{
-    margin-top: 10%;
+    margin-top: 5%;
+}
+#registrar:hover{
+    background-color: red;
 }
 #product{
     width:20%;

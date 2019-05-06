@@ -8,12 +8,14 @@
     <title>Modificación de usuario</title>
      <link rel="stylesheet" href="css/modify.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
     <div id="boxnene">
-        <div class="w3-container" id="box2">
+        <div id="wrapper">
     <h1 id="titulo2">Modificar usuario</h1>
-
+            </div>
+<div class="w3-container" id="box2">
     <form action="./modifyUser">
         <input type="text" name="id" value=${param.id} style="display: none;">
         <p id="texto"> Nombre: </p><input type="text" name="name" value=${param.name}>

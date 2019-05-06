@@ -7,11 +7,12 @@
     <meta charset="UTF-8">
     <title>Sistema de productos</title>
     <link rel="stylesheet" href="css/consult.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="w3-container">
+        <div id="wrapper">
         <h1>CATS Fumigaciones</h1>
         <form action="./logout" method="POST">
             <input type="submit" value="Salir" id="salir">
@@ -46,17 +47,19 @@
             </form>
             
             <form action="./reports">
-		        <input type="submit" value="Reportes" id="reports">
+		        <input type="submit" value="Reportes" id="reportes">
 		    </form>
         </nav>
         </div>
     </header>
     
-    <div class="w3-container">
+   
     <h2>Producto consultado</h2>
+    <div id="intento">
     <form action="./products" method="POST">
-        <input type="submit" value="Regresar a productos" id="regresarbotonfeo">
+        <center><input type="submit" value="Regresar a productos" id="regresarboton"></center>
     </form>
+        </div>
     <form action="./consultProduct">
         <p id="nom">Nombre:</p> <input type="text" name="productToConsult" id="usertoconsult"/>
         <input type="submit" value="Buscar" id="buscar">
@@ -109,6 +112,6 @@
             </tr>
         </c:forEach>
     </table>
-    </div>
+    
 </body>
 </html>

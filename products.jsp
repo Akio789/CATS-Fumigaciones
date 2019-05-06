@@ -7,11 +7,11 @@
     <meta charset="UTF-8">
     <title>Sistema de productos</title>
     <link rel="stylesheet" href="css/product.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="w3-container">
+        <div id="wrapper">
         <h1>CATS Fumigaciones</h1>
         <form action="./logout" method="POST">
             <input type="submit" value="Salir" id="salir">
@@ -46,17 +46,17 @@
             </form>
             
             <form action="./reports">
-		        <input type="submit" value="Reportes" id="reports">
+		        <input type="submit" value="Reportes" id="reportes">
 		    </form>
         </nav>
         </div>
     </header>
     
-    <div class="w3-container">
+    
     <h2>Productos</h2>
     <form action="./registerProduct.jsp">
         <input type="hidden" name="${providers}">
-        <input type="submit" value="Registar" id="registrar">
+        <center><input type="submit" value="Registrar" id="registrar"></center>
     </form>
 
     <form action="./consultProduct" method="POST">
@@ -93,24 +93,24 @@
                         <input type="text" name="costo" value="${product.costo}" style="display: none;" />
                         <input type="text" name="cant_disp" value="${product.cant_disp}" style="display: none;" />
                         <input type="text" name="idProveedor" value="${product.idProveedor}" style="display: none;" />
-                        <input type="submit" value="Modificar" />
+                        <input type="submit" value="Modificar" id="modificar"/>
                     </form>
 
                     <form action="./deleteProduct.jsp" method="POST">
                         <input type="text" name="productToDeleteName" value="${product.nombre}" style="display: none;" />
                         <input type="text" name="productToDeleteId" value="${product.id}" style="display: none;" />
-                        <input type="submit" value="Eliminar" />
+                        <input type="submit" value="Eliminar" id="eliminar"/>
                     </form>
 
                     <form action="./productBuy.jsp" method="POST">
                         <input type="text" name="id" value="${product.id}" style="display: none;" />
                         <input type="text" name="nombre" value="${product.nombre}" style="display: none;" />
-                        <input type="submit" value="Comprar">
+                        <input type="submit" value="Comprar" id="comprar">
                     </form>
                 </td>
             </tr>
         </c:forEach>
     </table>
-    </div>
+    
 </body>
 </html>

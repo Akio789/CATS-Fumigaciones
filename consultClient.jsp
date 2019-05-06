@@ -7,16 +7,17 @@
     <meta charset="UTF-8">
     <title>Sistema de clientes</title>
     <link rel="stylesheet" href="./css/consult.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="w3-container">
+        <div id="wrapper">
             <h1>CATS Fumigaciones</h1>
             <form action="./logout" method="POST">
                 <input type="submit" value="Salir" id="salir">
             </form>
         </div>
+        
        <div id="nav">
         <nav>
             <c:if test = "${sessionScope.isCurrentUserAdmin == 1}">
@@ -46,13 +47,17 @@
             </form>
             
             <form action="./reports">
-		        <input type="submit" value="Reportes" id="reports">
+		        <input type="submit" value="Reportes" id="reportes">
 		    </form>
         </nav>
+        </div>
     </header>
-    <div class="w3-container">
+    
+    
         <h2>Cliente consultado</h2>
-        <a href="./client.jsp" id="regresar">Regresar a clientes</a>
+    <div id="intento">
+    <center>  <a href="./client.jsp" id="regresar">Regresar a clientes</a></center>
+    </div>
         <form action="./consultClient">
             <p id="nom">Nombre: </p><input type="text" name="clientToConsult" id="usertoconsult"/>
             <input type="submit" value="Buscar" id="buscar">
@@ -87,18 +92,17 @@
                             <input type="text" name="telefono" value="${clientItem.telefono}" style="display: none;" />
                             <input type="text" name="direccion" value="${clientItem.direccion}" style="display: none;" />
                             <input type="text" name="correo" value="${clientItem.correo}" style="display: none;" />
-                            <input type="submit" value="Modificar" />
+                            <input type="submit" value="Modificar" id="modificar"/>
                         </form>
 
                         <form action="./consultClient.jsp">
                             <input type="text" name="clientToDeleteName" value="${clientItem.nombre}" style="display: none;" />
                             <input type="text" name="clientToDeleteId" value="${clientItem.id}" style="display: none;" />
-                            <input type="submit" value="Eliminar" />
+                            <input type="submit" value="Eliminar" id="eliminar" />
                         </form>
                     </td>
                 </tr>
             </c:forEach>
         </table>
-    </div>
 </body>
 </html>

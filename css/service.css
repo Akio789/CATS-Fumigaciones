@@ -111,6 +111,7 @@ section {
 body {
   line-height: 1;
   background: #455a64;
+      font-family: lato, sans-serif;
 }
 ol,
 ul {
@@ -131,27 +132,41 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+
+
+
+
+
 /*MY STYLES*/
+#wrapper{
+    background: black;
+    height: 80px;
+}
 h1 {
-  margin: 0 auto;
+  text-align: center;
   font-size: 300%;
 }
 #salir {
   float: right;
   transform: translateY(-80%);
-  width: 20%;
-  height: 39px;
+  width: 10%;
+  height: 30px;
   color: white;
   background-color: black;
+}
+#salir:hover{
+    background-color: red;
 }
 h2 {
   margin-top: 50px;
   font-size: 300%;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+    text-align: center;
 }
 #usuarios {
   float: left;
-  width: 17%;
+  width: 14.2%;
   height: 50px;
   background-color: #1c313a;
   color: white;
@@ -160,7 +175,7 @@ h2 {
 }
 #servicios {
   float: left;
-  width: 17%;
+  width: 14.2%;
   height: 50px;
   background-color: #1c313a;
   color: white;
@@ -168,7 +183,7 @@ h2 {
 }
 #productos {
   float: left;
-  width: 17%;
+  width: 14.2%;
   height: 50px;
   background-color: #1c313a;
   color: white;
@@ -177,7 +192,7 @@ h2 {
 }
 #fumigadores {
   float: left;
-  width: 17%;
+  width: 14.8%;
   height: 50px;
   background-color: #1c313a;
   color: white;
@@ -186,7 +201,7 @@ h2 {
 }
 #clientes {
   float: left;
-  width: 17%;
+  width: 14.2%;
   height: 50px;
   background-color: #1c313a;
   color: white;
@@ -194,7 +209,15 @@ h2 {
   display: block;
 }
 #proveedores {
-  width: 15%;
+  width: 14.2%;
+    float:left;
+  height: 50px;
+  background-color: #1c313a;
+  color: white;
+  border-color: #1c313a;
+}
+#reportes {
+  width: 14.2%;
   height: 50px;
   background-color: #1c313a;
   color: white;
@@ -209,23 +232,26 @@ active {
   color: white;
   transition: none;
 }
-#usuarios:focus {
-  background-color: greenyellow;
+#usuarios:hover {
+  background-color: red;
 }
-#servicios:focus {
-  background-color: greenyellow;
+#servicios:hover {
+  background-color: red;
 }
-#productos:focus {
-  background-color: greenyellow;
+#productos:hover {
+  background-color: red;
 }
-#fumigadores:focus {
-  background-color: greenyellow;
+#fumigadores:hover {
+  background-color: red;
 }
-#clientes:focus {
-  background-color: greenyellow;
+#clientes:hover {
+    background-color: red;
 }
-#proveedores:focus {
-  background-color: greenyellow;
+#proveedores:hover {
+  background-color: red;
+}
+#reportes:hover {
+  background-color: red;
 }
 table {
   width: 70%;
@@ -237,6 +263,7 @@ tr {
 }
 td {
   width: calc(100 / 6);
+     border: 3px solid black;
 }
 th {
   border: 3px solid black;
@@ -250,8 +277,10 @@ td {
   color: white;
   width: calc(100 / 6);
 }
-#registrar {
+#preregistrar {
   font-size: 30px;
+    text-decoration: none;
+    text-align: center;
 }
 
 td {
@@ -260,4 +289,47 @@ td {
 }
 #nav {
   display: block;
+}
+#intento{
+    margin-top: 10%;
+    background-color: #232529;
+    width:15%;
+    height: 50px;
+    margin:0 auto;
+    border-radius: 20px;
+}
+#intento:hover{
+    background-color: red;
+}
+#mostrar{
+    background-color: #232529;
+    color:white;
+    margin-bottom: 10px;
+}
+#mostrar:hover{
+    background-color: red;
+}
+#modificar{
+    background-color: #232529;
+    color:white;
+    margin-bottom: 10px;
+}
+#modificar:hover{
+    background-color: red;
+}
+#agregar{
+    background-color: #232529;
+    color:white;
+    margin-bottom: 10px;
+}
+#agregar:hover{
+    background-color: red;
+}
+#cancelar{
+    background-color: #232529;
+    color:white;
+    margin-bottom: 10px;
+}
+#cancelar:hover{
+    background-color: red;
 }

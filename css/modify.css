@@ -111,6 +111,7 @@ section {
 body {
   line-height: 1;
   background: #455a64;
+        font-family: lato, sans-serif;
 }
 ol,
 ul {
@@ -132,6 +133,11 @@ table {
   border-spacing: 0;
 }
 /*MY STYLES*/
+#wrapper{
+    background-color: black;
+    height: 60px;
+    margin-bottom: 2%;
+}
 #box {
   background-color: #1c313a;
   width: 60%;
@@ -143,35 +149,43 @@ table {
   text-align: center;
     margin-bottom: 5%;
 }
-#regresar {
-  height: 50px;
-  float: left;
-  transform: translateY(210%);
-    font-size: 15px;
-}
-#box2 {
-  text-align: center;
-}
 #aceptar{
     transform: translate(-194%,160%)
+}
+#aceptar:hover{
+    background-color: red;
 }
 #regresar2{
      height: 50px;
   float: left;
   transform: translateY(300%);
     font-size: 15px;
+    text-decoration: none;
+}
+#regresar2:hover{
+    background-color: red;
 }
 #aceptar2{
     transform: translate(-170%,160%)
 }
+#aceptar2:hover{
+    background-color: red;
+}
 #provider{
-    width: 20%;
+    width: 23%;
+}
+#correo{
+    margin-left: 8%;
 }
 #regresar3{
      height: 50px;
   float: left;
   transform: translateY(160%);
     font-size: 15px;
+    text-decoration: none;
+}
+#regresar3:hover{
+    background-color: red;
 }
 /*ModifyService*/
 #fondo {
@@ -198,7 +212,11 @@ table {
 #regresar {
   height: 50px;
   float: left;
-  transform: translateY(180%);
+    text-decoration: none;
+    transform: translateY(180%);    
+}
+#regresar:hover{
+    background-color: red;
 }
 #box2 {
   text-align: center;
@@ -214,11 +232,18 @@ table {
 #aceptar3{
     transform: translate(-200%,160%)
 }
+#aceptar3:hover{
+    background-color: red;
+}
 #regresar5{
     height: 50px;
   float: left;
   transform: translateY(300%);
+    text-decoration: none;
     font-size: 15px;
+}
+#regresar5:hover{
+    background-color: red;
 }
 #titulo2{
     text-align: center;
@@ -227,9 +252,16 @@ table {
 #aceptar4{
      transform: translate(-180%,160%)
 }
+#aceptar4:hover{
+    background-color: red;
+}
 #regresar4{
      height: 50px;
   float: left;
   transform: translateY(130%);
     font-size: 15px;
+    text-decoration: none;
+}
+#regresar4:hover{
+    background-color: red;
 }

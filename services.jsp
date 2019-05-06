@@ -7,11 +7,11 @@
     <meta charset="UTF-8">
     <title>Sistema de servicios</title>
     <link rel="stylesheet" href="css/service.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="w3-container">
+        <div id="wrapper">
         <h1>CATS Fumigaciones</h1>
         <form action="./logout" method="POST">
             <input type="submit" value="Salir" id="salir">
@@ -47,16 +47,19 @@
             </form>
             
             <form action="./reports">
-		        <input type="submit" value="Reportes" id="reports">
+		        <input type="submit" value="Reportes" id="reportes">
 		    </form>
         </nav>
         </div>
     </header>
 
-    <div class="w3-container">
-    <h1>Servicios</h1>
-    <a href="./preRegisterService.jsp">Pre-Registrar</a>
-    
+    <h2>Servicios</h2>
+    <div id="intento">
+   <center><a href="./preRegisterService.jsp" id="preregistrar">Pre-Registrar</a></center>
+    </div>
+    <br>
+      <br>
+      <br>
     <table border="1">
         <thead>
             <th>Costo</th>
@@ -83,7 +86,7 @@
                 <td>
                 	<form action="./productsServices"">
                         <input type="text" name="serviceToShow" value="${service.id}" style="display: none;" />
-                        <input type="submit" value="Mostrar productos" />
+                        <input type="submit" value="Mostrar productos" id="mostrar"/>
                     </form>
                 </td>
                 <td>
@@ -93,17 +96,17 @@
                         <input type="text" name="fecha" value="${service.fecha}" style="display: none;" />
                         <input type="text" name="idFumigador" value="${service.idFumigador}" style="display: none;" />
                         <input type="text" name="idCliente" value="${service.idCliente}" style="display: none;" />
-                        <input type="submit" value="Modificar" />
+                        <input type="submit" value="Modificar" id=""modificar/>
                     </form>
                     
                     <form action="./addProduct.jsp" method="post">
                         <input type="text" name="serviceToAddId" value="${service.id}" style="display: none;" />
-                        <input type="submit" value="Agregar Producto" />
+                        <input type="submit" value="Agregar Producto" id="agregar"/>
                     </form>
 
                     <form action="./deleteService.jsp">
                         <input type="text" name="serviceToDeleteId" value="${service.id}" style="display: none;" />
-                        <input type="submit" value="Cancelar" />
+                        <input type="submit" value="Cancelar" id="cancelar" />
                     </form>
                 </td>
             </tr>

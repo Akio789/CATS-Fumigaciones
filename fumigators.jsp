@@ -7,12 +7,12 @@
     <meta charset="UTF-8">
     <title>Sistema de fumigadores</title>
         <link rel="stylesheet" href="css/fumigator.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
 </head>
 <body>
     <header>
-        <div class="w3-container">
+        <div id="wrapper">
         <h1>CATS Fumigaciones</h1>
         <form action="./logout" method="POST">
             <input type="submit" value="Salir" id="salir">
@@ -48,17 +48,18 @@
             </form>
             
             <form action="./reports">
-		        <input type="submit" value="Reportes" id="reports">
+		        <input type="submit" value="Reportes" id="reportes">
 		    </form>
         </nav>
         </div>
     </header>
 
-    <div class="w3-container">
     <h2>Fumigadores</h2>
-    <a href="./registerFumigator.jsp" id="registrar">Registrar</a>
-    <form action="./consultFumigator">
-        <p id="nom">Nombre:</p> <input type="text" name="fumigatorToConsult" id="usertoconsult"/>
+    <div id="intento">
+    <center><a href="./registerFumigator.jsp" id="registrar">Registrar</a></center>
+    </div>
+        <form action="./consultFumigator">
+        <p id="nom">Nombre:</p> <input type="text" name="fumigatorToConsult" id="fumigatortoconsult"/>
         <input type="submit" value="Buscar" id="buscar">
     </form>
 
@@ -86,13 +87,13 @@
                         <input type="text" name="nombre" value="${fumigator.nombre}"}" style="display: none;" />
                         <input type="text" name="direccion" value="${fumigator.direccion}" style="display: none;" />
                         <input type="text" name="correo" value="${fumigator.correo}" style="display: none;" />
-                        <input type="submit" value="Modificar" />
+                        <input type="submit" value="Modificar" id="modificar"/>
                     </form>
 
                     <form action="./deleteFumigator.jsp">
                         <input type="text" name="fumigatorToDeleteName" value="${fumigator.nombre}" style="display: none;" />
                         <input type="text" name="fumigatorToDeleteId" value="${fumigator.id}" style="display: none;" />
-                        <input type="submit" value="Eliminar" />
+                        <input type="submit" value="Eliminar" id="eliminar" />
                     </form>
                     <%-- <a href="modifyUser.jsp?id=${user.id}&name=${user.name}&username=${user.username}&job=${user.job}&phoneNum=${user.phoneNum}&email=${user.email}&address=${user.address}">Modificar</a>
                     <a href="deleteUser.jsp?userToDeleteUsername=${user.username}&userToDeleteId=${user.id}">Eliminar</a> --%>

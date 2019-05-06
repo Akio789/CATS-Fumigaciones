@@ -8,11 +8,14 @@
     <title>Registro de usuario</title>
     <link rel="stylesheet" href="css/Register.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
-    <div id="box3">
-        <div class="w3-container" id="box2">
+    <div id="caja">
+        <div id="wrapper">
     <h1 id="titulo">Registrar usuario</h1>
+        </div>
+            <div class="w3-container" id="box2">
     <form action="./registerUser" method="GET">
         <p id="texto">Cuenta: </p><input type="text" name="username" id="username" placeholder="Usuario" required>
         <br>

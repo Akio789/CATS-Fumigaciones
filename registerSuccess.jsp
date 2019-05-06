@@ -8,13 +8,14 @@
     <title>Registro</title>
      <link rel="stylesheet" href="css/Register.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-</head>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    </head>
 <body>
      <div id="box">
         <div class="w3-container" id="box2">
-    <h1 id="titulo">Registro exitoso!</h1>
+    <h1 id="exito">Registro exitoso!</h1>
     <form action="${lastPageForSuccess}" method="${method}">
-        <input type="submit" value="Regresar" id="regresar4">    
+        <input type="submit" value="Regresar" id="regresarboton">    
     </form>
          </div>
     </div>

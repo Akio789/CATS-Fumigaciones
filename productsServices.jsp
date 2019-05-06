@@ -8,6 +8,7 @@
     <title>Añadir producto</title>
       <link rel="stylesheet" href="css/Ps.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
      <div id="box">

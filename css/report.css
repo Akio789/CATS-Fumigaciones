@@ -111,7 +111,7 @@ section {
 body {
   line-height: 1;
   background: #455a64;
-     font-family: lato, sans-serif;
+    font-family: lato, sans-serif;
 }
 ol,
 ul {
@@ -142,8 +142,8 @@ table {
     height: 80px;
 }
 h1 {
+  text-align: center;
   font-size: 300%;
-    text-align: center;
 }
 #salir{
     float:right;
@@ -275,62 +275,27 @@ td {
   color: white;
   width: calc(100 / 6);
 }
-#registrar {
-    font-size: 30px;
-    text-decoration: none;
-    text-align: center;
-}
-#intento:hover{
-    background-color: red;
-}
-#nom {
-  margin-top: 40px;
-  margin-bottom: 6px;
-    margin-left: 20%;
-}
-#fumigatortoconsult {
-  margin-bottom: 35px;
-    background-color: #718792;
-    width:20%;
-    margin-left: 20%;
-}
-#buscar {
-  width: 100px;
-  height: 25px;
-  color: white;
-  background-color: black;
-  border-radius: 10px;
-}
-#buscar:hover{
-    background-color: red;
-}
-td {
-  color: white;
-     border: 3px solid black;
-}
-#nav{
-    display: block;
-}
-#intento{
-    margin-top: 10%;
-    background-color: #232529;
-    width:10%;
+#box{
     margin: 0 auto;
-    height: 40px;
-    border-radius: 20px;
+    background-color: #1c313a;
+    width: 50%;
+    height: 400px;
+    transform: translateY(20%);
 }
-#eliminar{
-    background-color: #232529;
-    color:white;
+#sg{
+    margin-bottom: 60px;
+    font-size: 20px;
 }
-#eliminar:hover{
-    background-color: red;
+#cts{
+    margin-bottom: 60px;
+    font-size: 20px;
 }
-#modificar{
-    background-color: #232529;
-    color:white;
-     margin-bottom: 10px;
+#ctp{
+    margin-bottom: 60px;
+    font-size: 20px;
 }
-#modificar:hover{
-    background-color: red;
+#wrapper2{
+    background: black;
+    height: 80px;
+    margin-bottom: 2%;
 }

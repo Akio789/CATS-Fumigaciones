@@ -111,6 +111,7 @@ section {
 body {
   line-height: 1;
   background: #455a64;
+    font-family: lato, sans-serif;
 }
 ol,
 ul {
@@ -131,27 +132,44 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+
+
+
+
+
+
+
+
 /*MY STYLES*/
+#wrapper{
+    background: black;
+    height: 80px;
+}
 h1 {
-  margin: 0 auto;
+  text-align: center;
   font-size: 300%;
 }
 #salir{
     float:right;
     transform:translateY(-80%);
-    width:20%;
-    height:39px;
+    width:10%;
+    height:30px;
     color: white;
   background-color: black;
+}
+#salir:hover{
+    background-color: red;
 }
 h2 {
   margin-top: 50px;
   font-size: 300%;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+    text-align: center;
 }
 #usuarios {
   float: left;
-  width: 17%;
+  width: 14.2%;
   height: 50px;
   background-color: #1c313a;
   color: white;
@@ -160,7 +178,7 @@ h2 {
 }
 #servicios {
   float: left;
-  width: 17%;
+  width: 14.2%;
   height: 50px;
   background-color: #1c313a;
   color: white;
@@ -168,7 +186,7 @@ h2 {
 }
 #productos {
   float: left;
-  width: 17%;
+  width: 14.2%;
   height: 50px;
   background-color: #1c313a;
   color: white;
@@ -177,7 +195,7 @@ h2 {
 }
 #fumigadores {
   float: left;
-  width: 17%;
+  width: 14.8%;
   height: 50px;
   background-color: #1c313a;
   color: white;
@@ -186,7 +204,7 @@ h2 {
 }
 #clientes {
   float: left;
-  width: 17%;
+  width: 14.2%;
   height: 50px;
   background-color: #1c313a;
   color: white;
@@ -194,7 +212,15 @@ h2 {
   display: block;
 }
 #proveedores {
-  width: 15%;
+  width: 14.2%;
+    float:left;
+  height: 50px;
+  background-color: #1c313a;
+  color: white;
+  border-color: #1c313a;
+}
+#reportes {
+  width: 14.2%;
   height: 50px;
   background-color: #1c313a;
   color: white;
@@ -209,23 +235,26 @@ active {
   color: white;
   transition: none;
 }
-#usuarios:focus {
-  background-color: greenyellow;
+#usuarios:hover {
+  background-color: red;
 }
-#servicios:focus {
-  background-color: greenyellow;
+#servicios:hover {
+  background-color: red;
 }
-#productos:focus {
-  background-color: greenyellow;
+#productos:hover {
+  background-color: red;
 }
-#fumigadores:focus {
-  background-color: greenyellow;
+#fumigadores:hover {
+  background-color: red;
 }
-#clientes:focus {
-  background-color: greenyellow;
+#clientes:hover {
+    background-color: red;
 }
-#proveedores:focus {
-  background-color: greenyellow;
+#proveedores:hover {
+  background-color: red;
+}
+#reportes:hover {
+  background-color: red;
 }
 table {
   width: 70%;
@@ -253,15 +282,22 @@ td {
 }
 #registrar {
     font-size: 30px;
+    text-decoration: none;
+    text-align: center;
+}
+#intento:hover{
+    background-color: red;
 }
 #nom {
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 6px;
+    margin-left: 20%;
 }
 #clienttoconsult {
   margin-bottom: 35px;
     background-color: #718792;
-    width:35%;
+    width:20%;
+    margin-left: 20%;
 }
 #buscar {
   width: 100px;
@@ -270,9 +306,35 @@ td {
   background-color: black;
   border-radius: 10px;
 }
+#buscar:hover{
+    background-color: red;
+}
 td {
   color: white;
 }
 #nav{
     display: block;
+}
+#intento{
+    margin-top: 10%;
+    background-color: #232529;
+    width:10%;
+    margin: 0 auto;
+    height: 40px;
+    border-radius: 20px;
+}
+#eliminar{
+    background-color: #232529;
+    color:white;
+}
+#eliminar:hover{
+    background-color: red;
+}
+#modificar{
+    background-color: #232529;
+    color:white;
+     margin-bottom: 10px;
+}
+#modificar:hover{
+    background-color: red;
 }

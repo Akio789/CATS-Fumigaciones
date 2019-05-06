@@ -57,7 +57,7 @@
    <center> <a href="./users" id="regresar">Regresar a usuarios</a></center>
     </div>
     <form action="./consultUser">
-        <p id="nom">Nombre: </p><input type="text" name="userToConsult" id="usertoconsult" />
+        <p id="nom">Username del usuario: </p><input type="text" name="userToConsult" id="usertoconsult" />
         <input type="submit" value="Buscar" id="buscar">
     </form>
 

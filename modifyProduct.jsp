@@ -30,7 +30,10 @@
         </select>
 
         <input type="submit" value="Aceptar" id="aceptar2">
-        <a href="./products.jsp"id="regresar5">Regresar</a>
+    </form>
+        <form action="./products" method="POST">
+            <input type="hidden" name="${sessionScope.fumigators}">
+            <input type="submit" value="Regresar" id="regresar">
     </form>
         </div>
     </div>

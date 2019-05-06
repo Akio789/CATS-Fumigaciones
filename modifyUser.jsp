@@ -31,7 +31,10 @@
         <p id="texto">Dirección:</p> <input type="text" name="address" value="${param.address}">
 
         <input type="submit" value="Aceptar" id="aceptar3">
-        <a href="./users.jsp" id="regresar4">Regresar</a>
+    </form>
+    <form action="./users">
+            <input type="hidden" name="${sessionScope.fumigators}">
+            <input type="submit" value="Regresar" id="regresar">
     </form>
               </div>
     </div>

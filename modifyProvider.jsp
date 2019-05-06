@@ -25,7 +25,10 @@
         <p id="texto">Correo:</p> <input type="text" name="correo" value="${param.correo}">
 
         <input type="submit" value="Aceptar" id="aceptar">
-        <a href="./providers" id="regresar2">Regresar</a>
+    </form>
+    <form action="./providers">
+            <input type="hidden" name="${sessionScope.fumigators}">
+            <input type="submit" value="Regresar" id="regresar">
     </form>
         </div>
     </div>

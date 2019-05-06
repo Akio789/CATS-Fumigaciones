@@ -108,6 +108,14 @@ nav,
 section {
   display: block;
 }
+input[type=submit] {
+  background: black;
+  color: white;
+  transition: none;
+}
+input[type=submit]:hover {
+  background-color: red;
+}
 body {
   line-height: 1;
   background: #455a64;

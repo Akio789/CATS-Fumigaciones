@@ -109,7 +109,7 @@ CREATE TABLE UsuarioFumigador (
 );
 
 -- Dummy data
-INSERT INTO `Usuario` (username, password, nombre, puesto, telefono, correo, direccion, administrador) VALUES ('user1', '123', 'Akio', 'Manager', '123456', 'user1@gmail.com', 'Insurgentes Sur', true);
+INSERT INTO `Usuario` (username, password, nombre, puesto, telefono, correo, direccion, administrador) VALUES ('user1', '123', 'Daniela', 'Manager', '123456', 'user1@gmail.com', 'Insurgentes Sur', true);
 
 -- Create user
 CREATE USER 'catsUser'@'localhost' IDENTIFIED BY 'myPassword';
